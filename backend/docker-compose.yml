@@ -1,0 +1,33 @@
+version: '3'
+services:
+  parse:
+    image: parseplatform/parse-server
+    environment:
+      PARSE_SERVER_APPLICATION_ID: CarbonCalculator
+      PARSE_SERVER_MASTER_KEY: CarbonCalculator1510
+      PARSE_SERVER_DATABASE_URI: postgres://postgres:postgres@postgres-db:5432/CarbonCalculator
+      PARSE_SERVER_SERVER_URL: http://localhost:1337/parse
+      PARSE_SERVER_MASTER_KEY_IPS: 0.0.0.0/0
+    ports:
+      - 1337:1337
+    depends_on:
+      - postgres-db
+  postgres-db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: CarbonCalculator
+  parse-dashboard:
+    image: parseplatform/parse-dashboard
+    environment:
+      PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: true
+      PARSE_DASHBOARD_SERVER_URL: http://localhost:1337/parse
+      PARSE_DASHBOARD_APP_ID: CarbonCalculator
+      PARSE_DASHBOARD_MASTER_KEY: CarbonCalculator1510
+      PARSE_DASHBOARD_USER_ID: admin
+      PARSE_DASHBOARD_USER_PASSWORD: admin
+    ports:
+      - 1010:4040
+    depends_on:
+      - parse

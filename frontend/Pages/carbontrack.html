@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="shortcut icon" href="../Images/icon.ico" type="image/x-icon">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+          .green-bg {
+            background: linear-gradient(90deg, #98EA41, #45691D);
+        }
+        
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  display: block;
+  width: 25px;
+  background-color: #6BA42E;
+  
+border-radius: 15px;
+}
+
+
+
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+
+
+ .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+    </style>
+</head>
+<body class="max-h-screen h-auto " >
+    <header id="header" class="fixed top-0 w-full z-[999999999999] backdrop-blur-xl "></header>
+
+    <div class="main relative xl:h-screen flex justify-center items-start xl:justify-start xl:items-center flex-row w-full">
+    <div class="text w-full justify-center flex flex-col xl:block xl:w-2/3 h-full py-10 px-[5.4vw] z-50 pt-[7vw]">
+        <h1 class="text-3xl  sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5vw]  font-bold py-7 text-[#7E7E80] paras"><p>Track Your <br><span class="text-[#6BA24E]">Carbon Emissions</span><br> 
+          <span>
+            Instantly
+            <div class="flex justify-start pt-4 items-center w-[33vw] xl:w-[23vw]">
+                <svg  viewBox="0 0 300 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 15 Q150 -5 240 15" stroke="url(#gradient)" stroke-width="5" fill="none" />
+                  <defs>
+                    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#98EA41" />
+                      <stop offset="100%" stop-color="#45691D" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              
+        </span>
+    </p></h1>
+          
+        <p class="text-[#7E7E80] paras w-full text-lg xl:text-[1.3vw]  xl:w-2/3 px-[1.1vw] leading-[1.8] font-medium">Discover the full picture of your company's environmental impact. With our Carbon Measurement tool, you can precisely monitor your emissions in real time, empowering you to take meaningful action toward sustainability and achieve your reduction targets.</p>
+        <div class="relative w-full">
+
+          <button onclick="window.location.href='../Pages/Configuration.html'" class="green-bg px-6 py-2 xl:px-[1.3vw] xl:py-[0.5rem]  rounded-[1.2vw] z-50 text-white text-[1.8vw] font-semibold cursor-pointer my-7 mx-3 paras">
+            Start Tracking Now
+          </button>
+          <div class="absolute hidden xl:block right-[5vw] text-[1.3vw] z-50 w-fit h-[3.4vw] p-3 bg-white rounded-[0.8vw] paras">
+          <div class="flex font-bold ">
+            <span class="checkmark top-[0.8vw]"></span>
+            <span class="pl-5">Emissions Tracked Successfully</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <di class="absolute inset-0 hidden xl:block w-full h-full pt-[7vw]">
+      <div class="relative">
+
+        <img width="36%" height="45%" class="absolute top-0 right-20 object-cover animate-images" src="../Images/ctrack1.png" alt="">
+        <div class="absolute top-52 right-24  z-50 w-[17vw] h-fit text-center p-[0.6vw] bg-white rounded-[1.172vw] animate-images">
+          <div class="relative">
+            <div class="font-bold text-[1.2vw] text-left pl-[1vw]">Current Emissions:</div>
+            <div class="text-[2.3vw] font-medium text-[#409DDD]">2,500 kg CO2</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative animate-images">
+            <img width="40%" height="30%" 
+             class="absolute top-[26vw] right-36 object-cover" 
+             src="../Images/ctrack2.png" alt=""/>
+  
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+            gsap.from(".animate-images", {
+      scrollTrigger: {
+      trigger: ".animate-images",
+      start: "top 70%",
+      end:"bottom 30%",
+      toggleActions: "play none none none",
+    },
+        duration: 1.5,
+        scale: 0.8,
+        opacity: 0,
+        delay: 0.8,
+        ease: "power2.out",
+        stagger: 0.3
+    });
+    gsap.from(".paras", {
+      scrollTrigger: {
+      trigger: ".paras",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        delay: 0.5,
+        ease: "power2.out",
+        stagger: 0.2  
+    });
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+    </script>
+</body>
+</html>

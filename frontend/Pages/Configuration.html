@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <title>Document</title>
+    <style>
+    .no-scrollbarActivity::-webkit-scrollbar {
+    display: none; 
+}
+
+.no-scrollbarActivity {
+    -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;     /* Hide scrollbar for Firefox */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: thin;    
+  scrollbar-color: #6BA24E transparent; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6BA24E; 
+  border-radius: 5px; 
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+}
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  
+border-radius: 15px;
+}
+
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+.container input:checked ~ .checkmark {
+  background-color: #6BA42E;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+
+    <!-- heading -->
+
+    <h1 class="flex justify-center items-center text-4xl pt-[8vw] font-bold">Configuration</h1>
+    <!-- step bar -->
+    <div class="py-14">
+        <dh-component>
+            <div class="w-4/5 lg:w-1/2 mx-auto relative">
+                <div class="bg-gray-200 stepbar h-[1px] flex items-center justify-between">
+                    <div class="w-1/3 bg-gray-200  stepbar h-[1px] flex items-center">
+                            <div class="flex justify-center">
+                                <div class="bg-white step  h-8 w-8 sm:h-10 sm:w-10 rounded-full shadow border border-[#6BA42E] flex items-center justify-center relative"><div class="h-2.5 w-2.5 bg-[#6BA42E] rounded-full"></div></div>
+                            <p tabindex="0" class="py-5 absolute top-1 text-[#6BA42E]  text-xs sm:text-sm font-bold">Sector</p>
+                    </div>
+                    </div>
+                    <div class="w-1/3 flex stepbar justify-between bg-gray-200  h-[1px] items-center relative">
+                        <div class="absolute right-0 -mr-2">
+                            <div class="relative bg-white shadow-lg px-2 py-1 rounded mt-16 -mr-12">
+                            <!-- <p tabindex="0" class=" text-[#6BA42E] text-sm font-bold">Step 3: Analyzing</p> -->
+                        </div>
+                    </div>
+                    <div  class="flex items-center justify-center -ml-2">
+                        <div class="bg-white step h-8 w-8 sm:h-10 sm:w-10 rounded-full flex justify-center items-center shadow border border-[#C6C6C6]">
+                        </div>
+                        <p tabindex="0" class="py-5 absolute top-1 text-[#6BA42E] text-xs sm:text-sm font-bold">Geography</p>
+                    </div>
+                    <div  class="text-center flex justify-center items-center">
+                        <div class="bg-white step -mr-3  h-8 w-8 sm:h-10 sm:w-10 rounded-full flex justify-center items-center shadow border border-[#C6C6C6]">
+                        </div>
+                        <p tabindex="0" class="py-5 w-full  absolute top-1 -mr-3 text-[#6BA42E] text-xs sm:text-sm font-bold">ISIC Class</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-end">
+                    <div class="bg-white step  h-8 w-8 sm:h-10 sm:w-10 rounded-full flex justify-center items-center shadow border border-[#C6C6C6]">
+                    </div>
+                    <p tabindex="0" class="py-5 w-full flex justify-end absolute top-1 -mr-5  text-[#6BA42E]  text-xs sm:text-sm  font-bold">Activity Type</p>
+
+                </div>
+            </div>
+        </div>
+    </dh-component>
+        </div>
+        <h1 id="activityHeading" class="flex hidden justify-center items-center text-4xl pt-[5vw] font-bold">Activity Details</h1>
+    <!-- question heading -->
+    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg sm:text-4xl pt-12 pb-6 font-bold">Select your Company Sector</h1>
+    <!-- Activity div -->
+    <div id="ActivitytypeDiv" class="main no-scrollbar grid  overflow-y-auto max-h-[300px] overflow-x-hidden py-5 px-5 fade-shadow w-full 
+    grid-cols-1  
+    items-center justify-items-center place-content-start">
+       
+    </div>
+    
+    <!-- options divs -->
+        <div id="main" class="main no-scrollbar place-items-center justify-items-center  items-center content-center grid gap-12 overflow-y-auto max-h-[500px] overflow-x-hidden py-5 px-6 fade-shadow   w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-[47%] sm:mx-auto mx-auto">
+          
+        </div>
+            <!-- activity Details -->
+     <div id="activities" class="w-full justify-center  items-center pt-0 mt-0">
+        <div id="InputArea" class="w-full flex justify-center hidden">
+            <textarea type="text" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-2/5 flex bg-slate-200 h-[10vw] border-slate-300 rounded-[0.5vw]"></textarea>
+            <!-- controlbuttons -->
+        </div>
+        <div id="activitybuttons" class="flex justify-between items-center px-2 pb-10 pt-5 sm:px-10" style="display: none;">
+          <button onclick="prevactivity()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Back</button>
+          <button onclick="nextactivity()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Next</button>
+      </div>
+     </div>
+        <!-- isic div -->
+        <div 
+        id="mainIsic" 
+        class="main no-scrollbar grid gap-12 overflow-y-auto max-h-[450px] overflow-x-hidden py-4 px-5 fade-shadow w-full 
+        sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 sm:w-2/3 md:w-[80vw] sm:mx-auto mx-auto
+        items-start justify-items-start place-content-start">    
+        </div>
+
+
+        
+    
+        
+    
+           
+      
+        <!-- controlbuttons -->
+        <div id="controlbuttons" class="flex justify-between items-center px-2 pb-10 pt-5 sm:px-10">
+            <button onclick="prev()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Back</button>
+            <button onclick="next()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Next</button>
+        </div>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="../src/js/Sector.js" defer></script>
+    <script src="../src/js/Geography.js" defer></script>
+    <script src="../src/js/ISIC_Class.js" defer></script>
+    <script src="../src/js/Activity_Type.js" defer></script> -->
+    <!-- <script src="../src/js/Activity.js" defer></script> -->
+    <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
+    <script> 
+    
+
+    async function testGetGeographies() {
+    try {
+        const result = await Parse.Cloud.run("getGeographiesBySector", { sectorId: 'F4OJEVB3CB' });
+        console.log("Agya",result);
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+    }
+}
+
+
+async function fetchData(url) {
+try {
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+
+    const text = await response.text();  
+    // console.log('Response text:', text);  
+
+    if (response.ok) {
+        const data = JSON.parse(text);  
+        return data;
+    } else {
+        console.error('Failed to fetch data:', response.status);
+        throw new Error('Failed to fetch data');
+    }
+} catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+}
+}
+let sectorId = '';
+let geographyId = '';
+let ISICId = [];
+let ActivityId=[]
+let activities = [];
+let carbon=[];
+const ParentGrid = document.getElementById('main');
+
+document.addEventListener("DOMContentLoaded", async function () {
+    try {
+        await renderSectors();  
+    } catch (error) {
+        console.error("Error while reading sectors:", error);
+    }
+});
+
+async function fetchGeographiesBySector(sectorId) {
+    try {
+        const response = await fetch(`/geographies/${sectorId}`);
+        if (!response.ok) {
+            throw new Error(`Error fetching geographies: ${response.statusText}`);
+        }
+        return response
+    } catch (error) {
+        console.error(error.message);
+        alert('Failed to load geographies. Please try again.');
+    }
+}
+
+async function renderGeography() {
+    const Geographys = await fetchData('http://localhost:3000/api/geography/geographies', { sectorId });
+    const GeographysNeeded = await fetchData(`http://localhost:3000/api/carbon/geographies/${ sectorId }`);
+    const filteredGeographies = Geographys.filter(geo => 
+    GeographysNeeded.some(needed => 
+        needed.GeographyId === geo.id && parseInt(needed.SectorId) === parseInt(sectorId)
+    )
+);
+
+
+// console.log("Filtered",filteredGeographies);
+
+    renderObjects(ParentGrid, filteredGeographies);
+}
+
+async function renderSectors() {
+    const Sectors = await fetchData('http://localhost:3000/api/sector/sectors');  
+    renderObjects(ParentGrid, Sectors);
+}
+
+async function renderISICClass() {
+    const Parent2Grid = document.getElementById('ActivitytypeDiv');
+    ParentGrid.innerHTML = '';
+    Parent2Grid.innerHTML = '';
+
+    const ISIC_Class = await fetchData('http://localhost:3000/api/isic/isic-classes');
+    const ISIC_ClassNeeded = await fetchData(`http://localhost:3000/api/carbon/emissions?sectorId=${sectorId}&geographyId=${geographyId}`);
+    const filteredClasses = ISIC_Class.filter(item =>
+    ISIC_ClassNeeded.some(activity => activity.ISICClassId === parseInt(item.id))
+        );
+    // console.log("ISIC Class",filteredClasses);
+
+    const Parent1Grid = document.getElementById('mainIsic');
+    Parent1Grid.innerHTML = '';
+
+    if (filteredClasses && filteredClasses.length > 0) {
+        Parent1Grid.innerHTML = '';
+        filteredClasses.forEach(isic => {
+            const name = isic.name;
+            const displayName = name.split(':').slice(1).join(':').trim();
+            Parent1Grid.innerHTML += `
+                <div id="${isic.id}" onclick="ISIC(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-40 w-72 justify-center items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
+                    <p class=" border-[#6BA42E] w-full text-center flex text-2xl items-center justify-center font-semibold">
+                        ${displayName}
+                    </p>
+                </div>`;
+        });
+    } else {
+        console.log("No objects found.");
+    }
+}
+
+function renderObjects(container, objects) {
+    const Parent1Grid = document.getElementById('mainIsic');
+    Parent1Grid.innerHTML = '';
+    if (objects && objects.length > 0) {
+        container.innerHTML = '';
+        objects.forEach(sector => {
+            container.innerHTML += `
+                <div id="${sector.id}" onclick="Sector(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-48 w-44 justify-between items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
+                   <img class="w-full h-full" src="http://localhost:3000/${sector.image}" alt="undefined"/>
+                    <p class="h-[30%] border-t-2 border-[#6BA42E] w-full text-center flex text-lg items-center justify-center font-medium">
+                        ${sector.name}
+                    </p>
+                    <label class="container absolute -right-36 top-2 z-40">
+                        <input type="checkbox" class="sector-checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>`;
+            console.log(`Sector Name: ${sector.name}, Image: ${sector.image}`);
+        });
+    } else {
+        console.log("No objects found.");
+    }
+}
+async function fetchActivities() {
+    let activitesFinal=[]
+    const fetchPromises = ISICId.map(async (isicId) => {
+        const activitiesNeeded = await fetchData(`http://localhost:3000/api/carbon/emission?sectorId=${sectorId}&geographyId=${geographyId}&&ISICClassId=${isicId}`);
+        activitesFinal.push(...activitiesNeeded);  
+    });
+
+    await Promise.all(fetchPromises);
+
+
+    console.log(activitesFinal);
+    return activitesFinal
+}
+
+async function renderActivityTypes() {
+    const activities = await fetchData('http://localhost:3000/api/activity/activity-types');
+    let activitesFinal=await fetchActivities()
+    const filteredactivties = activities.filter(item =>
+    activitesFinal.some(activity => activity.ActivityId === parseInt(item.id))
+);
+// console.log(filteredactivties);
+    ParentGrid.innerHTML = '';
+    const ParentGrid1 = document.getElementById('mainIsic');
+    ParentGrid1.innerHTML = '';
+    const Parent2Grid = document.getElementById('ActivitytypeDiv');
+
+    if (filteredactivties && filteredactivties.length > 0) {
+        Parent2Grid.innerHTML = '';
+        filteredactivties.forEach(activity => {
+            const name = activity.name;
+            Parent2Grid.innerHTML += `
+                <div id="${activity.id}" onclick="ActivityType(this.id)" class="flex my-4 relative flex-row text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-16 w-[32vw] justify-center items-center border-[#6BA24E] border-2 rounded-lg">
+                    <label class="container absolute left-4 top-[18px] z-40">
+                        <input type="checkbox" class="sector-checkbox" >
+                        <span class="checkmark rounded-sm"></span>
+                    </label>
+                    <p class="border-[#6BA42E] px-4 text-center flex text-xl items-center justify-center font-semibold">
+                        ${name}
+                    </p>
+                </div>`;
+        });
+    } else {
+        console.log("No objects found.");
+    }
+}
+
+function Sector(sectorIds) {
+    let Questions=["Select your Company Sector","Select your Company Geography","What's your Company ISIC Class","Which activities are performed?"]
+    document.querySelectorAll('.sector-checkbox').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    divElement = document.getElementById(sectorIds);
+    const checkbox = divElement.querySelector('input[type="checkbox"]');
+    const stepTextDiv = document.getElementById("question");
+    if(stepTextDiv.innerText===Questions[0]){
+
+        sectorId = sectorIds;
+        console.log(sectorId);
+    }
+    else if(stepTextDiv.innerText===Questions[1]){
+        geographyId=sectorIds;
+        console.log(geographyId);
+    }
+    if (checkbox) {
+        checkbox.checked = !checkbox.checked;
+    }
+}
+
+function ActivityType(Ids) {
+    const divElement = document.getElementById(Ids);
+    if (ActivityId.includes(Ids)) {
+        ActivityId = ActivityId.filter(id => id !== Ids);
+        divElement.style.backgroundColor = '';
+        divElement.style.color = '';
+    } else {
+        ActivityId.push(Ids);
+        // divElement.style.backgroundColor = '#6BA42E';
+        // divElement.style.color = 'white';
+        const checkbox = divElement.querySelector('input[type="checkbox"]');
+        if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+        }
+    }
+
+    console.log(ActivityId);
+}
+
+function ISIC(Ids) {
+    const divElement = document.getElementById(Ids);
+    if (ISICId.includes(Ids)) {
+        ISICId = ISICId.filter(id => id !== Ids);
+        divElement.style.backgroundColor = '';
+        divElement.style.color = '';
+    } else {
+        ISICId.push(Ids);
+        divElement.style.backgroundColor = '#6BA42E';
+        divElement.style.color = 'white';
+    }
+
+    console.log(ISICId);
+}
+
+async function fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId) {
+    const responseList = [];
+
+    try {
+        for (const isicId of ISICId) {
+            for (const activityId of ActivityId) {
+      
+                const response = await fetch(`http://localhost:3000/api/Carbon/emissionsfinal?sectorId=${sectorId}&geographyId=${geographyId}&activityId=${activityId}&isicClassId=${isicId}`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+
+                    responseList.push(...data);
+                } else {
+                    console.error(`Failed to fetch for isicId=${isicId}, activityId=${activityId}: ${response.statusText}`);
+                }
+            }
+        }
+
+        // Log the final list
+        console.log('All emissions:', responseList);
+    } catch (error) {
+        console.error('Error fetching emissions:', error.message);
+    }
+
+    return responseList;
+}
+
+
+    let activitiesStep=0;
+    let currentStep = 1;
+    let currentStepbar = 0;
+const totalSteps = 4;
+        let Questions=["Select your Company Sector","Select your Company Geography","What's your Company ISIC Class","Which activities are performed?"]
+function updateStepText() {
+    const stepTextDiv = document.getElementById("question");
+    stepTextDiv.textContent = Questions[currentStep-1];
+}
+
+function next() {
+    if (currentStep < totalSteps) {
+        currentStep++;
+        updateStepSVG('next');
+        updateStepText();
+        if(currentStep==1){
+            renderSectors()
+        }
+        else if(currentStep==2){
+            renderGeography()
+        }
+        else if(currentStep==3){
+            renderISICClass()
+        }
+        else if(currentStep==4){
+            renderActivityTypes()
+        }
+    }
+    else {
+       
+        let ParentGrid1 = document.getElementById('ActivitytypeDiv');
+        ParentGrid1.innerHTML = '';
+        document.getElementById("activityHeading").classList.remove("hidden")
+        document.getElementById("InputArea").classList.remove("hidden")  
+         document.getElementById("controlbuttons").style.display="none"
+         document.getElementById("activitybuttons").style.display="flex"
+         document.getElementById("activityHeading").style.display="flex"
+        document.getElementById("InputArea").style.display="flex"
+
+         displayQuestion()
+    }
+}
+
+function prev() {
+    if (currentStep > 1) {
+        updateStepSVG('prev')
+        currentStep--;
+        if(currentStep==1){
+            renderSectors()
+        }
+        else if(currentStep==2){
+            renderGeography()
+        }
+        else if(currentStep==3){
+            renderISICClass()
+
+        }
+        else if(currentStep==4){
+            renderActivityTypes()
+            document.getElementById("activityHeading").style.display="none"
+            document.getElementById("InputArea").style.display="none"
+            document.getElementById("activitybuttons").style.display="none"
+            document.getElementById("controlbuttons").style.display="flex"
+        }
+        updateStepText();
+    }
+    else{
+        window.location.href = '/Pages/carbontrack.html';
+    }
+}
+function updateStepSVG(direction) {
+    const stepSVGs = document.getElementsByClassName(`step`);
+    const stepBars = document.getElementsByClassName(`stepbar`);
+    stepbarsI=[1,2,0]
+    const currentStepSVG = stepSVGs[currentStep - 1];
+    const prevStepSVG = stepSVGs[currentStep - 2]; 
+    const nextStepSVG = stepSVGs[currentStep]; 
+
+    const svgs = [
+        `<svg class="icon icon-tabler icon-tabler-check" width="22" height="22" viewBox="0 0 24 24" stroke-width="2.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <path d="M5 12l5 5l10 -10" />
+        </svg>`,
+        `<div class="bg-white h-8 w-8 sm:h-10 sm:w-10 rounded-full shadow border border-[#6BA42E] flex items-center justify-center relative"><div class="h-2.5 w-2.5 bg-[#6BA42E] rounded-full"></div></div>`,
+        `<div class="bg-white  h-8 w-8 sm:h-10 sm:w-10 rounded-full flex justify-center items-center shadow border border-[#C6C6C6]"></div>`
+    ];
+    if (direction === 'next' && currentStep <= totalSteps) {
+        if (prevStepSVG) {
+            prevStepSVG.innerHTML = svgs[0]; 
+            prevStepSVG.classList.add("bg-[#6BA42E]");
+            prevStepSVG.classList.remove("bg-white");
+            prevStepSVG.classList.remove("border-[#6BA42E]");
+            prevStepSVG.classList.remove("border-[#C6C6C6]");
+        }
+        if (currentStepSVG) {
+            currentStepSVG.innerHTML = svgs[1]; 
+            currentStepSVG.classList.add("border-[#6BA42E]");
+            currentStepSVG.classList.remove("border-[#C6C6C6]");
+        }
+        stepBars[stepbarsI[currentStepbar]].style.backgroundColor = '#6BA42E';
+        currentStepbar++
+        console.log(currentStepbar)
+
+    } else if (direction === 'prev' && currentStep >1) {
+        if (currentStepSVG) {
+            currentStepSVG.innerHTML = svgs[2];
+            currentStepSVG.classList.add("border-[#C6C6C6]");
+            currentStepSVG.classList.remove("border-[#6BA42E]");
+        }
+
+        currentStepbar--
+        console.log(currentStepbar)
+        stepBars[stepbarsI[currentStepbar]].style.backgroundColor = '#C6C6C6';
+        if (prevStepSVG) {
+            prevStepSVG.innerHTML = svgs[1]; 
+            prevStepSVG.classList.add("border-[#6BA42E]");
+            prevStepSVG.classList.remove("border-[#C6C6C6]");
+        }
+
+
+    }
+}
+
+
+let currentQuestionIndex = 0; 
+let answers = []; 
+
+ async function displayQuestion() {
+    console.log("Sector",sectorId)
+    console.log("Geo",geographyId)
+    console.log("isic",ISICId)
+    console.log("activity",ActivityId)
+    carbon=await fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId);
+    let textarea = document.querySelector('#InputArea textarea');
+    let questionHeading = document.getElementById('question');
+
+    if (currentQuestionIndex < carbon.length) {
+        // Display the current question in the UI
+        questionHeading.textContent = `How much ${carbon[currentQuestionIndex].activity_name} in Kg ?`;
+        textarea.value = ''; 
+    } else {
+
+        console.log("All answers collected:", answers);
+        // Calculate the sum of carbon_emission * answers
+        let totalEmission = carbon.reduce((sum, item, index) => {
+                    let answer = parseFloat(answers[index]) || 0; 
+                    return sum + item.carbon_emission * answer;
+                }, 0);
+                localStorage.setItem('totalEmission', totalEmission);
+                console.log("Total Emission:", totalEmission);
+         window.location.href = '/Pages/output.html';
+     
+    }
+}
+
+function nextactivity() {
+    let textarea = document.querySelector('#InputArea textarea');
+    let answer = textarea.value.trim();
+
+
+    if (currentQuestionIndex < carbon.length) {
+        answers[currentQuestionIndex] = answer || 'No answer provided';
+        currentQuestionIndex++;
+        displayQuestion();
+    }
+
+}
+
+
+function prevactivity() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        displayQuestion();
+    }
+    else{
+        renderActivityTypes()
+            document.getElementById("activityHeading").style.display="none"
+            document.getElementById("InputArea").style.display="none"
+            document.getElementById("activitybuttons").style.display="none"
+            document.getElementById("controlbuttons").style.display="flex"
+            let questionHeading = document.getElementById('question').innerText= Questions[currentStep-1];
+    }
+}
+
+
+if (carbon && carbon.length > 0) {
+    document.getElementById("InputArea").classList.remove("hidden");
+    document.getElementById("activitybuttons").style.display = "flex";
+    displayQuestion(); 
+} else {
+    console.log("No questions available.");
+}
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+    </script>
+</body>
+</html>

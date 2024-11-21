@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="Images/icon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <title>CarbonLifePulse | 🌱 Empowering a Greener Future</title>
+  <style>
+
+.answer-container {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  100% {
+    max-height: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  100% {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+.question-container.expanded {
+  /* height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px; */
+}
+
+.question-container.expanded + .answer-container {
+  display: block;
+  animation: slideDown 0.5s ease-in-out forwards;
+}
+
+
+.question-container:not(.expanded) + .answer-container {
+  display: block;
+  animation: slideUp 1.5s ease-in-out forwards;
+}
+
+
+.question-container.expanded span img {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+.shadow-custom:hover {
+  transition: 0.3s;
+  box-shadow:-4px 4px 8px #6BA42E;
+}
+       .shadowtext{
+        text-shadow: 0px 3px 3px #98EA41;
+    }
+  .green-bg {
+    background: linear-gradient(90deg, #277D0D, #30AA07);
+}
+.green-bg2 {
+    background: linear-gradient(180deg, #92E03B, #629729);
+}
+.green-bg3 {
+    background: linear-gradient(180deg, #45691D, #88CF39);
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+display: block;
+width: 25px;
+background-color: #6BA42E;
+
+border-radius: 15px;
+}
+
+
+
+
+
+.checkmark:after {
+content: "";
+position: absolute;
+display: block;
+}
+
+
+
+.checkmark:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+button.active {
+  background-color: #6BA42E;
+  color: white;
+}
+
+.gradient-text {
+            background: linear-gradient(to right, #6BA24E,#3FD60C, #277D0D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-text2 {
+            background: linear-gradient(to right, #6BA42E,#020300);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .label-floating {
+     top: 0%;
+
+      position: absolute;
+      transform: translateY(0.8vw);
+      font-size: 1.13vw;
+    }
+    .label-floating.floating {
+      top: 0.5rem;
+      transform: translateY(-80%) scale(0.90);
+      background-color: white;
+      z-index: 999;
+      left: 0.3vw;
+      color: #6BA42E;
+    }
+</style>
+</head>
+<body class="max-h-screen h-auto bg-[#DFEDDA] overflow-x-hidden" >
+  <header id="header" class="fixed top-0 w-full z-[999999]"></header>
+
+<div class="main relative h-fit   flex justify-center xl:justify-start items-start flex-row pt-[4vw] ">
+<div class="text w-full flex flex-col   xl:w-2/3 h-full py-10 px-14 z-50">
+<h1 id="MainHeading" class="text-xl sm:text-[3.8vw]  font-bold leading-snug py-[2.4vw] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
+  into Sustainable <br> Action!
+
+</span>
+</p></h1>
+
+<p class="text-[#7E7E80] text-xs sm:text-[1.4vw] md:w-[40%] paras xl:w-[65%] pr-[2.6vw] leading-tight font-semibold">We are committed to creating an environmentally friendly future by utilizing the latest advancements in AI and technology. Our product addresses a wide range of environmental issues, helping you make a positive impact. Join us in resolving challenges and building a sustainable world!</p>
+<p class="text-[#42B21C] text-sm sm:text-[1.4vw] w-full pr-[2.4vw] mt-[3.4vw] leading-tight font-bold paras"> 100% <span class="text-[#7E7E80]">Carbon Reduction Commitment</span></p>
+<a id="MeasureCarbonbtn" href='../Pages/carbontrack.html' class="green-bg px-6 text-center py-[1.1vw] rounded-[2.2vw] z-50 text-white  font-semibold cursor-pointer my-5 mr-3 md:w-[25vw] xl:w-[24vw] text-sm sm:text-[1.6vw]">
+    Measure Your Carbon Rate
+</a>
+
+<p class="gradient-text2  sm:text-[1.9vw] sm:w-2/3 mx-[1vw] mt-[3.8vw] leading-tight font-bold">Sign Up for Exclusive Discounts!</p>
+<p class=" sm:text-[1.1vw] paras text-xs md:w-[30%] lg:w-[35%] xl:w-1/2 mx-[1vw] mt-[1vw] text-[#7E7E80] font-semibold leading-tight pb-[6vw]">Be one of the first <span class="text-[#277D0D] font-black ">150 users</span> to enjoy discounts on our upcoming products!</p>
+
+</div>
+  <!-- IMAGES -->
+<div class="absolute hidden md:block mt-10 w-full h-full">
+  <img  class="absolute top-0 right-[3.6vw] object-cover w-[43vw] animate-images" src="../Images/homepage1.png" alt="">
+  <div>
+  </div>
+  <div class="absolute top-[29vw] w-[27%] h-[20%]   right-[33%] object-cover">
+    <div class="relative">
+      <img class="w-[30vw] animate-images"
+      src="../Images/homepage2.png" alt="">
+       <div id="stats" class="absolute top-[14vw] -right-[30.5vw] shadow-lg  z-50  h-fit w-[28vw] bg-white rounded-2xl">
+      <div  class=" rounded-lg p-[1.4vw] flex justify-between text-center text-black font-semibold">
+        <!-- First Section -->
+        <div class="w-[33%]">
+          <p class="text-[1.9vw] font-bold  pb-1">12% Avg</p>
+          <p class=" text-[0.9vw]  text-center">Carbon <br> Reduction</p>
+        </div>
+        <!-- Second Section -->
+        <div class="w-[30%]">
+          <p class="text-[1.9vw] font-bold  pb-1">5200</p>
+          <p class=" text-[0.9vw]">Number of <br> Users</p>
+        </div>
+        <!-- Third Section -->
+        <div class="w-[36%]">
+          <p class="text-[1.9vw] font-bold  pb-1">150 Cities</p>
+          <p class=" text-[0.9vw]">Global Impact</p>
+        </div>
+      </div>
+
+        </div>
+
+
+        <div id="EnvironmentalImpact" class="absolute -top-[30%] left-[11%] text-sm z-50  xl:h-[12.1vw] p-[0.8vw] bg-white rounded-[1vw]">
+      <div class="bg-white  rounded-lg w-[19vw] text-black">
+        <p class=" font-medium text-[1.1vw]">Environmental Impact</p>
+        <div class="flex items-baseline font-bold pt-[1vw]">
+          <p class="lg:text-lg xl:text-[2vw]  ">19,765</p>
+          <span class="lg:text-lg xl:text-[2vw] ">Kg CO<sub>2</sub></span>
+          <span class="px-[0.3vw] text-[#6BA42E] text-[1.3vw] font-bold overflow-hidden flex justify-between items-center">32% <span class="inline-block h-[1vw] px-[0.3vw]"><img class="rotate-90 h-full w-full " src="Images/uparrow.png" alt=""></span></span>
+        </div>
+        <!-- Bar chart -->
+        <div class="flex items-end space-x-1 mt-[1vw] w-full justify-between pl-[0.6vw] pr-[1vw]">
+          <div class="bg-[#6BA42E] h-[5.3vw] w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[4.3vw] w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[3.5vw] w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[3.4vw] w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[2.5vw]  w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[1.9vw]  w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[1.2vw]  w-[1.35vw] rounded-[0.3vw]"></div>
+          <div class="bg-[#6BA42E] h-[0.6vw]  w-[1.35vw] rounded-[0.3vw]"></div>
+      </div>
+    </div>
+
+
+        </div>
+      <div  class="absolute top-[8%] h-[100%] w-[31vw] rounded-3xl -right-[66%] -z-10 object-cover border-[5px] border-[#86A1A1] animate-images"></div>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
+<section id="whoWeAre" class="bg-[#F5FFEB] relative h-fit">
+  <img  class="absolute top-[10.9vw] w-[7vw] hidden md:block" src="Images/zigzag90.png" alt="">
+  <div class=" p-8 md:p-[6.2vw]  min-h-fit">
+    <div class="w-[90%] mx-auto grid md:grid-cols-2 gap-8">
+      <div id="textSection" class="z-10">
+        <div class="inline-block bg-[#98EA41] text-black text-xs sm:text-sm md:text-[1.1vw] font-semibold px-[1.5vw] py-[1.4vh] my-5 2xl:my-10 rounded-full mb-4">
+          Our Streamlined Approach
+        </div>
+
+        <h2 class="text-4xl md:text-[4.5vw] font-bold text-[#6BA42E] mb-6 mt-4 h-fit">Who We Are</h2>
+
+        <p class="text-[#808080] my-[1.5rem] w-[85%] text-xs leading-6  md:text-[1.25vw] 2xl:my-16">
+          At CarbonLife, we help businesses take meaningful steps toward sustainability by providing the tools needed to effectively achieve their environmental goals.
+        </p>
+
+        <div class="space-y-4 w-[70%]">
+          <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4  flex items-center px-2 sm:space-x-4  hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
+          <img class="w-[10%] mr-1 sm:mr-0" src="Images/i1.png" alt="">
+            <div>
+              <p class="text-xs md:text-[1.4vw] font-bold text-[#6BA42E]">Real-Time Carbon Tracking</p>
+              <p class="text-[#808080] text-[8px] md:text-[1.1vw]">Instantly monitor and reduce your carbon footprint with real-time data.</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4  flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
+            <img class="w-[10%] mr-1 sm:mr-0" src="Images/i2.png" alt="">
+              <div>
+                <p class="text-xs md:text-[1.4vw]  font-bold text-[#6BA42E]">AI-Powered Prediction</p>
+                <p class="text-[#808080] text-[8px] md:text-[1.1vw] pt-1">Instantly monitor and reduce your carbon footprint with real-time data.</p>
+              </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4  flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
+            <img class="w-[10%] mr-1 sm:mr-0" src="Images/i3.png" alt="">
+              <div>
+                <p class="text-xs md:text-[1.4vw]  font-bold text-[#6BA42E]">Tailored Solutions</p>
+                <p class="text-[#808080] text-[8px] md:text-[1.1vw] pt-1">Customized recommendations for your industry and needs.</p>
+              </div>
+            </div>
+          <div class="flex relative flex-col items-center">
+
+            <!-- Card 4 -->
+            <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4 w-full flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
+              <img class="w-[10%] mr-1 sm:mr-0" src="Images/i4.png" alt="">
+                <div>
+                  <p class="text-xs md:text-[1.4vw]  font-bold text-[#6BA42E]">Transparent Carbon Credits</p>
+                  <p class="text-[#808080] text-[8px] md:text-[1.1vw] pt-1">Track carbon credits with blockchain transparency.</p>
+                </div>
+              </div>
+               <!-- Card 5 -->
+     <div class="mt-6 bg-white  w-full featureCard shadow-lg rounded-[1.4vw] p-4 flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition duration-200 ease-in-out z-[999999999999]">
+      <img class="w-[10%]  z-[999999999999] mr-1 sm:mr-0" src="Images/i5.png" alt="">
+      <div>
+        <p class="text-xs md:text-[1.4vw] font-bold text-[#6BA42E]  z-[999999999999]">Affordable and Scalable</p>
+        <p class="text-[#808080] text-[8px] md:text-[1.1vw] pt-1  z-[999999999999]">Cost-effective solutions for businesses of all sizes</p>
+      </div>
+    </div>
+
+            </div>
+        </div>
+      </div>
+
+
+
+
+     <!-- Images Section -->
+<div id="imageSection" class="relative  hidden md:block h-full w-full md:w-[400px] pt-[4vw] z-0">
+
+  <!-- First large image on the left -->
+
+  <div class="relative w-[22vw] h-full inset-0">
+    <img src="Images/hwr3.png" alt="Image 3" class="absolute top-[7vw] -left-[2vw] h-[37vw] md:h-[35vw] w-auto object-cover">
+    <img class="absolute -right-[19vw] z-50 top-[3vw] h-[8vw] md:h-[8vw]" src="Images/rightcloud.png" alt="Cloud Image">
+    <img src="Images/hwr2.png" alt="Image 2" class="absolute top-[4.5vw] -right-[19vw] rounded-lg h-[22vw] w-[fit] md:w-full object-cover">
+    <img src="Images/hwr1.png" alt="Image 1" class="absolute top-[25vw] -right-[19vw] rounded-lg h-[13vw] w-full md:w-full object-cover">
+  </div>
+
+</div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<section id="product" class="w-full h-fit lg:min-h-screen mx-auto text-center p-10 md:px-20 md:py-20 overflow-hidden">
+
+  <h1 id="productsHeading" class="text-[4.68vw] font-bold text-[#6BA42E] mb-5 ">Our Products</h1>
+
+  <div class="flex relative h-[fit] flex-col justify-center items-center w-full p-[2vw]">
+    <img class="absolute -top-[6.3vw]  -right-[6.2vw] w-[7.2vw]" src="Images/zigzagVector.png" alt="">
+    <div class="flex justify-center w-full items-center pt-[2vw]">
+
+    <!-- Card 1 -->
+     <div class="relative">
+
+       <img class="absolute -top-[4.2vw] -left-[3vw] w-[5vw]" src="Images/highVector.png" alt="">
+       <div class="relative productCard cursor-default" onclick="window.location.href='/Pages/carbontrack.html'">
+      <div class="relative  bg-white mx-[1.4vw] text-[#6BA42E] w-[23vw] h-[26vw] p-[1.2vw] md:p-[3.12vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border-2 border-[#6BA42E] transition-transform transform hover:scale-105">
+      <div class="text-[4.5vw]  my-[1.6vw]">
+        <img class="w-[6.4vw]" src="Images/P1.png" alt="">
+      </div>
+      <h2 class="text-[1.6vw] font-bold text-black mb-[0.8vw]">Carbon Measurement</h2>
+      <p class="text-[#808080] mb-[1.4vw] text-[1.1vw]">Accurately track and measure your business's carbon emissions to reduce environmental impact.</p>
+      <a href="/Pages/carbontrack.html" class=" font-bold text-[1.1vw] mb-[1vw]">Start Measuring Emissions &gt;</a>
+    </div>
+  </div>
+  </div>
+    <!-- Card 2 -->
+     <div class="relative">
+  <div class="relative productCard">
+        <div class="relative bg-white mx-4 text-[#6BA42E]  w-[23vw] h-[26vw] p-[1.2vw] md:p-[3.12vw] overflow-hidden rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 cursor-default">
+          <div class="text-[4.5vw]  my-[1.6vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
+            <img class="w-[4.7vw]" src="Images/calculator.png" alt="">
+          </div>
+          <p class="absolute bg-[#6BA42E] py-[0.24vw] text-center px-[4.4vw] font-semibold z-0 rotate-[40deg] -right-[4.4vw] top-[2.3vw] text-[1.5vw] text-white">Coming Soon</p>
+          <h2 class="text-[1.6vw] w-[23vw] font-bold text-black mb-[0.8vw]">Carbon Emission Estimator</h2>
+          <p class="text-[#808080] mb-[1.4vw] text-[1.1vw] w-[16vw]">Quickly calculate your company's carbon footprint for better sustainability decisions</p>
+          <p href="" class="font-bold text-[1.1vw] mb-[1vw]">Coming Soon! </p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="flex justify-around items-center mt-[3vw]">
+
+
+    <!-- Card 3 -->
+        <div class="relative productCard">
+      <div class="relative  bg-white text-[#6BA42E] w-[23vw] h-[27vw] p-[1.2vw] md:p-[3.12vw]  mx-[1.4vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 overflow-hidden cursor-default">
+        <p class="absolute bg-[#6BA42E] py-[0.24vw] text-center px-[4.4vw] font-semibold z-0 rotate-[40deg] -right-[4.4vw] top-[2.3vw] text-[1.5vw] text-white">Coming Soon</p>
+        <div class="text-[4.5vw]  my-[1.6vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
+          <img  class="w-[4.7vw]" src="Images/co2.png" alt="">
+        </div>
+        <h2 class="text-[1.6vw] w-[23vw] font-bold text-black mb-[0.5vw]">Carbon Reductions Plans</h2>
+        <p class="text-[#808080] mb-[1.4vw] text-[1.1vw] w-[16vw] pt-[1.2vw]">Receive customized plans to reduce your carbon emissions and achieve sustainability goals.</p>
+        <p class="font-bold text-[1.1vw] mb-[1vw]">Coming Soon!</p>
+      </div>
+    </div>
+    <!-- Card 4 -->
+
+        <div class="relative">
+          <div class="relative productCard">
+            <div class="relative  bg-white text-[#6BA42E] w-[23vw] h-[27vw] p-[1.2vw] md:p-[3.12vw] overflow-hidden mx-4 rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 cursor-default">            
+            <p class="absolute bg-[#6BA42E] py-[0.24vw] text-center px-[4.4vw] font-semibold z-0 rotate-[40deg] -right-[4.4vw] top-[2.3vw] text-[1.5vw] text-white">Coming Soon</p>
+            <div class="text-[4.5vw]  my-[1.6vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
+              <img class="w-[4.7vw]" src="Images/redc.png" alt="">
+          </div>
+          <h2 class="text-[1.6vw] w-[23vw] font-bold text-black mb-[0.5vw]">Environmental Compliance Management</h2>
+          <p class="text-[#808080] mb-[0.3vw] text-[1.1vw] w-[19vw]">Stay compliant with environmental regulations through seamless monitoring and reporting</p>
+          <p class="font-bold text-[1.1vw] mb-[1vw]">Coming Soon!</p>
+        </div>
+      </div>
+        <img class="absolute -bottom-[4vw] -right-[4vw] w-[6vw]" src="Images/lowVector.png" alt="">
+      </div>
+      </div>
+
+    </div>
+</section>
+<section id="AdvertisetoReg" class=" min-h-fit py-20 green-bg2 text-white font-semibold flex flex-col justify-center items-center">
+  <div  class="text-[3.8vw] my-4 firstRow">Be one of the first 150 users to enjoy 50% off! </div>
+  <div class="text-[2.3vw] secondRow"> Sign up now to unlock exclusive access to our upcoming products!</div>
+  <div class="flex flex-row relative pt-14 justify-center w-full items-center">
+   <a href="Pages/loginsignup.html"><button  class="bg-white text-[#6BA42E] text-[1.5vw] h-fit py-[2vw] xl:py-0 xl:h-[7vh] cursor-pointer w-[18vw] font-bold rounded-xl hover:bg-gray-200 ">Register Yourself!</button></a>
+    <img class="hidden xl:block right-5 top-6 absolute" src="Images/reg1.png" alt="">
+  </div>
+</section>
+
+<section id="process" class="relative bg-[#F5FFEB] text-[#6BA42E]  shadow-md text-center w-full min-h-full h-[73vw] ">
+  <img id="zigzag" class="pt-[6.8vw] w-[12.5vw]" src="Images/zigzagdesign.png" alt="">
+  <!-- Center Circle -->
+  <div class="absolute inset-0 flex justify-center items-center shadow-2xl">
+    <div id="centralCircle" class="bg-[#D2FFDE] relative rounded-full h-[22vw] w-[23.8vw] flex items-center justify-center shadow-lg">
+      <p class=" font-bold text-[3.8vw] leading-normal shadowtext">Our <br> Process</p>
+      <div class="text-[2.5vw] -top-[2vw]  absolute font-bold   border-[0.3vw] bg-white border-[#6BA42E] hover:bg-[#6BA42E] hover:text-white cursor-default rounded-full w-[4.4vw] h-[4.4vw] flex justify-center items-center duration-200">1</div>
+      <div class="text-[2.5vw] top-[5vw] -right-[1.5vw] absolute font-bold border-[0.3vw] bg-white border-[#6BA42E] rounded-full w-[4.4vw] h-[4.4vw] hover:bg-[#6BA42E] hover:text-white cursor-default flex justify-center items-center duration-200">2</div>
+      <div class="text-[2.5vw] bottom-[0.6vw] right-[1.3vw] absolute font-bold border-[0.3vw] bg-white border-[#6BA42E] rounded-full w-[4.4vw] h-[4.4vw] hover:bg-[#6BA42E] hover:text-white cursor-default flex justify-center items-center duration-200">3</div>
+      <div class="text-[2.5vw] bottom-[0.6vw] left-[1.8vw] absolute font-bold border-[0.3vw] bg-white border-[#6BA42E] rounded-full w-[4.4vw] h-[4.4vw] hover:bg-[#6BA42E] hover:text-white cursor-default flex justify-center items-center duration-200">4</div>
+      <div class="text-[2.5vw] top-[5vw] -left-[1.5vw] absolute font-bold border-[0.3vw] bg-white border-[#6BA42E] rounded-full w-[4.4vw] h-[4.4vw] hover:bg-[#6BA42E] hover:text-white cursor-default flex justify-center items-center duration-200">5</div>
+
+
+
+        <!-- Step 1: Business -->
+        <div  class="absolute step-1 flex flex-col items-center -top-[13vw] cursor-default ">
+          <div class="bg-white shadow-2xl rounded-[1vw]  px-4 w-[19vw] shadow-custom">
+            <h3 class="text-[1.9vw] font-semibold py-[1.6vw] mb-[2.15vw] border-b-[3px] border-[#6BA42E] w-1/2 mx-auto">Business</h3>
+          </div>
+        <img class="absolute -right-[8.4vw] rotate-[30deg] top-[6.2vw] w-[5.1vw] cursor-default" src="Images/bendarrow.png" alt="">
+        <img class="absolute -left-[10vw] rotate-[300deg] top-[5.2vw] w-[5.1vw] cursor-default" src="Images/bendarrow.png" alt="">
+        </div>
+
+        <!-- Step 2: Estimation Emission -->
+        <div class="absolute step-1 flex flex-col items-center top-[0.5vw] -right-[22vw] cursor-default ">
+          <div class="bg-white shadow-2xl rounded-[1vw]  px-4 w-[19vw] shadow-custom">
+            <h3 class="text-[1.7vw] text-center font-semibold py-[0.6vw] mb-[1.6vw] border-b-[3px] border-[#6BA42E] w-[60%] mx-auto">Estimation of Emissions</h3>
+          </div>
+
+        </div>
+
+        <!-- Step 3: Monitor & Analyzes -->
+           <div class="absolute step-1 flex flex-col items-center top-[19.5vw] -right-[18.5vw] cursor-default ">
+            <img class="absolute  rotate-[70deg] -top-[6.4vw] left-[6.4vw] w-[5.1vw] cursor-default" src="Images/bendarrow.png" alt="">
+            <div class="bg-white shadow-2xl rounded-[1vw]  px-4 w-[19vw] shadow-custom">
+              <h3 class="text-[1.7vw] font-semibold py-[0.6vw] mb-[1.6vw] border-b-[3px] border-[#6BA42E] w-1/2 mx-auto"> Monitor & Analysis</h3>
+            </div>
+            <img class="absolute  rotate-[150deg] top-[10vw] -left-[13.5vw] w-[5.6vw] cursor-default" src="Images/bendarrow.png" alt="">
+
+          </div>
+
+        <!-- Step 4: Target & Reduction -->
+        <div class="absolute step-1 flex flex-col items-center top-[19.5vw] -left-[18vw] cursor-default ">
+          <div class="bg-white shadow-2xl rounded-[1vw]  px-4 w-[19vw] shadow-custom">
+            <h3 class="text-[1.7vw] font-semibold py-[0.4vw] mb-[1.6vw]  w-[67%] mx-auto">
+              Target Reduction
+              <div class="border-b-[3px] mx-4 pt-2 border-[#6BA42E] "></div>
+            </h3>
+          </div>
+
+        </div>
+
+        <!-- Step 5: Standard Reporting -->
+        <div class="absolute step-1 flex flex-col items-center top-[0.5vw] -left-[22vw] cursor-default ">
+          <img class="absolute  rotate-[220deg] top-[12vw] left-[6.4vw] w-[5.1vw]  cursor-default" src="Images/bendarrow.png" alt="">
+          <div class="bg-white shadow-2xl rounded-[1vw]  px-4 w-[19vw] shadow-custom">
+            <h3 class="text-[1.7vw] font-semibold py-[0.6vw] mb-[1.6vw] border-b-[3px] border-[#6BA42E] w-1/2 mx-auto">Standard Reporting</h3>
+          </div>
+
+        </div>
+    </div>
+  </div>
+  <img id="zigzaginverted" class="pb-[7.8vw] right-0 absolute bottom-0 w-[12vw]" src="Images/zigzaginverted.png" alt="">
+</section>
+
+
+<section id="howItworks" class="relative bg-[#F5FFEB] text-[#6BA42E] border-b text-center w-full min-h-fit  h-[75vw]">
+  <h1 class="text-[5vw] py-5 font-bold leading-[5vw] heading">Make your Carbon <br> Assessment Flow Better</h1>
+  <!-- Center Circle -->
+  <div class="absolute inset-x-0 top-[27vw] flex justify-center items-center ">
+    <div class="relative  h-[30vw]  w-[30vw] flex items-center justify-center ">
+      <img id="before" class=" absolute" src="Images/beforeUser.png" alt="">
+      <div id="after" class="hidden absolute inset-0 h-full w-full">
+          <img class="absolute -bottom-[2vw] left-[9vw] h-[15vw] w-[15vw]" src="Images/chillman.png" alt="">
+          <img class="absolute -top-[4vw] right-[1.5vw] h-[26vw] " src="Images/AI.png" alt="">
+          <img class="absolute top-[6.25vw] left-[4vw] h-[7.8vw] w-fit" src="Images/sysBtn.png" alt="">
+        </div>
+
+
+
+        <!-- Step 1: b/a -->
+        <div  class="absolute step-1 flex flex-col items-center -top-[10vw]">
+          <div class="bg-white shadow-2xl rounded-[3.9vw]   w-[19vw]">
+            <div class="flex flex-row items-center justify-center h-[4.5vw] ">
+              <button id="beforeButton" class="text-[1.5vw] border-2 border-[#6BA42E] font-semibold hover:bg-[#6BA42E] rounded-l-[40px] focus:bg-[#6BA42E] focus:text-white hover:text-white h-full w-1/2 cursor-default">Before</button>
+<button id="afterButton" class="text-[1.5vw] font-semibold hover:bg-[#6BA42E] border-2 border-[#6BA42E] rounded-r-[40px] focus:bg-[#6BA42E] focus:text-white hover:text-white h-full w-1/2 cursor-default">After</button>
+
+            </div>
+          </div>
+        </div>
+        <!-- Step 1: Monitor -->
+        <div id="step1" class="absolute  step-1 flex flex-col items-center -bottom-[9vw]">
+          <div class="bg-white hover:bg-[#6BA42E] hover:text-white cursor-pointer shadow-2xl rounded-[2vw]  px-[1.2vw] w-[19vw]">
+            <img class="absolute w-[6.5vw] -top-[1vw]" src="Images/computer.png" alt="">
+            <h3 class="text-[2vw] font-semibold py-[1.5vw] w-1/2 mx-auto px-[1.5vw]">Monitor</h3>
+          </div>
+        </div>
+
+        <!-- Step 2: collection -->
+        <div id="step2" class="absolute cursor-pointer  step-1 flex flex-col items-center top-0 -right-[18vw]">
+          <div class="bg-white hover:bg-[#6BA42E] hover:text-white shadow-2xl rounded-[2vw]  px-[1.2vw] w-[20vw]">
+            <img class="absolute -top-1 w-[6.2vw] h-[7vw]  right-0" src="Images/collection.png" alt="">
+            <h3 class="text-[2vw] font-semibold py-[1.5vw] pl-[3vw] w-full text-start ">Collection</h3>
+          </div>
+        </div>
+          <!-- Step 3: mail -->
+          <div id="step3" class="absolute cursor-pointer step-1 flex flex-col items-center top-[12vw] -right-[23vw]">
+            <div class="bg-white hover:bg-[#6BA42E] hover:text-white  shadow-2xl rounded-[2vw]   w-[20vw]">
+              <img class="absolute  w-[4.5vw] h-[5.8vw]  right-[2vw]" src="Images/mail.png" alt="">
+              <h3 class="text-[2vw] font-semibold py-[1.5vw] pr-[3.2vw] w-full text-center ">Mail</h3>
+            </div>
+          </div>
+
+               <!-- Step 4: report -->
+               <div id="step4" class="absolute  cursor-pointer step-1 flex flex-col items-center bottom-0 -right-[16vw]">
+                <div class="bg-white hover:bg-[#6BA42E] hover:text-white shadow-2xl rounded-[2vw]  w-[20vw]">
+                  <img class="absolute -top-[1.2vw] right-[1.6vw] w-[6vw] h-[7.2vw] " src="Images/report.png" alt="">
+                  <h3 class="text-[2vw] font-semibold py-[1.5vw] pl-[4.2vw] w-full text-start ">Report</h3>
+                </div>
+              </div>
+
+              <!-- Step 5: Data -->
+        <div id="step5" class="absolute cursor-pointer step-1 flex flex-col items-center top-0 -left-[15vw]">
+          <div class="bg-white  hover:bg-[#6BA42E] hover:text-white shadow-2xl rounded-[2vw] px-[1.2vw]  w-[19vw]">
+            <img class="absolute -top-[0.4vw] w-[6.2vw] h-[7.2vw]  left-[1.5vw]" src="Images/data.png" alt="">
+            <h3 class="text-[2vw] font-semibold py-[1.5vw] pl-[3vw] w-full text-center ">Data</h3>
+          </div>
+        </div>
+          <!-- Step 6: Target -->
+          <div id="step6" class="absolute  cursor-pointer step-1 flex flex-col items-center top-[12vw] -left-[21.8vw]">
+            <div class="bg-white shadow-2xl rounded-3xl hover:bg-[#6BA42E] hover:text-white  w-[19vw]">
+              <img class="absolute -top-1 w-[7vw] h-[6.5vw]  left-[2.8vw]" src="Images/target.png" alt="">
+              <h3 class="text-[2vw] font-semibold py-[1.5vw] pl-[3.2vw] w-full text-center ">Target</h3>
+            </div>
+          </div>
+
+               <!-- Step 7: regulation -->
+               <div id="step7" class="absolute cursor-pointer step-1 flex flex-col items-center bottom-0 -left-[16vw]">
+                <div class="bg-white shadow-2xl rounded-[2vw]   hover:bg-[#6BA42E] hover:text-white   w-[20vw]">
+                  <img class="absolute bottom-2 left-1 w-[5.2vw] h-[4.8vw] " src="Images/regulation.png" alt="">
+                  <h3 class="text-[2vw] font-semibold py-[1.5vw] pl-[4.2vw]  w-full text-center ">Regulation</h3>
+                </div>
+              </div>
+
+
+
+
+    </div>
+  </div>
+</section>
+
+
+<section id="letUS" class="bg-green-50 p-[3.1vw] h-[120vw] flex md:h-[75vw] overflow-x-hidden">
+  <div class="flex flex-col md:flex-row items-start pt-[5.3vw] w-[95%] ml-auto">
+    <!-- Left Section -->
+    <div id="leftSection" class="md:w-1/2 my-[1.5vw]">
+      <div class="flex flex-row ">
+        <img class="pr-[2.4vw] w-fit h-[20vw]"  src="Images/zigzag.png" alt="">
+        <h2 class="text-[#6BA42E] font-bold text-3xl md:text-[6vw] leading-[5vw] ">
+          <div class="flex py-2">Let us</div>
+          <div class="flex py-2">listen to your</div>
+          <div class="flex py-2">problems</div>
+        </h2>
+      </div>
+      <p class="text-[#7E7E80] w-[80%]  mx-auto py-[2vw] sm:leading-[2.4vw] text-xs leading-4 font-semibold sm:text-[1.3vw] ">
+        Share your concerns, and let us help you find solutions tailored to your needs. Together, we can make a positive impact on the environment!
+      </p>
+    </div>
+
+    <!-- Right Section -->
+    <div class=" w-full md:w-1/2 px-[3vw] pt-[7vw] md:mt-0 text-[1.9vw] text-[#7E7E80] font-semibold">
+      <div class="flex featureCard relative items-center justify-between border-b border-t  border-gray-300 h-[8vw] min-h-fit cursor-pointer question-container" onclick="toggleAnswer(this)">
+        <p class="w-[90%]">What kind of data is required for Carbon Measurement?</p>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+      </div>
+      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+        <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
+      </div>
+
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+        <p class="w-[90%]">How does CarbonLife work?</p>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+      </div>
+      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+        <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
+      </div>
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+        <p class="w-[90%]">How often can I track emissions?</p>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+      </div>
+      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+        <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
+      </div>
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+        <p class="w-[90%]">What benefits do early users get apart from the 50% discount?</p>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+      </div>
+      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+        <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
+      </div>
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+        <p class="">Is CarbonLife free to use?</p>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+      </div>
+      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+        <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contactUs" class="  overflow-hidden block relative md:h-[85vw] lg:h-[75vw]">
+  <div class="bg-white h-full absolute w-[70%] left-0"></div>
+  <div class="green-bg3 h-full absolute w-[30%] right-0"></div>
+  <section class="h-auto pt-[15vw] flex items-center justify-center">
+    <div class="bg-white z-50  overflow-hidden flex flex-col md:flex-row w-full max-w-[85%] mx-[1.6vw]  md:min-h-[620px] ">
+      <!-- Form Section -->
+      <div class="w-full lg:w-1/2 px-[3.1vw] flex flex-col justify-center ">
+        <h2 class="text-[5.5vw] font-bold text-[#7E7E80] mb-[0.8vw] flex justify-center items-center pt-[1vw]"><img class="px-[0.4vw] pt-[0.4vw] h-[4vw]" src="Images/DIAMOND.png" alt=""> Get in <span class="text-[#6BA42E]">Touch</span></h2>
+        <img class="py-[0.9vw] w-[75%]" src="Images/lines.png" alt="">
+        <p class="text-[#7E7E80] mb-[2vw] leading-[1.8vw] pt-[1.4vw] text-[1.25vw]">Have questions or need support? Reach out to us—we're here to help you on your journey to a more sustainable lifestyle!</p>
+        <form id="contactForm"  method="POST" class="space-y-4 py-[1vw] pb-[4vw]">
+        <div class="form-group mb-3 relative">
+            <input type="text" id="name" class="peer h-[3.2vw] form-control block w-full px-3 py-2.5 text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] rounded-[0.5vw]" placeholder=" " required />
+            <label for="name" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Name<span class="text-[#92dc43] px-1">*</span></label>
+        </div>
+        <div class="form-group mb-6 relative">
+          <input type="email" id="email" class="peer h-[3.2vw] form-control block w-full px-3 py-[0.8vw] text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] rounded-[0.5vw]" placeholder=" " required />
+          <label for="email" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Email<span class="text-[#92dc43] px-1">*</span></label>
+      </div>
+      <div class="form-group mb-6 relative">
+        <input type="tel" id="pnum" class="peer rounded-[0.5vw] h-[3.2vw] form-control block w-full px-3 py-2.5 text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
+        <label for="pnum" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Phone Number<span class="text-[#92dc43] px-1">*</span></label>
+    </div>
+
+
+
+    <div class="form-group relative w-full">
+      <label for="how"
+        class="absolute left-[0.3vw]  text-[1.2vw] text-gray-500 bg-white transition-all duration-300 transform -translate-y-[1.5vw] scale-90 top-[2.2vw] pointer-events-none label-floating px-1">
+        How did you find us?<span class="text-[#92dc43] px-1">*</span>
+      </label>
+
+      <select
+        id="how"
+        name="how"
+        class="w-full px-4 py-2 border border-gray-300  focus:outline-none focus:border-green-500 bg-transparent h-[3.2vw] relative rounded-[0.5vw]"
+        onchange="toggleFloatingLabel(this)">
+        <option value="" selected hidden disabled></option>
+        <option value="google">Google</option>
+        <option value="social">Social Media</option>
+        <option value="friend">Friend or Family</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+          <button type="submit" class="w-full bg-[#6BA42E] text-white py-[1vw] text-[1.6vw] font-bold hover:bg-green-700 focus:outline-none rounded-[0.5vw]">Send</button>
+        </form>
+      </div>
+
+      <!-- Map Section -->
+      <div class="w-full lg:w-1/2 hidden lg:block relative min-h-screen md:min-h-0">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13596.230355132411!2d74.352342!3d31.5774686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b66ba6e3705%3A0x89b3506015895c16!2sTICK%20-%20Techonology%20Incubation%20Center%20UET!5e0!3m2!1sen!2s!4v1732097215078!5m2!1sen!2s"
+          class="absolute inset-0 w-full h-full"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+
+</section>
+
+
+<footer class="bg-green-50 text-green-700 overflow-hidden">
+  <div class="flex justify-center flex-col  w-full  overflow-hidden">
+    <div class="flex py-20 flex-col md:flex-row md:justify-center items-start space-y-10 md:space-y-0 w-full px-10 md:px-0">
+      <div class="w-[10%]"></div>
+      <!-- Column 1: Company Information -->
+      <div class="md:w-[30%]">
+        <h2 class="font-bold text-[1.5vw] text-green-800 flex items-center mb-[1.5vw]">
+          <img src="Images/Logo.png" alt="CarbonLifePulse Logo" class="w-fit h-8 md:h-[2.5vw]  mr-[1.5vw]">
+          <div class="text-lg md:text-[1.5vw]"><span class="text-[#7E7E80]">Carbon</span>LifePulse</div>
+        </h2>
+        <p class="text-sm md:text-[1.1vw] mb-[1.5vw] text-[#6BA42E] leading-7 w-10/12">
+          CarbonLifePulse helps you track your carbon footprint in real-time. Take control of your impact and join us in creating a more sustainable future.
+        </p>
+        <div class="flex space-x-4 items-center">
+          <!-- Social media icons -->
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/Facebook1.png" alt=""></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/Twitter.png" alt=""></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/LinkedIn.png" alt=""></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Products -->
+      <div class="md:w-[30%] px-4">
+        <h3 class="font-bold  text-[#6BA42E] mb-[2.8vw] md:text-[1.5vw]">Products</h3>
+        <ul class="space-y-2 text-sm md:text-[1.1vw]">
+          <li class="pb-[0.8vw] font-normal"><a href="#" class="text-[#6BA42E]  hover:text-green-700">Carbon Measurement</a></li>
+          <li class="pb-[0.8vw] font-normal"><a href="#" class="text-[#6BA42E]  hover:text-green-700">Carbon Emission Estimator</a></li>
+          <li class="pb-[0.8vw] font-normal"><a href="#" class="text-[#6BA42E]  hover:text-green-700">Carbon Reductions Plans</a></li>
+          <li class="pb-[0.8vw] font-normal"><a href="#" class="text-[#6BA42E]  hover:text-green-700">Environmental Compliance Management</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Information -->
+      <div class="md:w-[30%] px-4 text-[#6BA42E]">
+        <h3 class="font-bold  text-[#6BA42E] mb-[3.4vw] md:text-[1.5vw]">Contact Information</h3>
+        <ul class="space-y-2 text-sm md:text-[1.1vw]">
+          <li class="flex items-center pb-4">
+           <img src="Images/sms.png" class="mr-3  md:h-[1.5vw]" alt=""> carbonlifepulse@gmail.com
+          </li>
+          <li class="flex items-center pb-4">
+            <img src="Images/call.png" class="mr-3 md:h-[1.5vw]" alt=""> 04299250229
+          </li>
+          <li class="flex items-center ">
+            <img src="Images/location.png" class="mr-3 md:h-[1.5vw]" alt=""> H9H5+22F TICK, Engineering University, Staff Houses Engineering University Lahore, Lahore, Punjab 54000
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <!-- Divider -->
+    <div class="border-t w-full border-[#45691D] opacity-[12%] mt-8"></div>
+
+    <!-- Bottom section with copyright and links -->
+    <div class="flex flex-col md:flex-row justify-between items-center h-[7.3vw] font-medium text-sm md:text-[1.1vw] text-[#45691D] px-6 md:px-20 lg:px-32">
+      <p>&copy; CarbonLifePulse, 2023. All rights reserved.</p>
+      <div class="flex space-x-4  ">
+        <a href="#" class="hover:text-green-700 font-medium underline underline-offset-1">Website Terms</a>
+        <a href="#" class="hover:text-green-700 font-medium underline underline-offset-1">Privacy Policy</a>
+        <a href="#" class="hover:text-green-700 font-medium underline underline-offset-1">Cookies Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".heading", {
+    opacity: 0,
+    y: -50,
+    duration: 3.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".heading", 
+      start: "top 80%",    
+      end: "bottom 10%",   
+      scrub: true,           
+      toggleActions: "play none none none", 
+    }
+  });
+
+
+  gsap.from("#howItworks .step-1", {
+    opacity: 0,
+    y: 100,
+    duration: 2.5,
+    ease: "power3.out",
+    stagger: 0.2,  
+    scrollTrigger: {
+      trigger: "#howItworks", 
+      start: "top bottom",  
+      end: "bottom 20%",
+      // scrub: true
+      toggleActions: "play none none none",    
+    }
+  });
+
+
+  gsap.from("#beforeButton, #afterButton", {
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#beforeButton",
+      start: "top 90%",
+      end: "bottom 20%",
+      toggleActions: "play none none none",    
+      // scrub: true
+    }
+  });
+
+
+  gsap.from("#before", {
+    opacity: 0,
+    scale: 0.5,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#howItworks",
+      start: "top 90%",
+      end: "bottom 60%",
+      toggleActions: "play none none none"    
+      // scrub: true
+    }
+  });
+
+  gsap.from("#after", {
+    opacity: 0,
+    scale: 0.5,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#howItworks",
+      start: "top 90%",
+      end: "bottom 60%",
+      // scrub: true
+      toggleActions: "play none none none",    
+    }
+  });
+
+
+
+
+
+
+  gsap.from("#leftSection", {
+  scrollTrigger: {
+    trigger: "#leftSection", 
+    start: "top 80%",      
+    end: "60% 10%",  
+    toggleActions: "play none none none",       
+         
+  },
+  opacity: 0,                  
+  x: -100,                    
+  duration: 1,                  
+  ease: "power2.out"            
+});
+
+
+
+
+ gsap.from("#contactUs", {
+    scrollTrigger: {
+      trigger: "#contactUs",
+      start: "top 80%", 
+      toggleActions: "play none none none" 
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: "power2.out"
+  });
+
+
+  gsap.from("#contactUs h2, #contactUs p, #contactUs form", {
+    scrollTrigger: {
+      trigger: "#contactUs",
+      start: "top 75%",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.2, 
+  });
+
+  gsap.from("#centralCircle", {
+    scrollTrigger: {
+      trigger: "#process",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    scale: 0.5,
+    duration: 1.5,
+    ease: "power2.out",
+  });
+
+  gsap.from("#process p", {
+    scrollTrigger: {
+      trigger: "#process",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: -20,
+    duration: 1,
+    delay: 0.2,
+    ease: "power2.out",
+  });
+
+
+  const steps = gsap.utils.toArray("#process .step-1");
+  steps.forEach((step, index) => {
+    gsap.from(step, {
+      scrollTrigger: {
+        trigger: step,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      x: index % 2 === 0 ? -50 : 50, 
+      duration: 1.2,
+      delay: index * 0.2, 
+      ease: "power2.out",
+    });
+  });
+
+  const arrows = gsap.utils.toArray("#process img[src*='bendarrow']");
+  arrows.forEach((arrow, index) => {
+    gsap.from(arrow, {
+      scrollTrigger: {
+        trigger: arrow,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      rotation: index % 2 === 0 ? -45 : 45, 
+      duration: 1,
+      delay: index * 0.15,
+      ease: "power2.out",
+    });
+  });
+
+  gsap.from("#zigzag", {
+    scrollTrigger: {
+      trigger: "#process",
+      start: "top 90%",
+      end:"bottom 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#zigzaginverted", {
+    scrollTrigger: {
+      trigger: "#process",
+      start: "top 90%",
+      end:"bottom 40%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+
+
+
+
+
+
+  gsap.from("#AdvertisetoReg .firstRow", {
+    scrollTrigger: {
+      trigger: "#AdvertisetoReg",
+      start: "top 80%",
+      end:"bottom 40%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#AdvertisetoReg .secondRow", {
+    scrollTrigger: {
+      trigger: "#AdvertisetoReg",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 30,
+    delay: 0.3,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#AdvertisetoReg button", {
+    scrollTrigger: {
+      trigger: "#AdvertisetoReg",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    scale: 0.8,
+    delay: 0.6,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from("#AdvertisetoReg img", {
+    scrollTrigger: {
+      trigger: "#AdvertisetoReg",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: -50,
+    delay: 0.8,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+
+  gsap.utils.toArray(".productCard").forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        end: "bottom 10%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      scale: 0.8,
+      duration: 1.8,
+      delay: i * 0.2,
+      ease: "power3.out",
+    });
+  });
+
+
+  gsap.from("#productsHeading", {
+    scrollTrigger: {
+      trigger: "#productsHeading",
+      start: "top 95%",
+      end: "bottom top",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from("#textSection", {
+    scrollTrigger: {
+      trigger: "#textSection",
+      start: "top 80%",
+      end: "70% top", 
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.utils.toArray(".featureCard").forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        end: "bottom 40%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      x: i % 2 === 0 ? -50 : 50, 
+      duration: 1.2,
+      delay: i * 0.2,
+      ease: "power2.out",
+    });
+  });
+
+
+  gsap.from("#imageSection", {
+    scrollTrigger: {
+      trigger: "#imageSection",
+      start: "top 85%",
+      end: "bottom 15%", 
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    scale: 0.9,
+    duration: 1,
+    ease: "power3.out",
+  });
+});
+
+
+
+
+
+
+
+    gsap.from("#MainHeading", {
+      scrollTrigger: {
+      trigger: "#MainHeading",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        stagger: 0.2 
+    });
+
+    gsap.from(".paras", {
+      scrollTrigger: {
+      trigger: ".paras",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        delay: 0.5,
+        ease: "power2.out",
+        stagger: 0.2  
+    });
+
+
+    let startPosition = window.innerWidth <= 768 ? "top 75%" : "top 90%";
+  let endPosition = window.innerWidth <= 768 ? "bottom 25%" : "bottom 40%";
+
+  gsap.from("#MeasureCarbonbtn", {
+    scrollTrigger: {
+      trigger: "#MeasureCarbonbtn",
+      start: startPosition, 
+      end: endPosition,    
+      toggleActions: "play none none none",
+      scrub: true,          
+    },
+    duration: 1,
+    opacity: 0.5,
+    y: 30,
+    delay: 1.5,
+    ease: "power2.out",
+  });
+
+
+    gsap.from(".gradient-text2", {
+      scrollTrigger: {
+      trigger: ".gradient-text2",
+      start: "top bottom",
+      end:"bottom 10%",
+      toggleActions: "play none none none",
+    },
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        delay: 1.8,
+        ease: "power2.out"
+    });
+
+
+    gsap.from(".animate-images", {
+      scrollTrigger: {
+      trigger: ".animate-images",
+      start: "top 70%",
+      end:"bottom 30%",
+      toggleActions: "play none none none",
+    },
+        duration: 1.5,
+        scale: 0.8,
+        opacity: 0,
+        delay: 0.8,
+        ease: "power2.out",
+        stagger: 0.3
+    });
+
+
+    gsap.from("#stats", {
+      scrollTrigger: {
+      trigger: "#stats",
+      start: "top bottom",
+      end:"bottom 20%",
+      toggleActions: "play none none none",
+    },
+        duration: 1,
+        scale: 0.8,
+        opacity: 0,
+        delay: 1.2,
+        ease: "back.out(1.7)"
+    });
+
+
+    gsap.from("#EnvironmentalImpact", {
+      scrollTrigger: {
+      trigger: "#EnvironmentalImpact",
+      start: "top 70%",
+      end:"bottom 30%",
+      toggleActions: "play none none none",
+    },
+        duration: 2,
+        y: 100,
+        opacity: 0,
+        delay: 1.4,
+        ease: "power2.out"
+    });
+    $(function(){
+      $("#header").load("Pages/header.html");
+    });
+    function toggleFloatingLabel(selectElement) {
+      const label = selectElement.previousElementSibling;
+      if (selectElement.value) {
+        label.classList.add('floating');
+      } else {
+        label.classList.remove('floating');
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const beforeImage = document.getElementById('before');
+  const afterContent = document.getElementById('after');
+  const beforeButton = document.getElementById('beforeButton');
+  const afterButton = document.getElementById('afterButton');
+  let showBefore = true;
+
+  function toggleBeforeAfter() {
+    if (showBefore) {
+      beforeImage.style.display = 'block';
+      afterContent.style.display = 'none';
+      beforeButton.classList.add('active');
+      afterButton.classList.remove('active');
+    } else {
+      beforeImage.style.display = 'none';
+      afterContent.style.display = 'block';
+      afterButton.classList.add('active');
+      beforeButton.classList.remove('active');
+    }
+    showBefore = !showBefore;
+  }
+
+
+  // setInterval(toggleBeforeAfter, 5000);
+  beforeButton.addEventListener('click', () => {
+    beforeImage.style.display = 'block';
+    afterContent.style.display = 'none';
+    beforeButton.classList.add('active');
+    afterButton.classList.remove('active');
+    showBefore = true;
+  });
+
+  afterButton.addEventListener('click', () => {
+    beforeImage.style.display = 'none';
+    afterContent.style.display = 'block';
+    afterButton.classList.add('active');
+    beforeButton.classList.remove('active');
+    showBefore = false;
+  });
+});
+function toggleAnswer(element) {
+  const allQuestions = document.querySelectorAll('.question-container');
+  const isExpanded = element.classList.contains('expanded');
+  const answerContainer = element.nextElementSibling;
+
+
+  allQuestions.forEach(question => {
+    const answer = question.nextElementSibling;
+    if (question !== element) {
+      question.classList.remove('expanded');
+      answer.style.animation = 'slideUp 1.5s ease-in-out forwards';
+      answer.style.display = 'none';
+    }
+  });
+
+
+  if (isExpanded) {
+    element.classList.remove('expanded');
+    answerContainer.style.animation = 'slideUp 0.5s ease-in-out forwards';
+    // answerContainer.style.display = 'none';
+  } else {
+    element.classList.add('expanded');
+    answerContainer.style.animation = 'slideDown 0.5s ease-in-out forwards';
+    answerContainer.style.display = 'block';
+  }
+}
+emailjs.init("OfmlMCjmuKg7pjl35");
+
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+
+  const formData = {
+    Name: document.getElementById("name").value,
+    ContactNumber: document.getElementById("pnum").value,
+    find_us: document.getElementById("how").value,
+    sender: document.getElementById("email").value,
+  };
+
+  emailjs
+    .send("xdgaming", "template_7j0ekxq", formData) 
+    .then(
+      (response) => {
+        console.log("Email sent successfully!", response);
+        alert("Thank you! Your message has been sent.");
+      },
+      (error) => {
+        console.error("Failed to send email:", error);
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    );
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+Sector,Geography,ActivityType,ISICSection,ISIC_Class,ActivityName,Carbon
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,flax,retting",1.0 - 1.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,jute,retting",0.5 - 0.7 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,kenaf,retting",0.4 - 0.6 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,reeled raw silk hank production,4.0 - 5.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"textile production,nonwoven polyester,needle-punched",3.0 - 4.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"textile production,nonwoven polypropylene,spunbond",3.0 - 3.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,cotton,open end spinning",2.0 - 2.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,jute",1.0 - 1.2 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,kenaf",0.9 - 1.1 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,silk,long fibre",7.5 - 8.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,silk,short fibre",5.0 - 6.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,cotton,air jet loom weaving",3.5 - 4.5 kg CO?e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,cotton,weaving",3.0 - 4.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,jute,weaving",1.5 - 2.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,kenaf,weaving",1.0 - 1.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,silk",10.0 - 12.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"batch dyeing,fibre,cotton",2.5 - 3.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"bleaching and dyeing,yarn",2.0 - 2.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"bleaching,textile",1.5 - 2.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"mercerizing,textile",2.0 - 2.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1399:Manufacture of other textiles n.e.c.,"fleece production,polyethylene",2.5 - 3.5 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1399:Manufacture of other textiles n.e.c.,"polar fleece production,energy use only",2.0 - 2.8 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,1391:Manufacture of knitted and crocheted fabrics,"textile production,cotton,circular knitting",2.5 - 3.0 kg CO2e
+Textiles,Rest-of-World (RoW),Transforming activity,C - Manufacturing,2030:Manufacture of man-made fibres,"polyester fibre production,finished",3.5 - 4.5 kg CO2e
+Textiles,Rest-of-World (RoW),Market activity,"E - Water supply; sewerage,waste management and remediation activities",3821:Treatment and disposal of non-hazardous waste,"market for waste textile,soiled",0.5 - 0.7 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,flax,retting",1.4 - 1.6 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,jute,retting",0.6 - 0.8 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,kenaf,retting",0.5 - 0.7 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,reeled raw silk hank production,4.0 - 5.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"textile production,nonwoven polyester,needle-punched",3.5 - 4.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"textile production,nonwoven polypropylene,spunbond",3.0 - 3.5 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,cotton,open end spinning",2.0 - 2.5 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,cotton,ring spinning",2.8 - 3.2 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,jute",1.0 - 1.2 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,kenaf",0.9 - 1.1 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,silk,long fibre",8.0 - 9.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,silk,short fibre",5.0 - 6.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,cotton,air jet loom weaving",3.0 - 4.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,jute,weaving",1.5 - 2.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,kenaf,weaving",1.0 - 1.5 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,silk",10.0 - 12.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"batch dyeing,fibre,cotton",2.5 - 3.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"bleaching and dyeing,yarn",2.0 - 2.5 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"bleaching,textile",1.5 - 2.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"mercerizing,textile",2.0 - 2.5 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,1391:Manufacture of knitted and crocheted fabrics,"textile production,cotton,circular knitting",2.5 - 3.0 kg CO2e
+Textiles,India (IN),Transforming activity,C - Manufacturing,2030:Manufacture of man-made fibres,"polyester fibre production,finished",3.5 - 4.5 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"fibre production,jute,retting",0.6 - 1.1 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,cotton,ring spinning",1.5 - 2.5 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"yarn production,jute",1.0 - 1.5 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"batch dyeing,fibre,cotton",2.5 - 3.5 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"bleaching and dyeing,yarn",2.0 - 3.0 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1313:Finishing of textiles,"bleaching,textile",1.5 - 2.5 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,cotton,weaving",2.0 - 3.0 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1312:Weaving of textiles,"textile production,jute,weaving",1.0 - 1.5 kg CO2e
+Textiles,Bangladesh (BD),Transforming activity,C - Manufacturing,1391:Manufacture of knitted and crocheted fabrics,"textile production,cotton,circular knitting",1.5 - 2.5 kg CO2e
+Textiles,Europe (RER),Transforming activity,"A - Agriculture,forestry and fishing",0116:Growing of fibre crops,"fibre production,flax,scutching",0.5 - 1.0 kg CO2e
+Textiles,Europe (RER),Transforming activity,C - Manufacturing,1399:Manufacture of other textiles n.e.c.,"fleece production,polyethylene",2.5 - 3.5 kg CO2e
+Textiles,Europe (RER),Transforming activity,C - Manufacturing,1399:Manufacture of other textiles n.e.c.,"polar fleece production,energy use only",1.0 - 1.5 kg CO2e
+Textiles,Europe (RER),Market activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"market for fibre,flax,long,scutched",0.3 - 0.5 kg CO2e
+Textiles,Europe (RER),Market activity,C - Manufacturing,1311:Preparation and spinning of textile fibres,"market for fibre,flax,short,scutched",0.3 - 0.5 kg CO2e
+Textiles,Switzerland (CH),Transforming activity,"E - Water supply; sewerage,waste management and remediation activities",3821:Treatment and disposal of non-hazardous waste,"treatment of waste textile,soiled,municipal incineration FAE",0.89 kg CO2e
+Textiles,Switzerland (CH),Market activity,"E - Water supply; sewerage,waste management and remediation activities",3821:Treatment and disposal of non-hazardous waste,"market for waste textile,soiled",0.05 - 0.10 kg CO2e
+Textiles,"Canada,Québec (CA-QC)",Transforming activity,C - Manufacturing,1399:Manufacture of other textiles n.e.c.,"polar fleece production,energy use only",1.0 - 1.5 kg CO2e

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <style>
+        .green-gradient-bg {
+            background: linear-gradient(90deg, #277D0D, #36B60B);
+        }
+        #sidebar {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #sidebar.active {
+            transform: translateX(0);
+        }
+        #overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="flex py-[1.9vh] justify-between items-center text-[#277D0D] font-semibold text-[1.6vw] fixed w-full top-0 z-[9999] backdrop-blur-2xl">
+        <div class="w-1/2 xl:w-[12%] flex flex-row justify-start xl:justify-center items-center ml-[3vw] cursor-pointer" onclick="window.location.href='../index.html'">
+                <img class="pl-[1.2vw] pr-[0.3vw] w-fit h-[3vw]" src="../Images/Logo.png" alt="Logo">
+                <div class="text-[2vw]"><span class="text-[#7E7E80]">Carbon</span>LifePulse</div>
+            </div>
+        <button id="openSidebar" class="xl:hidden fixed top-[1vw] right-[1vw] bg-[#277D0D] text-white px-4 py-2 rounded-full">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="w-[70%] hidden xl:flex  items-baseline h-full pt-[0.5vw]">
+            <nav class="flex w-full ">
+                <ul class="flex w-full text-lg px-[10vw] items-center justify-between">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#whoWeAre">Who We Are</a></li>
+                    <li><a href="../index.html#product">Products</a></li>
+                    <li><a href="../index.html#process">Process</a></li>
+                    <li><a href="../index.html#howItworks">How It Works</a></li>
+                    <li><a href="../index.html#contactUs">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="w-[12%] hidden xl:flex justify-end mr-7 text-white text-[1.2vw] font-semibold pt-[0.5vw]">
+            <a href="../Pages/loginsignup.html" class="green-gradient-bg px-[1.3vw] py-[0.5rem] rounded-[2.3vw] cursor-pointer">
+                <div>Register Yourself</div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 right-0 w-2/3 h-full bg-[#ecfbe8] shadow-md z-[9999] hidden xl:hidden">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="font-bold text-xl text-[#277D0D]">Menu</h2>
+            <button id="closeSidebar" class="text-red-500">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="p-4 flex flex-col">
+            <li><a href="../index.html" class="block py-2 text-gray-800">Home</a></li>
+            <li><a href="/Pages/Configuration.html" class="block py-2 text-gray-800">Who We Are</a></li>
+            <li><a href="/Pages/Configuration.html" class="block py-2 text-gray-800">Products</a></li>
+            <li><a href="Configuration.html" class="block py-2 text-gray-800">Process</a></li>
+            <li><a href="Configuration.html" class="block py-2 text-gray-800">How It Works</a></li>
+            <li><a href="Configuration.html" class="block py-2 text-gray-800">Contact Us</a></li>
+            <li>
+                <a href="../Pages/loginsignup.html" class="green-gradient-bg px-6 w-full py-2 rounded-3xl block text-white text-center">Register Yourself</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-[9998]"></div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const openSidebar = document.getElementById('openSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+
+        // Open Sidebar
+        openSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('hidden');
+            sidebar.classList.add('active');
+            overlay.classList.remove('hidden');
+            gsap.to('#sidebar', { x: 0, duration: 0.3, ease: 'power2.out' });
+        });
+
+        // Close Sidebar
+        const closeSidebarHandler = () => {
+            sidebar.classList.remove('active');
+            overlay.classList.add('hidden');
+            gsap.to('#sidebar', { x: '100%', duration: 0.3, ease: 'power2.in' });
+        };
+
+        closeSidebar.addEventListener('click', closeSidebarHandler);
+        overlay.addEventListener('click', closeSidebarHandler);
+    </script>
+</body>
+</html>

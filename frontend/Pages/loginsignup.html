@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../Images/icon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+</style>
+  
+</head>
+<body>
+    <div class="main flex flex-row w-full justify-between font-sans">
+        <div class="form flex flex-col py-5 px-8 w-full lg:w-[50vw] ">
+            <a href="../index.html">
+
+                <div class="logo flex flex-row justify-start font-bold text-[#277D0D] items-center">
+                    <img class="h-full lg:h-[4vw] w-fit px-[0.1vw]" src="../Images/Logo.png" alt="">
+                    <div class="text-xl lg:text-[2.5vw] pt-[1vw]"><span class="text-[#7E7E80]">Carbon</span>LifePulse</div>
+                </div>
+            </a>
+            <div class="container w-full flex flex-col  text-sm text-gray-400 sm:px-14">
+
+                    <form id="loginForm"  class="flex flex-col pb-[1.2vw]" action="" onsubmit="handleLogin(event)">
+                        <h1 class="h-[10%] text-3xl md:text-[4vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[7vw]" >Login</h1>
+                        
+                        <div class="form-group mb-5 lg:mb-[1.8vw] relative">
+                            <input type="email" id="email" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
+                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-[0vw] peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
+                        </div>
+                        
+                        <div class="form-group mb-5 lg:mb-[1.8vw] relative">
+                            <input type="password" id="passwordField" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
+                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
+                            <button type="button" class="absolute inset-y-0 right-3 flex items-center text-gray-500 z-50" onclick="togglePasswordVisibility()">
+                                <i class="bi bi-eye z-50" id="togglePasswordIcon"></i>
+                            </button>
+                        </div>
+                        <div class="flex flex-row justify-between items-center pb-[2vw] px-[0.25vw] text-[0.65rem] lg:text-[1.15vw]">
+                            <div 
+                                class="forget text-[#6BA42E] font-semibold justify-end items-end flex w-full text-right cursor-pointer" 
+                                onclick="showResetPasswordForm()"
+                            >
+                                Forget Password
+                            </div>
+                        </div>
+                        
+                     
+                        <button class="bg-[#6BA42E] text-[#F3F3F3] my-6 lg:my-0 h-10 lg:h-[4.7vw] rounded-[0.5vw] lg:text-[2vw] font-semibold">Login</button>
+                        <div class="flex justify-center h-fit pt-5 lg:pt-0 lg:h-[4.8vw] items-center cursor-pointer font-bold text-[#444444] text-xs lg:text-[1.1vw]">Don't have an account? <span class="px-[0.25vw] text-[#6BA42E]" onclick="showSignup()" >Sign Up</span></div>
+                    </form>
+                    <form id="signupForm" class="flex flex-col pb-[1.2vw] hidden" action="" onsubmit="handleSignup(event)">
+                        <h1 class="text-3xl md:text-[4vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[5.2vw]">Sign Up</h1>
+                        
+                        <div class="form-group mb-5 lg:mb-[2vw] relative">
+                            <input type="email" id="signupEmail" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
+                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute   text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
+                        </div>
+                        
+                        <div class="form-group mb-5 lg:mb-[2vw] relative">
+                            <input type="password" id="signupPassword" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
+                            <label for="signupPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
+                        </div>
+                        
+                        <div class="form-group  mb-5 lg:mb-[2vw] relative">
+                            <input type="password" id="confirmPassword" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
+                            <label for="confirmPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.15vw]">Confirm Password</label>
+                        </div>
+                        <div class="flex flex-row justify-between items-center pb-6 px-1">
+                            <div class="flex justify-center items-center font-bold text-[#444444]  text-xs lg:text-[1.1vw]"><span class="pr-[0.8vw] flex"><input class="h-2 w-2 lg:w-[1vw] lg:h-[1vw]" type="checkbox"></span>I agree to all the <span class="text-[#6BA42E] px-1">Terms</span> and <span class="text-[#6BA42E] px-1">Privacy Policies</span></div>
+                   
+                        </div>
+                        <button class="bg-[#6BA42E] text-[#F3F3F3] my-6 lg:my-0 h-10 lg:h-[4.7vw] rounded-[0.5vw] lg:text-[1.8vw] font-semibold">Create Account</button>
+                        <div class="flex justify-center h-[5.3vw] items-center cursor-pointer font-bold text-[#444444]  text-xs lg:text-[1.1vw]">Already have an account? <span class="px-1 text-[#6BA42E]" onclick="showLogin()" >Login</span></div>
+                    </form>
+                <!-- <div class="social-login w-full  ">
+                    <div class="social-head flex flex-row justify-center items-center text-[1.1vw]">
+                        <div class="w-full  h-[0.1vw] bg-gray-300"></div>
+                        <div class="w-full justify-center flex">Or login with</div>
+                        <div class="w-full h-[0.1vw] bg-gray-300"></div>
+                    </div>
+                    <div class="social-grid flex justify-between py-[3vw]">
+                        <div class="w-[30%] border border-[#6BA42E]  rounded-[0.2vw] justify-center items-center flex py-[1vw]"><img class="w-[2vw]" src="../Images/facebook.png" alt=""></div>
+                        <div class="w-[30%]  border border-[#6BA42E] rounded-[0.2vw] justify-center items-center flex py-[1vw]"><img class="w-[2vw]" src="../Images/Google.png" alt=""></div>
+                        <div class="w-[30%]  border border-[#6BA42E] rounded-[0.2vw] justify-center items-center flex py-[1vw]"><img class="w-[2vw]" src="../Images/apple.png" alt=""></div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div id="img" class="img  w-[50vw] hidden lg:flex">
+            
+            <img class="image w-full h-[70vw] max-h-screen object-cover min-h-screen" src="../Images/LoginBg.png" alt="">
+        </div>
+    </div>
+   <!-- Modal for Reset Password -->
+<!-- Modal for Reset Password -->
+<div id="resetPasswordModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-[500px]">
+        <h2 class="text-lg font-bold mb-4">Reset Password</h2>
+
+        <!-- Step 1: Enter Email -->
+        <div id="step1">
+            <form id="emailForm" onsubmit="sendVerificationCode(event)">
+                <label for="email" class="block font-semibold mb-2">Email:</label>
+                <input
+                    type="email"
+                    id="resetEmail"
+                    class="w-full p-2 border rounded-lg mb-4"
+                    placeholder="Enter your email"
+                    required
+                />
+                <div class="flex justify-end">
+                    <button 
+                        type="submit" 
+                        class="bg-[#6BA42E] text-white px-4 py-2 rounded-lg"
+                    >
+                        Send Code
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Step 2: Verify Code and Reset Password -->
+        <div id="step2" class="hidden">
+            <form id="resetPasswordForm" onsubmit="resetPassword(event)">
+                <label for="verificationCode" class="block font-semibold mb-2">Verification Code:</label>
+                <input
+                    type="text"
+                    id="verificationCode"
+                    class="w-full p-2 border rounded-lg mb-4"
+                    placeholder="Enter the code sent to your email"
+                    required
+                />
+
+                <label for="newPassword" class="block font-semibold mb-2">New Password:</label>
+                <input
+                    type="password"
+                    id="resetNewPassword"
+                    class="w-full p-2 border rounded-lg mb-4"
+                    placeholder="Enter new password"
+                    required
+                />
+
+                <label for="confirmPasswordreset" class="block font-semibold mb-2">Confirm Password:</label>
+                <input
+                    type="password"
+                    id="confirmPasswordreset"
+                    class="w-full p-2 border rounded-lg mb-4"
+                    placeholder="Confirm new password"
+                    required
+                />
+
+                <div class="flex justify-end gap-4">
+                    <button 
+                        type="button" 
+                        class="bg-gray-400 text-white px-4 py-2 rounded-lg"
+                        onclick="closeResetPasswordForm()"
+                    >
+                        Cancel
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="bg-[#6BA42E] text-white px-4 py-2 rounded-lg"
+                    >
+                        Reset Password
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
+    <script>
+        function showLogin() {
+            document.getElementById("loginForm").classList.remove("hidden");
+            document.getElementById("signupForm").classList.add("hidden");
+            document.getElementById("img").innerHTML='<img class="image w-full h-[70vw] max-h-screen object-cover min-h-screen" src="../Images/LoginBg.png" alt="">'
+        }
+
+        function showSignup() {
+            document.getElementById("signupForm").classList.remove("hidden");
+            document.getElementById("loginForm").classList.add("hidden");
+            document.getElementById("img").innerHTML='<img class="image w-full h-[70vw] max-h-screen object-cover min-h-screen" src="../Images/signup.png" alt="">'
+        }
+
+        function togglePasswordVisibility(fieldId, iconId) {
+            var passwordField = document.getElementById(fieldId);
+            var toggleIcon = document.getElementById(iconId);
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("bi-eye");
+                toggleIcon.classList.add("bi-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("bi-eye-slash");
+                toggleIcon.classList.add("bi-eye");
+            }
+        }
+        async function handleLogin(event) {
+    event.preventDefault(); 
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('passwordField').value;
+
+    try {
+        const response = await fetch('http://localhost:3000/api/auth/signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Login failed');
+        }
+
+        const data = await response.json();
+        alert(`Login successful: Welcome ${data.user.email}`);
+        // Redirect or perform actions after login
+    } catch (error) {
+        console.error('Error logging in:', error);
+        alert('Invalid login credentials');
+    }
+}
+
+async function handleSignup(event) {
+    event.preventDefault(); 
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    try {
+        const response = await fetch('http://localhost:3000/api/auth/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Signup failed');
+        }
+
+        const data = await response.json();
+        alert(`Signup successful: Welcome ${data.user.email}`);
+        // Redirect or perform actions after signup
+    } catch (error) {
+        console.error('Error signing up:', error);
+        alert('Could not create account. Please try again.');
+    }
+}
+// Show the Reset Password modal
+let verificationCode; 
+let resetemail; 
+
+// Show the Reset Password modal
+function showResetPasswordForm() {
+    document.getElementById('resetPasswordModal').classList.remove('hidden');
+    document.getElementById('step1').classList.remove('hidden');
+    document.getElementById('step2').classList.add('hidden');
+}
+
+// Hide the Reset Password modal
+function closeResetPasswordForm() {
+    document.getElementById('resetPasswordModal').classList.add('hidden');
+}
+emailjs.init("OfmlMCjmuKg7pjl35");
+async function sendVerificationCode(event) {
+    event.preventDefault(); 
+
+    const email = document.getElementById('resetEmail').value;
+    resetemail=email
+    const verificationCode1 = generateRandomSixDigitNumber();
+    verificationCode=verificationCode1;
+    const templateParams = {
+        email: email,
+        verificationCode: verificationCode1
+    };
+
+    // Send the email using EmailJS
+    emailjs.send("xdgaming", "template_n0ejzqc", templateParams)
+        .then(function(response) {
+            // Handle the response from EmailJS
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Password reset link sent to your email!');
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }, function(error) {
+            // Handle errors
+            console.error('FAILED...', error);
+            alert('Failed to send reset link. Please try again.');
+        });
+}
+
+function generateRandomSixDigitNumber() {
+    return Math.floor(100000 + Math.random() * 900000);
+}
+
+// Step 2: Verify Code and Reset Password
+async function resetPassword(event) {
+    event.preventDefault();
+
+    const enteredCode = document.getElementById('verificationCode').value.trim();
+    const newPassword = document.getElementById('resetNewPassword').value.trim();
+    const confirmPassword = document.getElementById('confirmPasswordreset').value.trim();
+
+    if (enteredCode.toString() !== verificationCode.toString()) {
+        alert('Invalid verification code!');
+        return;
+    }
+ 
+
+    if (newPassword.toString() !== confirmPassword.toString()) {
+        alert('Passwords do not match!');
+        return;
+    }
+
+    try {
+        const email=resetemail
+        const response = await fetch('http://localhost:3000/api/auth/reset-password', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, newPassword }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert('Password reset successfully!');
+            closeResetPasswordForm();
+        } else {
+            alert(data.error || 'Failed to reset password');
+        }
+    } catch (error) {
+        console.error('Error resetting password:', error);
+        alert('An error occurred. Please try again.');
+    }
+}
+
+    </script>
+</body>
+</html>

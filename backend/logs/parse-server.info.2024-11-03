@@ -1,0 +1,4 @@
+{"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowExpiredAuthDataToken' default will change to 'false' in a future version.","timestamp":"2024-11-03T13:57:40.390Z"}
+{"level":"warn","message":"DeprecationWarning: The Parse Server option 'encodeParseObjectInCloudFunction' default will change to 'true' in a future version.","timestamp":"2024-11-03T13:57:40.393Z"}
+{"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowExpiredAuthDataToken' default will change to 'false' in a future version.","timestamp":"2024-11-03T14:47:29.002Z"}
+{"level":"warn","message":"DeprecationWarning: The Parse Server option 'encodeParseObjectInCloudFunction' default will change to 'true' in a future version.","timestamp":"2024-11-03T14:47:29.006Z"}
