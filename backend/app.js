@@ -47,9 +47,9 @@ app.get('/', (req, res) => {
     res.send('API is running');
     pool.connect((err, client, release) => {
       if (err) {
-          console.error('Error connecting to the database:', err.stack);
+        res.send('Error connecting to the database:', err.stack);
       } else {
-          console.log('Connected to the database successfully!');
+        res.send('Connected to the database successfully!');
       }
       release();  // Always release the client after the operation is done
   });
