@@ -27,6 +27,10 @@ const upload = multer({
       }
     },
   });
+  console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+
 const app = express();
 const port = process.env.PORT || 3000;
 
