@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
   pool.connect((err, client, release) => {
       if (err) {
 
-          console.error('Error connecting to the database:', err.stack);
+          console.error('Error connecting to the database:', err);
           return res.status(500).send('Error connecting to the database');
       }
 
