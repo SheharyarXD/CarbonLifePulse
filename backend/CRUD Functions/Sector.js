@@ -39,6 +39,16 @@ const pool = require('../db');
 // });
 
 // Read All Sectors
+module.exports = async (req, res) => {
+  if (req.method === 'GET') {
+    try {
+      const sectors = await ReadSectors();
+      res.status(200).json(sectors);
+    } catch (error) {
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
+};
 router.get('/sectors', async (req, res) => {
     try {
         const sectors = await ReadSectors();
