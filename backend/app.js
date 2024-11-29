@@ -44,14 +44,17 @@ app.use('/api/Carbon', carbon);
 app.use('/api/auth', user);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.get('/', (req, res) => {
-    res.send('API is running');
-    pool.connect((err, client, release) => {
+  pool.connect((err, client, release) => {
       if (err) {
-        res.send('Error connecting to the database:', err.stack);
-      } else {
-        res.send('Connected to the database successfully!');
+
+          console.error('Error connecting to the database:', err.stack);
+          return res.status(500).send('Error connecting to the database');
       }
-      release();  // Always release the client after the operation is done
+
+      console.log('Connected to the database successfully!');
+      res.send('API is running and connected to the database!');
+      
+      release(); 
   });
 });
 
