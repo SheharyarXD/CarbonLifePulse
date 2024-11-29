@@ -1,81 +1,166 @@
-const { IncomingMessage, ServerResponse } = require('http');
-const pool = require('../db'); // DB connection pool
+const express = require('express');
+const router = express.Router();
+// const multer = require('multer');
+const path = require('path');
+const pool = require('../db');  
+// const upload = multer({
+//   dest: 'uploads/', 
+//   limits: {
+//     fileSize: 10 * 1024 * 1024, 
+//   },
+//   fileFilter: (req, file, cb) => {
 
-module.exports = async (req = IncomingMessage, res = ServerResponse) => {
-    const { method } = req;
-    
-    // Handling different methods for sector API routes
-    if (method === 'GET') {
-        if (req.url.includes('/sector/')) {
-            const id = req.url.split('/')[2];
-            const sector = await GetSectorById(id);
-            if (sector) {
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.end(JSON.stringify(sector));
-            } else {
-                res.statusCode = 404;
-                res.end(JSON.stringify({ error: 'Sector not found' }));
-            }
-        } else if (req.url === '/sectors') {
-            const sectors = await ReadSectors();
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(sectors));
-        }
-    } else if (method === 'POST' && req.url === '/sector') {
-        // Add functionality for creating sector
-        const { name, image } = req.body;
-        const sector = await CreateSector(name, image);
+//     const fileTypes = /jpeg|jpg|png|gif/;
+//     const mimeType = fileTypes.test(file.mimetype);
+//     if (mimeType) {
+//       return cb(null, true);
+//     } else {
+//       cb(new Error('Only image files are allowed.'));
+//     }
+//   },
+// });
+
+
+// // Create Sector
+// router.post('/sector',upload.single('image'), async (req, res) => {
+  
+//     const { name, image } = req.body;
+//     try {
+//         const sector = await CreateSector(name, image);
+//         if (sector) {
+//             res.status(201).json(sector); // Successfully created
+//         } else {
+//             res.status(400).json({ error: 'Failed to create sector' });
+//         }
+//     } catch (error) {
+//         console.error('Error creating sector:', error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
+
+// Read All Sectors
+
+router.get('/sectors', async (req, res) => {
+    try {
+        const sectors = await ReadSectors();
+        res.status(200).json(sectors); // Successfully fetched
+    } catch (error) {
+        console.error('Error reading sectors:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// Get Sector by ID
+router.get('/sector/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const sector = await GetSectorById(id);
         if (sector) {
-            res.statusCode = 201;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(sector));
+            res.status(200).json(sector); // Successfully found sector
         } else {
-            res.statusCode = 400;
-            res.end(JSON.stringify({ error: 'Failed to create sector' }));
+            res.status(404).json({ error: 'Sector not found' });
         }
-    } else if (method === 'PUT' && req.url.includes('/sector/')) {
-        // Update functionality for sector
-        const id = req.url.split('/')[2];
-        const { name, image } = req.body;
+    } catch (error) {
+        console.error('Error getting sector by ID:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// Update Sector by ID
+router.put('/sector/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, image } = req.body;
+    try {
         const updatedSector = await UpdateSector(id, name, image);
         if (updatedSector) {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(updatedSector));
+            res.status(200).json(updatedSector); // Successfully updated sector
         } else {
-            res.statusCode = 404;
-            res.end(JSON.stringify({ error: 'Sector not found or update failed' }));
+            res.status(404).json({ error: 'Sector not found or update failed' });
         }
-    } else if (method === 'DELETE' && req.url.includes('/sector/')) {
-        // Delete functionality for sector
-        const id = req.url.split('/')[2];
+    } catch (error) {
+        console.error('Error updating sector:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// Delete Sector by ID
+router.delete('/sector/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
         const deletedSector = await DeleteSector(id);
         if (deletedSector) {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify({ message: 'Sector deleted successfully' }));
+            res.status(200).json({ message: 'Sector deleted successfully' }); // Successfully deleted
         } else {
-            res.statusCode = 404;
-            res.end(JSON.stringify({ error: 'Sector not found' }));
+            res.status(404).json({ error: 'Sector not found' });
         }
-    } else {
-        res.statusCode = 405; // Method Not Allowed
-        res.end(JSON.stringify({ error: 'Method Not Allowed' }));
+    } catch (error) {
+        console.error('Error deleting sector:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-};
-
+});
 async function CreateSector(Name, Image) {
     try {
-        const query = `INSERT INTO sectors (name, image) VALUES ($1, $2) RETURNING *;`;
-        const values = [Name, Image];
-        const result = await pool.query(query, values);
-        return result.rows[0];
+      const query = 
+        `INSERT INTO sectors (name, image)
+        VALUES ($1, $2)
+        RETURNING *;`
+      ;
+      const values = [Name, Image];
+      const result = await pool.query(query, values);
+      console.log('Sector Created Successfully:', result.rows[0]);
     } catch (error) {
-        console.error('Error creating sector:', error);
-        return null;
+      console.error(`Error creating sector: ${error.message}`);
     }
-}
-
-// Add other CRUD functions (ReadSectors, GetSectorById, UpdateSector, DeleteSector) below as shown in your original code.
+  }
+  
+  // Read All Sectors
+  async function ReadSectors() {
+    try {
+      const query = `SELECT * FROM sectors;`;
+      const result = await pool.query(query);
+      return result.rows;
+    } catch (error) {
+      console.error(`Error reading sectors: ${error.message}`);
+      return [];
+    }
+  }
+  
+  // Get Sector by ID
+  async function GetSectorById(Id) {
+    try {
+      const query = `SELECT * FROM sectors WHERE id = $1;`;
+      const result = await pool.query(query, [Id]);
+      return result.rows.length ? result.rows[0] : null;
+    } catch (error) {
+      console.error(`Error getting sector by ID: ${error.message}`);
+      return null;
+    }
+  }
+  
+  // Update Sector
+  async function UpdateSector(Id, Name, Image) {
+    try {
+      const query = 
+        `UPDATE sectors SET name = $1, image = $2 WHERE id = $3 RETURNING *`;
+      ;
+      const values = [Name, Image, Id];
+      const result = await pool.query(query, values);
+      return result.rows.length ? result.rows[0] : null;
+    } catch (error) {
+      console.error(`Error updating sector: ${error.message}`);
+      return null;
+    }
+  }
+  
+  // Delete Sector
+  async function DeleteSector(Id) {
+    try {
+      const query = 'DELETE FROM sectors WHERE id = $1 RETURNING *;';
+      const result = await pool.query(query, [Id]);
+      return result.rows.length ? result.rows[0] : null;
+    } catch (error) {
+      console.error(`Error deleting sector: ${error.message}`);
+      return null;
+    }
+  }
+module.exports = router;
