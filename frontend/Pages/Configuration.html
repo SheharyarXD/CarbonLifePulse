@@ -331,7 +331,7 @@ function renderObjects(container, objects) {
         objects.forEach(sector => {
             container.innerHTML += `
                 <div id="${sector.id}" onclick="Sector(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-48 w-44 justify-between items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
-                   <img class="w-full h-full" src="http://localhost:3000/${sector.image}" alt="undefined"/>
+                   <img class="w-full h-full" src="https://res.cloudinary.com/ded7cxzxh/image/upload/v1732873340/${sector.image}" alt="undefined"/>
                     <p class="h-[30%] border-t-2 border-[#6BA42E] w-full text-center flex text-lg items-center justify-center font-medium">
                         ${sector.name}
                     </p>
