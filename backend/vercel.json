@@ -2,22 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/sector.js",
+      "src": "app.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/sector",
-      "dest": "api/sector.js"
-    },
-    {
-      "src": "/api/sectors",
-      "dest": "api/sector.js"
-    },
-    {
-      "src": "/api/sector/:id",
-      "dest": "api/sector.js"
+      "src": "/(.*)",
+      "dest": "app.js"
     }
   ]
 }
