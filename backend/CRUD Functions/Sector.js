@@ -3,40 +3,40 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const pool = require('../db');  
-const upload = multer({
-  dest: 'uploads/', 
-  limits: {
-    fileSize: 10 * 1024 * 1024, 
-  },
-  fileFilter: (req, file, cb) => {
+// const upload = multer({
+//   dest: 'uploads/', 
+//   limits: {
+//     fileSize: 10 * 1024 * 1024, 
+//   },
+//   fileFilter: (req, file, cb) => {
 
-    const fileTypes = /jpeg|jpg|png|gif/;
-    const mimeType = fileTypes.test(file.mimetype);
-    if (mimeType) {
-      return cb(null, true);
-    } else {
-      cb(new Error('Only image files are allowed.'));
-    }
-  },
-});
+//     const fileTypes = /jpeg|jpg|png|gif/;
+//     const mimeType = fileTypes.test(file.mimetype);
+//     if (mimeType) {
+//       return cb(null, true);
+//     } else {
+//       cb(new Error('Only image files are allowed.'));
+//     }
+//   },
+// });
 
 
-// Create Sector
-router.post('/sector',upload.single('image'), async (req, res) => {
+// // Create Sector
+// router.post('/sector',upload.single('image'), async (req, res) => {
   
-    const { name, image } = req.body;
-    try {
-        const sector = await CreateSector(name, image);
-        if (sector) {
-            res.status(201).json(sector); // Successfully created
-        } else {
-            res.status(400).json({ error: 'Failed to create sector' });
-        }
-    } catch (error) {
-        console.error('Error creating sector:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
+//     const { name, image } = req.body;
+//     try {
+//         const sector = await CreateSector(name, image);
+//         if (sector) {
+//             res.status(201).json(sector); // Successfully created
+//         } else {
+//             res.status(400).json({ error: 'Failed to create sector' });
+//         }
+//     } catch (error) {
+//         console.error('Error creating sector:', error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
 
 // Read All Sectors
 router.get('/sectors', async (req, res) => {
