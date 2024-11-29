@@ -5,12 +5,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 // Import the sector and geography route files
-const geographyRoutes = require('./CRUD Functions/Geography'); 
-const sectorRoutes = require('./CRUD Functions/Sector'); 
-const activityRoutes = require('./CRUD Functions/Activity_Type'); 
-const isicClass = require('./CRUD Functions/ISIC_Class'); 
-const carbon = require('./CRUD Functions/Activity'); 
-const user = require('./CRUD Functions/User'); 
+const geographyRoutes = require('./api/Geography'); 
+const sectorRoutes = require('./api/Sector'); 
+const activityRoutes = require('./api/Activity_Type'); 
+const isicClass = require('./api/ISIC_Class'); 
+const carbon = require('./api/Activity'); 
+const user = require('./api/User'); 
 // const upload = multer({
 //     dest: 'uploads/', 
 //     limits: {
