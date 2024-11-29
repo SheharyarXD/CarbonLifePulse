@@ -2,12 +2,12 @@ const { Pool } = require('pg');
 require('dotenv').config(); // If using dotenv to load your .env file
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT,
-    ssl: { rejectUnauthorized: true },
+  user: 'CarbonCalculator_owner',           // Hardcoded database user
+  host: 'ep-dark-morning-a547yy53.us-east-2.aws.neon.tech',  // Hardcoded Neon DB host
+  database: 'CarbonCalculator',             // Hardcoded database name
+  password: '6xoWM8hfHFPO',                 // Hardcoded database password
+  port: 5432,                               // Port for PostgreSQL
+  ssl: { rejectUnauthorized: true }         // SSL configuration for secure connection
 });
 
 pool.connect()
