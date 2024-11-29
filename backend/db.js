@@ -12,5 +12,12 @@ const pool = new Pool({
   ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
   connectionTimeoutMillis: 5000,
 });
-
+pool.connect((err, client, release) => {
+  if (err) {
+      console.error('Error connecting to the database:', err.stack);
+  } else {
+      console.log('Connected to the database successfully!');
+  }
+  release();
+});
 module.exports = pool;
