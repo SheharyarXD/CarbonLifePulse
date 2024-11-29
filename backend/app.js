@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const pool = require('./db');
 // const multer = require('multer');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -44,6 +45,14 @@ app.use('/api/auth', user);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.get('/', (req, res) => {
     res.send('API is running');
+    pool.connect((err, client, release) => {
+      if (err) {
+          console.error('Error connecting to the database:', err.stack);
+      } else {
+          console.log('Connected to the database successfully!');
+      }
+      release();  // Always release the client after the operation is done
+  });
 });
 
 app.listen(port, () => {
