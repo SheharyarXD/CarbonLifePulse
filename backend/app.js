@@ -11,25 +11,23 @@ const activityRoutes = require('./CRUD Functions/Activity_Type');
 const isicClass = require('./CRUD Functions/ISIC_Class'); 
 const carbon = require('./CRUD Functions/Activity'); 
 const user = require('./CRUD Functions/User'); 
-const upload = multer({
-    dest: 'uploads/', 
-    limits: {
-      fileSize: 10 * 1024 * 1024, 
-    },
-    fileFilter: (req, file, cb) => {
+// const upload = multer({
+//     dest: 'uploads/', 
+//     limits: {
+//       fileSize: 10 * 1024 * 1024, 
+//     },
+//     fileFilter: (req, file, cb) => {
   
-      const fileTypes = /jpeg|jpg|png|gif/;
-      const mimeType = fileTypes.test(file.mimetype);
-      if (mimeType) {
-        return cb(null, true);
-      } else {
-        cb(new Error('Only image files are allowed.'));
-      }
-    },
-  });
-  console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+//       const fileTypes = /jpeg|jpg|png|gif/;
+//       const mimeType = fileTypes.test(file.mimetype);
+//       if (mimeType) {
+//         return cb(null, true);
+//       } else {
+//         cb(new Error('Only image files are allowed.'));
+//       }
+//     },
+//   });
+
 
 const app = express();
 const port = process.env.PORT || 3000;
