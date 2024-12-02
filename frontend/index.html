@@ -10,7 +10,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
   <style>
-
+@media (max-height: 900px) {
+    .main {
+        transform: scale(0.85);
+        transform-origin: top center;
+        height: auto;
+    }
+    body {
+        font-size: 90%; 
+        line-height: 1.2; 
+    }
+}
 .answer-container {
   max-height: 0;
   overflow: hidden;
@@ -159,7 +169,7 @@ button.active {
 <body class="max-h-screen h-auto bg-[#DFEDDA] overflow-x-hidden" >
   <header id="header" class="fixed top-0 w-full z-[999999]"></header>
 
-<div class="main relative h-fit   flex justify-center xl:justify-start items-start flex-row pt-[4vw] ">
+<div class="main relative h-fit   flex justify-center xl:justify-start items-start flex-row pt-[4vw]">
 <div class="text w-full flex flex-col   xl:w-2/3 h-full py-10 px-14 z-50">
 <h1 id="MainHeading" class="text-xl sm:text-[3.8vw]  font-bold leading-snug py-[2.4vw] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
   into Sustainable <br> Action!

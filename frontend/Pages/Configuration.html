@@ -104,9 +104,16 @@ border-radius: 15px;
   transform: rotate(45deg);
 }
 
+
     </style>
 </head>
 <body>
+    <div id="loader" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+        <p class="mb-4 text-2xl text-green-400">Loading...</p>
+        <div class="w-16 h-16 border-8 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+    
+    
     <header id="header"></header>
 
     <!-- heading -->
@@ -211,7 +218,7 @@ border-radius: 15px;
     async function testGetGeographies() {
     try {
         const result = await Parse.Cloud.run("getGeographiesBySector", { sectorId: 'F4OJEVB3CB' });
-        console.log("Agya",result);
+        // console.log("Agya",result);
     } catch (error) {
         console.error(`Error: ${error.message}`);
     }
@@ -248,6 +255,10 @@ let ISICId = [];
 let ActivityId=[]
 let activities = [];
 let carbon=[];
+const userEmails = localStorage.getItem('userEmail');
+        if(!userEmails){
+            window.location.href="loginsignup.html"
+        }
 const ParentGrid = document.getElementById('main');
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -272,8 +283,8 @@ async function fetchGeographiesBySector(sectorId) {
 }
 
 async function renderGeography() {
-    const Geographys = await fetchData('http://localhost:3000/api/geography/geographies', { sectorId });
-    const GeographysNeeded = await fetchData(`http://localhost:3000/api/carbon/geographies/${ sectorId }`);
+    const Geographys = await fetchData('https://actsearthbackend.vercel.app/api/geography/geographies', { sectorId });
+    const GeographysNeeded = await fetchData(`https://actsearthbackend.vercel.app/api/carbon/geographies/${ sectorId }`);
     const filteredGeographies = Geographys.filter(geo => 
     GeographysNeeded.some(needed => 
         needed.GeographyId === geo.id && parseInt(needed.SectorId) === parseInt(sectorId)
@@ -287,7 +298,7 @@ async function renderGeography() {
 }
 
 async function renderSectors() {
-    const Sectors = await fetchData('http://localhost:3000/api/sector/sectors');  
+    const Sectors = await fetchData('https://actsearthbackend.vercel.app/api/sector/sectors');  
     renderObjects(ParentGrid, Sectors);
 }
 
@@ -296,8 +307,8 @@ async function renderISICClass() {
     ParentGrid.innerHTML = '';
     Parent2Grid.innerHTML = '';
 
-    const ISIC_Class = await fetchData('http://localhost:3000/api/isic/isic-classes');
-    const ISIC_ClassNeeded = await fetchData(`http://localhost:3000/api/carbon/emissions?sectorId=${sectorId}&geographyId=${geographyId}`);
+    const ISIC_Class = await fetchData('https://actsearthbackend.vercel.app/api/isic/isic-classes');
+    const ISIC_ClassNeeded = await fetchData(`https://actsearthbackend.vercel.app/api/carbon/emissions?sectorId=${sectorId}&geographyId=${geographyId}`);
     const filteredClasses = ISIC_Class.filter(item =>
     ISIC_ClassNeeded.some(activity => activity.ISICClassId === parseInt(item.id))
         );
@@ -319,7 +330,7 @@ async function renderISICClass() {
                 </div>`;
         });
     } else {
-        console.log("No objects found.");
+        // console.log("No objects found.");
     }
 }
 
@@ -340,28 +351,28 @@ function renderObjects(container, objects) {
                         <span class="checkmark"></span>
                     </label>
                 </div>`;
-            console.log(`Sector Name: ${sector.name}, Image: ${sector.image}`);
+            // console.log(`Sector Name: ${sector.name}, Image: ${sector.image}`);
         });
     } else {
-        console.log("No objects found.");
+        // console.log("No objects found.");
     }
 }
 async function fetchActivities() {
     let activitesFinal=[]
     const fetchPromises = ISICId.map(async (isicId) => {
-        const activitiesNeeded = await fetchData(`http://localhost:3000/api/carbon/emission?sectorId=${sectorId}&geographyId=${geographyId}&&ISICClassId=${isicId}`);
+        const activitiesNeeded = await fetchData(`https://actsearthbackend.vercel.app/api/carbon/emission?sectorId=${sectorId}&geographyId=${geographyId}&&ISICClassId=${isicId}`);
         activitesFinal.push(...activitiesNeeded);  
     });
 
     await Promise.all(fetchPromises);
 
 
-    console.log(activitesFinal);
+    // console.log(activitesFinal);
     return activitesFinal
 }
 
 async function renderActivityTypes() {
-    const activities = await fetchData('http://localhost:3000/api/activity/activity-types');
+    const activities = await fetchData('https://actsearthbackend.vercel.app/api/activity/activity-types');
     let activitesFinal=await fetchActivities()
     const filteredactivties = activities.filter(item =>
     activitesFinal.some(activity => activity.ActivityId === parseInt(item.id))
@@ -388,7 +399,7 @@ async function renderActivityTypes() {
                 </div>`;
         });
     } else {
-        console.log("No objects found.");
+        // console.log("No objects found.");
     }
 }
 
@@ -403,13 +414,14 @@ function Sector(sectorIds) {
     if(stepTextDiv.innerText===Questions[0]){
 
         sectorId = sectorIds;
-        console.log(sectorId);
+        // console.log(sectorId);
     }
     else if(stepTextDiv.innerText===Questions[1]){
         geographyId=sectorIds;
-        console.log(geographyId);
+        // console.log(geographyId);
     }
     if (checkbox) {
+        console.log(!checkbox.checked)
         checkbox.checked = !checkbox.checked;
     }
 }
@@ -430,7 +442,7 @@ function ActivityType(Ids) {
         }
     }
 
-    console.log(ActivityId);
+    // console.log(ActivityId);
 }
 
 function ISIC(Ids) {
@@ -445,7 +457,7 @@ function ISIC(Ids) {
         divElement.style.color = 'white';
     }
 
-    console.log(ISICId);
+    // console.log(ISICId);
 }
 
 async function fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId) {
@@ -455,7 +467,7 @@ async function fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId) {
         for (const isicId of ISICId) {
             for (const activityId of ActivityId) {
       
-                const response = await fetch(`http://localhost:3000/api/Carbon/emissionsfinal?sectorId=${sectorId}&geographyId=${geographyId}&activityId=${activityId}&isicClassId=${isicId}`);
+                const response = await fetch(`https://actsearthbackend.vercel.app/api/Carbon/emissionsfinal?sectorId=${sectorId}&geographyId=${geographyId}&activityId=${activityId}&isicClassId=${isicId}`);
                 
                 if (response.ok) {
                     const data = await response.json();
@@ -468,7 +480,7 @@ async function fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId) {
         }
 
         // Log the final list
-        console.log('All emissions:', responseList);
+        // console.log('All emissions:', responseList);
     } catch (error) {
         console.error('Error fetching emissions:', error.message);
     }
@@ -488,6 +500,26 @@ function updateStepText() {
 }
 
 function next() {
+    if (currentStep === 1 && !sectorId) {
+            alert("Please select a sector before proceeding.");
+            return;
+        } else if (currentStep === 2 && !geographyId) {
+            alert("Please select a geography before proceeding.");
+            return;
+        } else if (currentStep === 3 && ISICId.length === 0) {
+            alert("Please select at least one ISIC class before proceeding.");
+            return;
+        } else if (currentStep === 4 && ActivityId.length === 0) {
+            alert("Please select at least one activity type before proceeding.");
+            return;
+        }
+        showLoader();
+
+
+setTimeout(() => {
+
+    hideLoader();
+}, 1000); 
     if (currentStep < totalSteps) {
         currentStep++;
         updateStepSVG('next');
@@ -578,7 +610,7 @@ function updateStepSVG(direction) {
         }
         stepBars[stepbarsI[currentStepbar]].style.backgroundColor = '#6BA42E';
         currentStepbar++
-        console.log(currentStepbar)
+        // console.log(currentStepbar)
 
     } else if (direction === 'prev' && currentStep >1) {
         if (currentStepSVG) {
@@ -588,7 +620,7 @@ function updateStepSVG(direction) {
         }
 
         currentStepbar--
-        console.log(currentStepbar)
+        // console.log(currentStepbar)
         stepBars[stepbarsI[currentStepbar]].style.backgroundColor = '#C6C6C6';
         if (prevStepSVG) {
             prevStepSVG.innerHTML = svgs[1]; 
@@ -605,10 +637,10 @@ let currentQuestionIndex = 0;
 let answers = []; 
 
  async function displayQuestion() {
-    console.log("Sector",sectorId)
-    console.log("Geo",geographyId)
-    console.log("isic",ISICId)
-    console.log("activity",ActivityId)
+    // console.log("Sector",sectorId)
+    // console.log("Geo",geographyId)
+    // console.log("isic",ISICId)
+    // console.log("activity",ActivityId)
     carbon=await fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId);
     let textarea = document.querySelector('#InputArea textarea');
     let questionHeading = document.getElementById('question');
@@ -619,14 +651,14 @@ let answers = [];
         textarea.value = ''; 
     } else {
 
-        console.log("All answers collected:", answers);
+        // console.log("All answers collected:", answers);
         // Calculate the sum of carbon_emission * answers
         let totalEmission = carbon.reduce((sum, item, index) => {
                     let answer = parseFloat(answers[index]) || 0; 
                     return sum + item.carbon_emission * answer;
                 }, 0);
                 localStorage.setItem('totalEmission', totalEmission);
-                console.log("Total Emission:", totalEmission);
+                // console.log("Total Emission:", totalEmission);
          window.location.href = '/Pages/output.html';
      
     }
@@ -667,11 +699,21 @@ if (carbon && carbon.length > 0) {
     document.getElementById("activitybuttons").style.display = "flex";
     displayQuestion(); 
 } else {
-    console.log("No questions available.");
+    // console.log("No questions available.");
 }
     $(function(){
       $("#header").load("header.html"); 
     });
+
+
+    function showLoader() {
+    document.getElementById('loader').classList.remove('hidden');
+}
+
+function hideLoader() {
+    document.getElementById('loader').classList.add('hidden');
+}
+
     </script>
 </body>
 </html>

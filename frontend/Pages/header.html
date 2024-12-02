@@ -43,11 +43,35 @@
                 </ul>
             </nav>
         </div>
-        <div class="w-[12%] hidden xl:flex justify-end mr-7 text-white text-[1.2vw] font-semibold pt-[0.5vw]">
-            <a href="../Pages/loginsignup.html" class="green-gradient-bg px-[1.3vw] py-[0.5rem] rounded-[2.3vw] cursor-pointer">
+        <div  class="w-[12%] hidden xl:flex justify-end mr-7 text-white text-[1.2vw] font-semibold pt-[0.5vw]">
+            <a id="regBtn" href="../Pages/loginsignup.html" class="green-gradient-bg px-[1.3vw] py-[0.5rem] rounded-[2.3vw] cursor-pointer">
                 <div>Register Yourself</div>
             </a>
+            <div id="authContainer" class="relative ">
+                <!-- User Avatar -->
+                <div 
+                    id="userAvatar" 
+                    class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white font-bold cursor-pointer">
+                    PFP
+                </div>
+        
+                <!-- User Dropdown Menu -->
+                <div 
+                    id="userMenu" 
+                    class="hidden absolute top-14 right-0 bg-white shadow-lg rounded-lg w-48 text-black z-50">
+                    <div class="p-4 border-b">
+                        <p id="userEmail" class="text-sm font-semibold">johndoe@example.com</p>
+                    </div>
+                    <button 
+                        id="logoutButton" 
+                        class="w-full text-left px-4 py-2 text-red-600 hover:bg-red-100 rounded-b-lg">
+                        Logout
+                    </button>
+                </div>
+            </div>
         </div>
+
+        
     </header>
 
     <!-- Sidebar -->
@@ -96,6 +120,46 @@
 
         closeSidebar.addEventListener('click', closeSidebarHandler);
         overlay.addEventListener('click', closeSidebarHandler);
+
+
+
+        // Simulate user state
+const username = "JohnDoe"; 
+const userEmail = localStorage.getItem('userEmail');
+            const authContainer=document.getElementById('authContainer')
+            const regBtn=document.getElementById('regBtn')
+            if(userEmail){
+                regBtn.style.display="none"
+            }
+            else{
+
+                authContainer.classList.add('hidden')
+            }
+            const userAvatar = document.getElementById("userAvatar"); 
+            const userMenu = document.getElementById("userMenu"); 
+            const logoutButton = document.getElementById("logoutButton"); 
+            const email=document.getElementById("userEmail");
+            email.innerText=userEmail
+
+            userAvatar.addEventListener("click", (e) => {
+                e.stopPropagation(); 
+                userMenu.classList.toggle("hidden");
+                // console.log("agya")
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!userMenu.contains(e.target) && e.target !== userAvatar) {
+                    userMenu.classList.add("hidden");
+                }
+            });
+
+            logoutButton.addEventListener("click", () => {
+                localStorage.removeItem('userEmail');
+                location.reload()
+                // window.location.href = "../Pages/loginsignup.html"; 
+            });
+    
+
     </script>
 </body>
 </html>
