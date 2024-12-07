@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
   <style>
-@media (max-height: 900px) {
+/* @media (max-height: 900px) {
     .main {
         transform: scale(0.85);
         transform-origin: top center;
@@ -20,7 +20,7 @@
         font-size: 90%; 
         line-height: 1.2; 
     }
-}
+} */
 .answer-container {
   max-height: 0;
   overflow: hidden;
@@ -87,6 +87,10 @@
     }
   .green-bg {
     background: linear-gradient(90deg, #277D0D, #30AA07);
+    transition: ease-in-out 0.3s;
+}
+.green-bg:hover {
+  background: linear-gradient(90deg, #30AA07, #277D0D); 
 }
 .green-bg2 {
     background: linear-gradient(180deg, #92E03B, #629729);
@@ -166,37 +170,37 @@ button.active {
     }
 </style>
 </head>
-<body class="max-h-screen h-auto bg-[#DFEDDA] overflow-x-hidden" >
+<body  class="max-h-screen h-auto bg-[#DFEDDA] overflow-x-hidden" >
   <header id="header" class="fixed top-0 w-full z-[999999]"></header>
 
-<div class="main relative h-fit   flex justify-center xl:justify-start items-start flex-row pt-[4vw]">
+<div id="mainDiv" class="main relative h-fit max-h-[1000px]  flex justify-center xl:justify-start items-start flex-row pt-[60px]">
 <div class="text w-full flex flex-col   xl:w-2/3 h-full py-10 px-14 z-50">
-<h1 id="MainHeading" class="text-xl sm:text-[3.8vw]  font-bold leading-snug py-[2.4vw] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
+<h1 id="MainHeading" class="text-xl sm:text-[3.8vw]  font-bold leading-snug py-[3vh] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
   into Sustainable <br> Action!
 
 </span>
 </p></h1>
 
 <p class="text-[#7E7E80] text-xs sm:text-[1.4vw] md:w-[40%] paras xl:w-[65%] pr-[2.6vw] leading-tight font-semibold">We are committed to creating an environmentally friendly future by utilizing the latest advancements in AI and technology. Our product addresses a wide range of environmental issues, helping you make a positive impact. Join us in resolving challenges and building a sustainable world!</p>
-<p class="text-[#42B21C] text-sm sm:text-[1.4vw] w-full pr-[2.4vw] mt-[3.4vw] leading-tight font-bold paras"> 100% <span class="text-[#7E7E80]">Carbon Reduction Commitment</span></p>
-<a id="MeasureCarbonbtn" href='../Pages/carbontrack.html' class="green-bg px-6 text-center py-[1.1vw] rounded-[2.2vw] z-50 text-white  font-semibold cursor-pointer my-5 mr-3 md:w-[25vw] xl:w-[24vw] text-sm sm:text-[1.6vw]">
+<p class="text-[#42B21C] text-sm sm:text-[1.4vw] w-full pr-[2.4vw] mt-[3.6vh] leading-tight font-bold paras"> 100% <span class="text-[#7E7E80]">Carbon Reduction Commitment</span></p>
+<a id="MeasureCarbonbtn" href='../Pages/carbontrack.html' class="green-bg px-6 text-center py-[1.6vh] rounded-[2.2vw] z-50 text-white  font-semibold cursor-pointer my-5 mr-3 md:w-[25vw] xl:w-[24vw] text-sm sm:text-[1.6vw]">
     Measure Your Carbon Rate
 </a>
 
-<p class="gradient-text2  sm:text-[1.9vw] sm:w-2/3 mx-[1vw] mt-[3.8vw] leading-tight font-bold">Sign Up for Exclusive Discounts!</p>
-<p class=" sm:text-[1.1vw] paras text-xs md:w-[30%] lg:w-[35%] xl:w-1/2 mx-[1vw] mt-[1vw] text-[#7E7E80] font-semibold leading-tight pb-[6vw]">Be one of the first <span class="text-[#277D0D] font-black ">150 users</span> to enjoy discounts on our upcoming products!</p>
+<p class="gradient-text2  sm:text-[1.9vw] sm:w-2/3 mx-[1vw] mt-[2.4vh] leading-tight font-bold">Sign Up for Exclusive Discounts!</p>
+<p class=" sm:text-[1.1vw] paras text-xs md:w-[30%] lg:w-[35%] xl:w-1/2 mx-[1vw] mt-[1vh] text-[#7E7E80] font-semibold leading-tight pb-[6vw]">Be one of the first <span class="text-[#277D0D] font-black ">150 users</span> to enjoy discounts on our upcoming products!</p>
 
 </div>
   <!-- IMAGES -->
-<div class="absolute hidden md:block mt-10 w-full h-full">
-  <img  class="absolute top-0 right-[3.6vw] object-cover w-[43vw] animate-images" src="../Images/homepage1.png" alt="">
+<div class="absolute hidden md:block mt-10 w-full h-full ">
+  <img  class="absolute top-0 right-[3.6vw] w-fit h-[57vh] bg-black animate-images rounded-[2vw] lg:object-contain overflow-hidden"  src="../Images/homepage1.png" alt="">
   <div>
   </div>
-  <div class="absolute top-[29vw] w-[27%] h-[20%]   right-[33%] object-cover">
+  <div class="absolute top-[39vh] w-[27%] h-[20%]   right-[33%] object-cover">
     <div class="relative">
-      <img class="w-[30vw] animate-images"
+      <img class="w-[30vw] h-[36vh] animate-images object-contain"
       src="../Images/homepage2.png" alt="">
-       <div id="stats" class="absolute top-[14vw] -right-[30.5vw] shadow-lg  z-50  h-fit w-[28vw] bg-white rounded-2xl">
+       <div id="stats" class="absolute top-[21vh] -right-[30.5vw] shadow-lg  z-50  h-fit w-[28vw] object-contain bg-white rounded-2xl">
       <div  class=" rounded-lg p-[1.4vw] flex justify-between text-center text-black font-semibold">
         <!-- First Section -->
         <div class="w-[33%]">
@@ -241,7 +245,7 @@ button.active {
 
 
         </div>
-      <div  class="absolute top-[8%] h-[100%] w-[31vw] rounded-3xl -right-[66%] -z-10 object-cover border-[5px] border-[#86A1A1] animate-images"></div>
+      <div  class="absolute top-[3vh] h-[36.5vh] object-contain w-[31vw] rounded-3xl -right-[66%] -z-10  border-[5px] border-[#86A1A1] animate-images"></div>
     </div>
 </div>
 
@@ -250,9 +254,9 @@ button.active {
 
 </div>
 
-<section id="whoWeAre" class="bg-[#F5FFEB] relative h-fit">
+<section id="whoWeAre" class="bg-[#F5FFEB] relative lg:h-screen">
   <img  class="absolute top-[10.9vw] w-[7vw] hidden md:block" src="Images/zigzag90.png" alt="">
-  <div class=" p-8 md:p-[6.2vw]  min-h-fit">
+  <div id="Who" class="ScaledDivs p-8 md:p-[6.2vw]  min-h-fit">
     <div class="w-[90%] mx-auto grid md:grid-cols-2 gap-8">
       <div id="textSection" class="z-10">
         <div class="inline-block bg-[#98EA41] text-black text-xs sm:text-sm md:text-[1.1vw] font-semibold px-[1.5vw] py-[1.4vh] my-5 2xl:my-10 rounded-full mb-4">
@@ -335,13 +339,13 @@ button.active {
 </section>
 
 
-<section id="product" class="w-full h-fit lg:min-h-screen mx-auto text-center p-10 md:px-20 md:py-20 overflow-hidden">
+<section id="product" class="w-full ScaledDivs  h-fit mx-auto text-center p-10 md:px-20 md:py-20 ">
 
   <h1 id="productsHeading" class="text-[4.68vw] font-bold text-[#6BA42E] mb-5 ">Our Products</h1>
 
-  <div class="flex relative h-[fit] flex-col justify-center items-center w-full p-[2vw]">
+  <div class="flex  relative  h-fit flex-col justify-center items-center w-full p-[2vw]">
     <img class="absolute -top-[6.3vw]  -right-[6.2vw] w-[7.2vw]" src="Images/zigzagVector.png" alt="">
-    <div class="flex justify-center w-full items-center pt-[2vw]">
+    <div class="flex  justify-center w-full items-center pt-[2vw]">
 
     <!-- Card 1 -->
      <div class="relative">
@@ -417,10 +421,13 @@ button.active {
   </div>
 </section>
 
-<section id="process" class="relative bg-[#F5FFEB] text-[#6BA42E]  shadow-md text-center w-full min-h-full h-[73vw] ">
+<section id="process" class="relative  bg-[#F5FFEB] text-[#6BA42E]   text-center w-full min-h-full h-[1000px]">
   <img id="zigzag" class="pt-[6.8vw] w-[12.5vw]" src="Images/zigzagdesign.png" alt="">
+  <div class="ScaledDivs min-h-screen h-full absolute inset-0">
+
+
   <!-- Center Circle -->
-  <div class="absolute inset-0 flex justify-center items-center shadow-2xl">
+  <div class="absolute  inset-0 flex justify-center items-center ">
     <div id="centralCircle" class="bg-[#D2FFDE] relative rounded-full h-[22vw] w-[23.8vw] flex items-center justify-center shadow-lg">
       <p class=" font-bold text-[3.8vw] leading-normal shadowtext">Our <br> Process</p>
       <div class="text-[2.5vw] -top-[2vw]  absolute font-bold   border-[0.3vw] bg-white border-[#6BA42E] hover:bg-[#6BA42E] hover:text-white cursor-default rounded-full w-[4.4vw] h-[4.4vw] flex justify-center items-center duration-200">1</div>
@@ -479,11 +486,14 @@ button.active {
         </div>
     </div>
   </div>
+
+</div>
+
   <img id="zigzaginverted" class="pb-[7.8vw] right-0 absolute bottom-0 w-[12vw]" src="Images/zigzaginverted.png" alt="">
 </section>
 
-
-<section id="howItworks" class="relative bg-[#F5FFEB] text-[#6BA42E] border-b text-center w-full min-h-fit  h-[75vw]">
+<section id="howItworks" class="relative bg-[#F5FFEB] text-[#6BA42E] border-b text-center w-full  min-h-fit h-[110vh]">
+  <div class="ScaledDivs">
   <h1 class="text-[5vw] py-5 font-bold leading-[5vw] heading">Make your Carbon <br> Assessment Flow Better</h1>
   <!-- Center Circle -->
   <div class="absolute inset-x-0 top-[27vw] flex justify-center items-center ">
@@ -566,10 +576,12 @@ button.active {
 
     </div>
   </div>
+</div>
 </section>
 
 
-<section id="letUS" class="bg-green-50 p-[3.1vw] h-[120vw] flex md:h-[75vw] overflow-x-hidden">
+<section id="letUS" class="bg-green-50  p-[3.1vw] h-[120vw] flex md:h-fit min-h-screen overflow-x-hidden">
+  <div class="bg-green-50 ScaledDivs">
   <div class="flex flex-col md:flex-row items-start pt-[5.3vw] w-[95%] ml-auto">
     <!-- Left Section -->
     <div id="leftSection" class="md:w-1/2 my-[1.5vw]">
@@ -626,6 +638,7 @@ button.active {
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <section id="contactUs" class="  overflow-hidden block relative md:h-[85vw] lg:h-[75vw]">
@@ -1323,6 +1336,46 @@ document.getElementById("contactForm").addEventListener("submit", function (even
       }
     );
 });
+
+
+$(document).ready(function () {
+  var $el = $(".ScaledDivs");
+  function scaleToFit() {
+    $el.each(function() {
+    // Get the total dimensions, including overflow content
+    var elWidth = $el[0].scrollWidth;
+    var elHeight = $el[0].scrollHeight;
+
+    // Get viewport dimensions
+    var screenWidth = $(window).width();
+    var screenHeight = $(window).height();
+
+    // Calculate the scale to fit within the screen
+    var scale = Math.min(screenWidth / elWidth, screenHeight / elHeight, 1);
+
+    // Calculate the adjusted top position to vertically center the scaled element
+    var scaledHeight = elHeight * scale;
+    var topPosition = (screenHeight - scaledHeight) / 2;
+
+    // Apply the scale transform and top position
+    $el.css({
+      transform: `scale(${scale})`,
+       transformOrigin: "top", // Keep scaling consistent with the original position
+      // top: `${topPosition}px`,
+      // // position: "absolute", // Required for top adjustment
+      // 'padding-top': '130px',
+      // overflow:"hidden"
+    });
+  });
+  }
+
+  // Scale and position when the page loads
+  scaleToFit();
+
+  // Recalculate scale and position when the window is resized
+  $(window).resize(scaleToFit);
+});
+
 
     </script>
 </body>

@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script> 
-    <link rel="shortcut icon" href="../Images/icon.ico" type="image/x-icon">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+  <link rel="shortcut icon" href="../Images/icon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
     <style>
-          .green-bg {
-            background: linear-gradient(90deg, #98EA41, #45691D);
-        }
+        .green-bg {
+    background: linear-gradient(90deg, #98EA41, #45691D);
+}
+
+.green-bg:hover {
+    background: linear-gradient(90deg, #45691D, #98EA41);
+}
         
 .checkmark {
   position: absolute;
@@ -54,11 +57,11 @@ border-radius: 15px;
 }
     </style>
 </head>
-<body class="max-h-screen h-auto " >
-    <header id="header" class="fixed top-0 w-full z-[999999999999] backdrop-blur-xl "></header>
+<body  class="max-h-screen h-auto " >
+  <header id="header" class="fixed top-0 w-full z-[999999]"></header>
 
-    <div class="main relative xl:h-screen flex justify-center items-start xl:justify-start xl:items-center flex-row w-full">
-    <div class="text w-full justify-center flex flex-col xl:block xl:w-2/3 h-full py-10 px-[5.4vw] z-50 pt-[7vw]">
+    <div id="mainDiv" class="main  relative xl:h-fit flex justify-center items-start xl:justify-start xl:items-center flex-row w-full">
+    <div class="text w-full justify-center flex flex-col xl:block xl:w-2/3 h-full px-[5.4vw] pt-[7vw]">
         <h1 class="text-3xl  sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5vw]  font-bold py-7 text-[#7E7E80] paras"><p>Track Your <br><span class="text-[#6BA24E]">Carbon Emissions</span><br> 
           <span>
             Instantly
@@ -80,23 +83,23 @@ border-radius: 15px;
         <p class="text-[#7E7E80] paras w-full text-lg xl:text-[1.3vw]  xl:w-2/3 px-[1.1vw] leading-[1.8] font-medium">Discover the full picture of your company's environmental impact. With our Carbon Measurement tool, you can precisely monitor your emissions in real time, empowering you to take meaningful action toward sustainability and achieve your reduction targets.</p>
         <div class="relative w-full">
 
-          <button onclick="window.location.href='../Pages/Configuration.html'" class="green-bg px-6 py-2 xl:px-[1.3vw] xl:py-[0.5rem]  rounded-[1.2vw] z-50 text-white text-[1.8vw] font-semibold cursor-pointer my-7 mx-3 paras">
+          <button onclick="window.location.href='../Pages/Configuration.html'" class="green-bg px-6 py-2 xl:px-[1.3vw] xl:py-[0.5rem]  rounded-[1.2vw]  text-white text-[1.8vw] font-semibold cursor-pointer my-7 mx-3 paras">
             Start Tracking Now
           </button>
-          <div class="absolute hidden xl:block right-[5vw] text-[1.3vw] z-50 w-fit h-[3.4vw] p-3 bg-white rounded-[0.8vw] paras">
+          <!-- <div class="absolute hidden xl:block right-[5vw] text-[1.3vw] w-fit h-[3.4vw] p-3 bg-white rounded-[0.8vw] paras">
           <div class="flex font-bold ">
             <span class="checkmark top-[0.8vw]"></span>
             <span class="pl-5">Emissions Tracked Successfully</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <di class="absolute inset-0 hidden xl:block w-full h-full pt-[7vw]">
-      <div class="relative">
+    <div class="absolute inset-0 hidden xl:block w-full  max-h-screen pt-[7vw] ">
+      <div class="relative ">
 
-        <img width="36%" height="45%" class="absolute top-0 right-20 object-cover animate-images" src="../Images/ctrack1.png" alt="">
-        <div class="absolute top-52 right-24  z-50 w-[17vw] h-fit text-center p-[0.6vw] bg-white rounded-[1.172vw] animate-images">
+        <img width="36%" height="45%"  class="absolute top-0 right-20 object-cover animate-images overflow-hidden" src="../Images/ctrack1.png" alt="">
+        <div class="absolute top-52 right-24  w-[17vw] h-fit text-center p-[0.6vw] bg-white rounded-[1.172vw] animate-images">
           <div class="relative">
             <div class="font-bold text-[1.2vw] text-left pl-[1vw]">Current Emissions:</div>
             <div class="text-[2.3vw] font-medium text-[#409DDD]">2,500 kg CO2</div>
@@ -105,7 +108,7 @@ border-radius: 15px;
       </div>
       <div class="relative animate-images">
             <img width="40%" height="30%" 
-             class="absolute top-[26vw] right-36 object-cover" 
+             class="absolute top-[33vh] right-36 object-cover overflow-hidden" 
              src="../Images/ctrack2.png" alt=""/>
   
       </div>
@@ -116,6 +119,9 @@ border-radius: 15px;
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
     <script>
             gsap.from(".animate-images", {
       scrollTrigger: {
@@ -147,6 +153,44 @@ border-radius: 15px;
     $(function(){
       $("#header").load("header.html"); 
     });
+
+    $(document).ready(function () {
+  var $el = $("#mainDiv");
+
+  function scaleToFit() {
+    // Get the total dimensions, including overflow content
+    var elWidth = $el[0].scrollWidth;
+    var elHeight = $el[0].scrollHeight;
+
+    // Get viewport dimensions
+    var screenWidth = $(window).width();
+    var screenHeight = $(window).height();
+
+    // Calculate the scale to fit within the screen
+    var scale = Math.min(screenWidth / elWidth, screenHeight / elHeight, 1);
+
+    // Calculate the adjusted top position to vertically center the scaled element
+    var scaledHeight = elHeight * scale;
+    var topPosition = (screenHeight - scaledHeight) / 2;
+
+    // Apply the scale transform and top position
+    $el.css({
+      transform: `scale(${scale})`,
+      transformOrigin: "top", // Keep scaling consistent with the original position
+      // top: `${topPosition}px`,
+      position: "absolute", // Required for top adjustment
+      padding:"10px",
+      // overflow:'hidden'
+    });
+  }
+
+  // Scale and position when the page loads
+  scaleToFit();
+
+  // Recalculate scale and position when the window is resized
+  $(window).resize(scaleToFit);
+});
+
     </script>
 </body>
 </html>

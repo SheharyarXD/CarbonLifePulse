@@ -10,7 +10,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <title>Document</title>
+    <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
     <style>
 
     .main{
@@ -21,10 +21,10 @@
     }
     </style>
 </head>
-<body class="max-h-screen h-auto " >
+<body class="max-h-screen h-auto main" >
     <header id="header" class="bg-white "></header>
 
-    <div class="main min-h-screen flex justify-start items-center flex-col pt-[6vw]">
+    <div class=" min-h-screen flex justify-start items-center flex-col pt-[6vw] ScaledDivs">
         <h1 class=" justify-center flex items-center text-white font-bold py-[6.5vw] text-[2.8vw] " style="font-family: 'Poppins', sans-serif;">Output Result</h1>
         <div class="outputdiv bg-white mt-[1.6vw]  sm:h-[30vw]  sm:w-1/2 rounded-[2vw] flex justify-center items-center flex-col">
             <div class="text-[#6BA42E] text-xl sm:text-[3vw] font-extrabold pb-14" style="font-family: 'Poppins', sans-serif;">Total Carbon Emission</div>
@@ -48,6 +48,46 @@ if (totalEmission) {
     $(function(){
       $("#header").load("header.html"); 
     });
+    
+$(document).ready(function () {
+  var $el = $(".ScaledDivs");
+  function scaleToFit() {
+    $el.each(function() {
+    // Get the total dimensions, including overflow content
+    var elWidth = $el[0].scrollWidth;
+    var elHeight = $el[0].scrollHeight;
+
+    // Get viewport dimensions
+    var screenWidth = $(window).width();
+    var screenHeight = $(window).height();
+
+    // Calculate the scale to fit within the screen
+    var scale = Math.min(screenWidth / elWidth, screenHeight / elHeight, 1);
+
+    // Calculate the adjusted top position to vertically center the scaled element
+    var scaledHeight = elHeight * scale;
+    var topPosition = (screenHeight - scaledHeight) / 2;
+
+    // Apply the scale transform and top position
+    $el.css({
+      transform: `scale(${scale})`,
+       transformOrigin: "top", // Keep scaling consistent with the original position
+      // top: `${topPosition}px`,
+      // // position: "absolute", // Required for top adjustment
+      // 'padding-top': '130px',
+      // overflow:"hidden"
+    });
+  });
+  }
+
+  // Scale and position when the page loads
+  scaleToFit();
+
+  // Recalculate scale and position when the window is resized
+  $(window).resize(scaleToFit);
+});
+
+
     </script>
 </body>
 </html>

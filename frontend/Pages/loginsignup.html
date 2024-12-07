@@ -7,18 +7,19 @@
 
     <link rel="shortcut icon" href="../Images/icon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
 <style>
 
 </style>
   
 </head>
 <body>
-    <div class="main flex flex-row w-full justify-between font-sans">
-        <div class="form flex flex-col py-5 px-8 w-full lg:w-[50vw] ">
+    <div id="mainDiv" class="main flex flex-row w-full justify-between font-sans">
+        <div class="form flex flex-col py-5 px-8 w-full lg:w-[50vw] max-h-screen h-auto ">
             <a href="../index.html">
 
                 <div class="logo flex flex-row justify-start font-bold text-[#277D0D] items-center">
-                    <img class="h-full lg:h-[4vw] w-fit px-[0.1vw]" src="../Images/Logo.png" alt="">
+                    <img class="h-10 lg:h-[4vw] w-fit px-[0.1vw]" src="../Images/Logo.png" alt="">
                     <div class="text-xl lg:text-[2.5vw] pt-[1vw]"><span class="text-[#7E7E80]">ACTS.</span>Earth</div>
                 </div>
             </a>
@@ -92,7 +93,7 @@
         </div>
         <div id="img" class="img  w-[50vw] hidden lg:flex">
             
-            <img class="image w-full h-[70vw] max-h-screen object-cover min-h-screen" src="../Images/LoginBg.png" alt="">
+            <img class="image w-full h-full max-h-screen object-cover min-h-screen" src="../Images/LoginBg.png" alt="">
         </div>
     </div>
    <!-- Modal for Reset Password -->
@@ -173,6 +174,9 @@
     </div>
 </div>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script>
         function showLogin() {
             document.getElementById("loginForm").classList.remove("hidden");
@@ -344,6 +348,42 @@ async function resetPassword(event) {
         alert('An error occurred. Please try again.');
     }
 }
+$(document).ready(function () {
+  var $el = $("#mainDiv");
+
+  function scaleToFit() {
+    // Get the total dimensions, including overflow content
+    var elWidth = $el[0].scrollWidth;
+    var elHeight = $el[0].scrollHeight;
+
+    // Get viewport dimensions
+    var screenWidth = $(window).width();
+    var screenHeight = $(window).height();
+
+    // Calculate the scale to fit within the screen
+    var scale = Math.min(screenWidth / elWidth, screenHeight / elHeight, 1);
+
+    // Calculate the adjusted top position to vertically center the scaled element
+    var scaledHeight = elHeight * scale;
+    var topPosition = (screenHeight - scaledHeight) / 2;
+
+    // Apply the scale transform and top position
+    $el.css({
+      transform: `scale(${scale})`,
+      transformOrigin: "bottom ", // Keep scaling consistent with the original position
+      // top: `${topPosition}px`,
+      position: "absolute", // Required for top adjustment
+    //   padding:"10px",
+      // overflow:'hidden'
+    });
+  }
+
+  // Scale and position when the page loads
+  scaleToFit();
+
+  // Recalculate scale and position when the window is resized
+  $(window).resize(scaleToFit);
+});
 
     </script>
 </body>

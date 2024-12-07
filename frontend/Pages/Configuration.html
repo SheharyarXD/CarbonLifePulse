@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="../Images/icon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <title>Document</title>
+    <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
     <style>
     .no-scrollbarActivity::-webkit-scrollbar {
     display: none; 
@@ -168,11 +168,11 @@ border-radius: 15px;
     </div>
     
     <!-- options divs -->
-        <div id="main" class="main no-scrollbar place-items-center justify-items-center  items-center content-center grid gap-12 overflow-y-auto max-h-[500px] overflow-x-hidden py-5 px-6 fade-shadow   w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-[47%] sm:mx-auto mx-auto">
+        <div id="main" class=" items-start justify-items-start place-content-start main no-scrollbar   grid gap-12 overflow-y-auto max-h-[300px] overflow-x-hidden py-5 px-6 fade-shadow   w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-[47%] sm:mx-auto mx-auto">
           
         </div>
             <!-- activity Details -->
-     <div id="activities" class="w-full justify-center  items-center pt-0 mt-0">
+     <div id="activities" class="w-full justify-center max-h-[300px] items-center pt-0 mt-0">
         <div id="InputArea" class="w-full flex justify-center hidden">
             <textarea type="text" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-2/5 flex bg-slate-200 h-[10vw] border-slate-300 rounded-[0.5vw]"></textarea>
             <!-- controlbuttons -->
@@ -185,7 +185,7 @@ border-radius: 15px;
         <!-- isic div -->
         <div 
         id="mainIsic" 
-        class="main no-scrollbar grid gap-12 overflow-y-auto max-h-[450px] overflow-x-hidden py-4 px-5 fade-shadow w-full 
+        class="main no-scrollbar grid gap-12 overflow-y-auto max-h-[300px] overflow-x-hidden py-4 px-5 fade-shadow w-full 
         sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 sm:w-2/3 md:w-[80vw] sm:mx-auto mx-auto
         items-start justify-items-start place-content-start">    
         </div>
@@ -713,6 +713,45 @@ if (carbon && carbon.length > 0) {
 function hideLoader() {
     document.getElementById('loader').classList.add('hidden');
 }
+
+$(document).ready(function () {
+  var $el = $(".ScaledDivs");
+  function scaleToFit() {
+    $el.each(function() {
+    // Get the total dimensions, including overflow content
+    var elWidth = $el[0].scrollWidth;
+    var elHeight = $el[0].scrollHeight;
+
+    // Get viewport dimensions
+    var screenWidth = $(window).width();
+    var screenHeight = $(window).height();
+
+    // Calculate the scale to fit within the screen
+    var scale = Math.min(screenWidth / elWidth, screenHeight / elHeight, 1);
+
+    // Calculate the adjusted top position to vertically center the scaled element
+    var scaledHeight = elHeight * scale;
+    var topPosition = (screenHeight - scaledHeight) / 2;
+
+    // Apply the scale transform and top position
+    $el.css({
+      transform: `scale(${scale})`,
+       transformOrigin: "top", // Keep scaling consistent with the original position
+      // top: `${topPosition}px`,
+      // // position: "absolute", // Required for top adjustment
+      // 'padding-top': '130px',
+      // overflow:"hidden"
+    });
+  });
+  }
+
+  // Scale and position when the page loads
+  scaleToFit();
+
+  // Recalculate scale and position when the window is resized
+  $(window).resize(scaleToFit);
+});
+
 
     </script>
 </body>
