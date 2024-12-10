@@ -10,17 +10,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <title> ACTS.Earth | 🌱 Empowering a Greener Future</title>
   <style>
-/* @media (max-height: 900px) {
-    .main {
-        transform: scale(0.85);
-        transform-origin: top center;
-        height: auto;
+ @media (max-height: 900px) {
+    .mainBr {
+        display: none;
     }
-    body {
-        font-size: 90%; 
-        line-height: 1.2; 
-    }
-} */
+} 
 .answer-container {
   max-height: 0;
   overflow: hidden;
@@ -176,12 +170,12 @@ button.active {
 <div id="mainDiv" class="main relative h-fit max-h-[1000px]  flex justify-center xl:justify-start items-start flex-row pt-[60px]">
 <div class="text w-full flex flex-col   xl:w-2/3 h-full py-10 px-14 z-50">
 <h1 id="MainHeading" class="text-xl sm:text-[3.8vw]  font-bold leading-snug py-[3vh] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
-  into Sustainable <br> Action!
+  into Sustainable <br class="mainBr"> Action!
 
 </span>
 </p></h1>
 
-<p class="text-[#7E7E80] text-xs sm:text-[1.4vw] md:w-[40%] paras xl:w-[65%] pr-[2.6vw] leading-tight font-semibold">We are committed to creating an environmentally friendly future by utilizing the latest advancements in AI and technology. Our product addresses a wide range of environmental issues, helping you make a positive impact. Join us in resolving challenges and building a sustainable world!</p>
+<p class="text-[#7E7E80] text-xs sm:text-[1.15vw] lg:w-[65%] paras xl:w-[65%] pr-[2.6vw] leading-tight font-semibold">We are committed to creating an environmentally friendly future by utilizing the latest advancements in AI and technology. Our product addresses a wide range of environmental issues, helping you make a positive impact. Join us in resolving challenges and building a sustainable world!</p>
 <p class="text-[#42B21C] text-sm sm:text-[1.4vw] w-full pr-[2.4vw] mt-[3.6vh] leading-tight font-bold paras"> 100% <span class="text-[#7E7E80]">Carbon Reduction Commitment</span></p>
 <a id="MeasureCarbonbtn" href='../Pages/carbontrack.html' class="green-bg px-6 text-center py-[1.6vh] rounded-[2.2vw] z-50 text-white  font-semibold cursor-pointer my-5 mr-3 md:w-[25vw] xl:w-[24vw] text-sm sm:text-[1.6vw]">
     Measure Your Carbon Rate
@@ -192,7 +186,7 @@ button.active {
 
 </div>
   <!-- IMAGES -->
-<div class="absolute hidden md:block mt-10 w-full h-full ">
+<div class="absolute hidden xl:block mt-10 w-full h-full ">
   <img  class="absolute top-0 right-[3.6vw] w-fit h-[57vh] bg-black animate-images rounded-[2vw] lg:object-contain overflow-hidden"  src="../Images/homepage1.png" alt="">
   <div>
   </div>
@@ -254,9 +248,9 @@ button.active {
 
 </div>
 
-<section id="whoWeAre" class="bg-[#F5FFEB] relative lg:h-screen">
+<section id="whoWeAre" class="bg-[#F5FFEB] relative ">
   <img  class="absolute top-[10.9vw] w-[7vw] hidden md:block" src="Images/zigzag90.png" alt="">
-  <div id="Who" class="ScaledDivs p-8 md:p-[6.2vw]  min-h-fit">
+  <div id="Who" class=" p-8 md:p-[6.2vw]  min-h-fit">
     <div class="w-[90%] mx-auto grid md:grid-cols-2 gap-8">
       <div id="textSection" class="z-10">
         <div class="inline-block bg-[#98EA41] text-black text-xs sm:text-sm md:text-[1.1vw] font-semibold px-[1.5vw] py-[1.4vh] my-5 2xl:my-10 rounded-full mb-4">
@@ -265,7 +259,7 @@ button.active {
 
         <h2 class="text-4xl md:text-[4.5vw] font-bold text-[#6BA42E] mb-6 mt-4 h-fit">Who We Are</h2>
 
-        <p class="text-[#808080] my-[1.5rem] w-[85%] text-xs leading-6  md:text-[1.25vw] 2xl:my-16">
+        <p class="text-[#808080] my-[1.5rem] w-[85%] text-xs leading-6  md:text-[1.1vw] 2xl:my-16">
           At ACTS.Earth, we help businesses take meaningful steps toward sustainability by providing the tools needed to effectively achieve their environmental goals.
         </p>
 
@@ -304,13 +298,13 @@ button.active {
                 </div>
               </div>
                <!-- Card 5 -->
-     <div class="mt-6 bg-white  w-full featureCard shadow-lg rounded-[1.4vw] p-4 flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition duration-200 ease-in-out z-[999999999999]">
+     <!-- <div class="mt-6 bg-white  w-full featureCard shadow-lg rounded-[1.4vw] p-4 flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition duration-200 ease-in-out z-[999999999999]">
       <img class="w-[10%]  z-[999999999999] mr-1 sm:mr-0" src="Images/i5.png" alt="">
       <div>
         <p class="text-xs md:text-[1.4vw] font-bold text-[#6BA42E]  z-[999999999999]">Affordable and Scalable</p>
         <p class="text-[#808080] text-[8px] md:text-[1.1vw] pt-1  z-[999999999999]">Cost-effective solutions for businesses of all sizes</p>
       </div>
-    </div>
+    </div> -->
 
             </div>
         </div>
@@ -339,13 +333,13 @@ button.active {
 </section>
 
 
-<section id="product" class="w-full ScaledDivs  h-fit mx-auto text-center p-10 md:px-20 md:py-20 ">
+<section id="product" class="w-full ScaledDivs max-h-[105vh]  mx-auto text-center p-10 md:px-20 md:py-10 ">
 
   <h1 id="productsHeading" class="text-[4.68vw] font-bold text-[#6BA42E] mb-5 ">Our Products</h1>
 
   <div class="flex  relative  h-fit flex-col justify-center items-center w-full p-[2vw]">
     <img class="absolute -top-[6.3vw]  -right-[6.2vw] w-[7.2vw]" src="Images/zigzagVector.png" alt="">
-    <div class="flex  justify-center w-full items-center pt-[2vw]">
+    <div class="flex  justify-center w-full items-center pt-[2vh]">
 
     <!-- Card 1 -->
      <div class="relative">
@@ -353,12 +347,12 @@ button.active {
        <img class="absolute -top-[4.2vw] -left-[3vw] w-[5vw]" src="Images/highVector.png" alt="">
        <div class="relative productCard cursor-default" onclick="window.location.href='/Pages/carbontrack.html'">
       <div class="relative  bg-white mx-[1.4vw] text-[#6BA42E] w-[23vw] h-[26vw] p-[1.2vw] md:p-[3.12vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border-2 border-[#6BA42E] transition-transform transform hover:scale-105">
-      <div class="text-[4.5vw]  my-[1.6vw]">
-        <img class="w-[6.4vw]" src="Images/P1.png" alt="">
+      <div class="text-[4.5vw]  my-[1.6vh]">
+        <img class="w-[6.4vw] " src="Images/P1.png" alt="">
       </div>
-      <h2 class="text-[1.6vw] font-bold text-black mb-[0.8vw]">Carbon Measurement</h2>
-      <p class="text-[#808080] mb-[1.4vw] text-[1.1vw]">Accurately track and measure your business's carbon emissions to reduce environmental impact.</p>
-      <a href="/Pages/carbontrack.html" class=" font-bold text-[1.1vw] mb-[1vw]">Start Measuring Emissions &gt;</a>
+      <h2 class="text-[1.6vw] font-bold text-black mb-[0.8vh]">Carbon Measurement</h2>
+      <p class="text-[#808080] mb-[1.4vh] text-[1.1vw]">Accurately track and measure your business's carbon emissions to reduce environmental impact.</p>
+      <a href="/Pages/carbontrack.html" class=" font-bold text-[1.1vw] mb-[1vh]">Start Measuring Emissions &gt;</a>
     </div>
   </div>
   </div>
@@ -377,7 +371,7 @@ button.active {
       </div>
     </div>
   </div>
-      <div class="flex justify-around items-center mt-[3vw]">
+      <div class="flex justify-around items-center mt-[3vh]">
 
 
     <!-- Card 3 -->
@@ -412,6 +406,10 @@ button.active {
 
     </div>
 </section>
+
+
+
+
 <section id="AdvertisetoReg" class=" min-h-fit py-20 green-bg2 text-white font-semibold flex flex-col justify-center items-center">
   <div  class="text-[3.8vw] my-4 firstRow">Be one of the first 150 users to enjoy 50% off! </div>
   <div class="text-[2.3vw] secondRow"> Sign up now to unlock exclusive access to our upcoming products!</div>
@@ -421,11 +419,10 @@ button.active {
   </div>
 </section>
 
-<section id="process" class="relative  bg-[#F5FFEB] text-[#6BA42E]   text-center w-full min-h-full h-[1000px]">
+<section id="process" class="relative  bg-[#F5FFEB] text-[#6BA42E]   text-center w-full h-fit">
   <img id="zigzag" class="pt-[6.8vw] w-[12.5vw]" src="Images/zigzagdesign.png" alt="">
-  <div class="ScaledDivs min-h-screen h-full absolute inset-0">
-
-
+  <div class="ScaledDivs h-[50vh] md:h-[90vh]   inset-0">
+<div class="relative top-[20vh] md:top-[40vh]">
   <!-- Center Circle -->
   <div class="absolute  inset-0 flex justify-center items-center ">
     <div id="centralCircle" class="bg-[#D2FFDE] relative rounded-full h-[22vw] w-[23.8vw] flex items-center justify-center shadow-lg">
@@ -486,13 +483,16 @@ button.active {
         </div>
     </div>
   </div>
-
+</div>
 </div>
 
   <img id="zigzaginverted" class="pb-[7.8vw] right-0 absolute bottom-0 w-[12vw]" src="Images/zigzaginverted.png" alt="">
 </section>
 
-<section id="howItworks" class="relative bg-[#F5FFEB] text-[#6BA42E] border-b text-center w-full  min-h-fit h-[110vh]">
+
+
+
+<section id="howItworks" class="relative bg-[#F5FFEB] text-[#6BA42E] border-b text-center w-full  min-h-fit h-[50vh] sm:h-[70vh] md:h-[110vh]">
   <div class="ScaledDivs">
   <h1 class="text-[5vw] py-5 font-bold leading-[5vw] heading">Make your Carbon <br> Assessment Flow Better</h1>
   <!-- Center Circle -->
@@ -581,59 +581,59 @@ button.active {
 
 
 <section id="letUS" class="bg-green-50  p-[3.1vw] h-[120vw] flex md:h-fit min-h-screen overflow-x-hidden">
-  <div class="bg-green-50 ScaledDivs">
+  <div class="bg-green-50">
   <div class="flex flex-col md:flex-row items-start pt-[5.3vw] w-[95%] ml-auto">
     <!-- Left Section -->
     <div id="leftSection" class="md:w-1/2 my-[1.5vw]">
       <div class="flex flex-row ">
         <img class="pr-[2.4vw] w-fit h-[20vw]"  src="Images/zigzag.png" alt="">
-        <h2 class="text-[#6BA42E] font-bold text-3xl md:text-[6vw] leading-[5vw] ">
+        <h2 class="text-[#6BA42E] font-bold text-3xl md:text-[5vw] leading-[5vw] ">
           <div class="flex py-2">Let us</div>
           <div class="flex py-2">listen to your</div>
           <div class="flex py-2">problems</div>
         </h2>
       </div>
-      <p class="text-[#7E7E80] w-[80%]  mx-auto py-[2vw] sm:leading-[2.4vw] text-xs leading-4 font-semibold sm:text-[1.3vw] ">
+      <p class="text-[#7E7E80] w-[80%]  mx-auto py-[2vw] sm:leading-[2.4vw] text-xs leading-4 font-semibold sm:text-[1.1vw] ">
         Share your concerns, and let us help you find solutions tailored to your needs. Together, we can make a positive impact on the environment!
       </p>
     </div>
 
     <!-- Right Section -->
-    <div class=" w-full md:w-1/2 px-[3vw] pt-[7vw] md:mt-0 text-[1.9vw] text-[#7E7E80] font-semibold">
-      <div class="flex featureCard relative items-center justify-between border-b border-t  border-gray-300 h-[8vw] min-h-fit cursor-pointer question-container" onclick="toggleAnswer(this)">
+    <div class=" w-full md:w-1/2 px-[3vw] pt-[7vw] md:mt-0 md:text-[1.3vw] text-[#7E7E80] font-semibold">
+      <div class="flex featureCard relative items-center justify-between border-b border-t  border-gray-300 h-[10vh] min-h-fit cursor-pointer question-container" onclick="toggleAnswer(this)">
         <p class="w-[90%]">What kind of data is required for Carbon Measurement?</p>
-        <span class="w-[5vw] absolute -right-[1.8vw]"><img class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+      <div class="answer-container p-4 hidden italic font-normal text-[1.1vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
 
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[10vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="w-[90%]">How does ACTS.Earth work?</p>
-        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+      <div class="answer-container p-4 hidden italic font-normal text-[1.1vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[10vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="w-[90%]">How often can I track emissions?</p>
-        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+      <div class="answer-container p-4 hidden italic font-normal text-[1.1vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[10vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="w-[90%]">What benefits do early users get apart from the 50% discount?</p>
-        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+      <div class="answer-container p-4 hidden italic font-normal text-[1.1vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[8vw] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[10vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="">Is CarbonLife free to use?</p>
-        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[3vw]" src="Images/Arrow.png" alt=""></span>
+        <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[1.7vw]">
+      <div class="answer-container p-4 hidden italic font-normal text-[1.1vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
     </div>
@@ -641,13 +641,13 @@ button.active {
 </div>
 </section>
 
-<section id="contactUs" class="  overflow-hidden block relative md:h-[85vw] lg:h-[75vw]">
+<section id="contactUs" class=" overflow-hidden block relative md:h-[85vw] lg:h-fit">
   <div class="bg-white h-full absolute w-[70%] left-0"></div>
   <div class="green-bg3 h-full absolute w-[30%] right-0"></div>
-  <section class="h-auto pt-[15vw] flex items-center justify-center">
-    <div class="bg-white z-50  overflow-hidden flex flex-col md:flex-row w-full max-w-[85%] mx-[1.6vw]  md:min-h-[620px] ">
+  <section class="h-auto pt-[15vh]  flex items-center justify-center">
+    <div class="bg-white z-50 overflow-hidden flex flex-col md:flex-row w-full max-w-[85%] mx-[1.6vw]  md:min-h-[62vh] ">
       <!-- Form Section -->
-      <div class="w-full lg:w-1/2 px-[3.1vw] flex flex-col justify-center ">
+      <div class="w-full  lg:w-1/2 px-[3.1vw] flex flex-col justify-center ">
         <h2 class="text-[5.5vw] font-bold text-[#7E7E80] mb-[0.8vw] flex justify-center items-center pt-[1vw]"><img class="px-[0.4vw] pt-[0.4vw] h-[4vw]" src="Images/DIAMOND.png" alt=""> Get in <span class="text-[#6BA42E]">Touch</span></h2>
         <img class="py-[0.9vw] w-[75%]" src="Images/lines.png" alt="">
         <p class="text-[#7E7E80] mb-[2vw] leading-[1.8vw] pt-[1.4vw] text-[1.25vw]">Have questions or need support? Reach out to us—we're here to help you on your journey to a more sustainable lifestyle!</p>
@@ -691,7 +691,7 @@ button.active {
       </div>
 
       <!-- Map Section -->
-      <div class="w-full lg:w-1/2 hidden lg:block relative min-h-screen md:min-h-0">
+      <div class="w-full lg:w-1/2 hidden lg:block relative min-h-full md:min-h-0">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13596.230355132411!2d74.352342!3d31.5774686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b66ba6e3705%3A0x89b3506015895c16!2sTICK%20-%20Techonology%20Incubation%20Center%20UET!5e0!3m2!1sen!2s!4v1732097215078!5m2!1sen!2s"
           class="absolute inset-0 w-full h-full"
@@ -1360,7 +1360,7 @@ $(document).ready(function () {
     // Apply the scale transform and top position
     $el.css({
       transform: `scale(${scale})`,
-       transformOrigin: "top", // Keep scaling consistent with the original position
+       transformOrigin: "top", // Keep scaling consistent with the original position     
       // top: `${topPosition}px`,
       // // position: "absolute", // Required for top adjustment
       // 'padding-top': '130px',
