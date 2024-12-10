@@ -107,8 +107,8 @@ border-radius: 15px;
 
     </style>
 </head>
-<body>
-    <div id="loader" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+<body class="bg-[#DFEDDA]">
+    <div id="loader" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-50 z-[999999999999]">
         <p class="mb-4 text-2xl text-green-400">Loading...</p>
         <div class="w-16 h-16 border-8 border-green-500 border-t-transparent rounded-full animate-spin"></div>
     </div>
@@ -159,7 +159,7 @@ border-radius: 15px;
         </div>
         <h1 id="activityHeading" class="flex hidden justify-center items-center text-4xl pt-[5vw] font-bold">Activity Details</h1>
     <!-- question heading -->
-    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg sm:text-4xl pt-12 pb-6 font-bold">Select your Company Sector</h1>
+    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg sm:text-4xl py-2 font-bold">Select your Company Sector</h1>
     <!-- Activity div -->
     <div id="ActivitytypeDiv" class="main no-scrollbar grid  overflow-y-auto max-h-[300px] overflow-x-hidden py-5 px-5 fade-shadow w-full 
     grid-cols-1  
@@ -168,7 +168,7 @@ border-radius: 15px;
     </div>
     
     <!-- options divs -->
-        <div id="main" class=" items-start justify-items-start place-content-start main no-scrollbar   grid gap-12 overflow-y-auto max-h-[300px] overflow-x-hidden py-5 px-6 fade-shadow   w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-[47%] sm:mx-auto mx-auto">
+        <div id="main" class=" items-start justify-items-start place-content-start main no-scrollbar   grid gap-12 overflow-y-auto max-h-[30vh] overflow-x-hidden py-5 px-6 fade-shadow   w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-[47%] sm:mx-auto mx-auto">
           
         </div>
             <!-- activity Details -->
@@ -198,7 +198,7 @@ border-radius: 15px;
            
       
         <!-- controlbuttons -->
-        <div id="controlbuttons" class="flex justify-between items-center px-2 pb-10 pt-5 sm:px-10">
+        <div id="controlbuttons" class="flex justify-between items-center px-2 py-5 sm:px-10">
             <button onclick="prev()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Back</button>
             <button onclick="next()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Next</button>
         </div>
@@ -213,8 +213,11 @@ border-radius: 15px;
     <!-- <script src="../src/js/Activity.js" defer></script> -->
     <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
     <script> 
-    
+     showLoader();
+     setTimeout(() => {
 
+hideLoader();
+}, 1000); 
     async function testGetGeographies() {
     try {
         const result = await Parse.Cloud.run("getGeographiesBySector", { sectorId: 'F4OJEVB3CB' });
@@ -341,7 +344,7 @@ function renderObjects(container, objects) {
         container.innerHTML = '';
         objects.forEach(sector => {
             container.innerHTML += `
-                <div id="${sector.id}" onclick="Sector(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-48 w-44 justify-between items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
+                <div id="${sector.id}" onclick="Sector(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-48 object-contain w-44 justify-between items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
                    <img class="w-full h-full" src="https://res.cloudinary.com/ded7cxzxh/image/upload/v1732873340/${sector.image}" alt="undefined"/>
                     <p class="h-[30%] border-t-2 border-[#6BA42E] w-full text-center flex text-lg items-center justify-center font-medium">
                         ${sector.name}

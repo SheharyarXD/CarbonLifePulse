@@ -14,26 +14,26 @@
   
 </head>
 <body>
-    <div id="mainDiv" class="main flex flex-row w-full justify-between font-sans">
-        <div class="form flex flex-col py-5 px-8 w-full lg:w-[50vw] max-h-screen h-auto ">
+    <div id="" class="main flex flex-row w-full justify-between font-sans">
+        <div class="form flex flex-col py-5 px-8 w-full lg:w-[50vw] max-h-screen h-auto overflow-hidden">
             <a href="../index.html">
 
                 <div class="logo flex flex-row justify-start font-bold text-[#277D0D] items-center">
-                    <img class="h-10 lg:h-[4vw] w-fit px-[0.1vw]" src="../Images/Logo.png" alt="">
-                    <div class="text-xl lg:text-[2.5vw] pt-[1vw]"><span class="text-[#7E7E80]">ACTS.</span>Earth</div>
+                    <img class="h-10 lg:h-[5vw] w-fit px-[0.1vw]" src="../Images/Logo.png" alt="">
+                    <div class="text-xl lg:text-[2.8vw] pt-[1vh]"><span class="text-[#7E7E80]">ACTS.</span>Earth</div>
                 </div>
             </a>
             <div class="container w-full flex flex-col  text-sm text-gray-400 sm:px-14">
 
-                    <form id="loginForm"  class="flex flex-col pb-[1.2vw]" action="" onsubmit="handleLogin(event)">
-                        <h1 class="h-[10%] text-3xl md:text-[4vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[7vw]" >Login</h1>
+                    <form id="loginForm"  class="flex flex-col pb-[0.5vh]" action="" onsubmit="handleLogin(event)">
+                        <h1 class="h-[10%] text-3xl md:text-[3vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[10vh]" >Login</h1>
                         
-                        <div class="form-group mb-5 lg:mb-[1.8vw] relative">
+                        <div class="form-group mb-5 lg:mb-[1.8vh] relative">
                             <input type="email" id="email" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
                             <label for="email"  class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-[0vw] peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
                         </div>
                         
-                        <div class="form-group mb-5 lg:mb-[1.8vw] relative">
+                        <div class="form-group mb-5 lg:mb-[1.8vh] relative">
                             <input type="password" id="passwordField" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
                             <label for="email"  class="form-label bg-white px-[0.25vw] absolute text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
                             <button type="button" class="absolute inset-y-0 right-3 flex items-center text-gray-500 z-50" onclick="togglePasswordVisibility()">
@@ -54,19 +54,19 @@
                         <div class="flex justify-center h-fit pt-5 lg:pt-0 lg:h-[4.8vw] items-center cursor-pointer font-bold text-[#444444] text-xs lg:text-[1.1vw]">Don't have an account? <span class="px-[0.25vw] text-[#6BA42E]" onclick="showSignup()" >Sign Up</span></div>
                     </form>
                     <form id="signupForm" class="flex flex-col pb-[1.2vw] hidden" action="" onsubmit="handleSignup(event)">
-                        <h1 class="text-3xl md:text-[4vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[5.2vw]">Sign Up</h1>
+                        <h1 class="text-3xl md:text-[3vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[5.2vh]">Sign Up</h1>
                         
-                        <div class="form-group mb-5 lg:mb-[2vw] relative">
+                        <div class="form-group mb-5 lg:mb-[2vh] relative">
                             <input type="email" id="signupEmail" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
                             <label for="email"  class="form-label bg-white px-[0.25vw] absolute   text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
                         </div>
                         
-                        <div class="form-group mb-5 lg:mb-[2vw] relative">
+                        <div class="form-group mb-5 lg:mb-[2vh] relative">
                             <input type="password" id="signupPassword" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
                             <label for="signupPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
                         </div>
                         
-                        <div class="form-group  mb-5 lg:mb-[2vw] relative">
+                        <div class="form-group  mb-5 lg:mb-[2vh] relative">
                             <input type="password" id="confirmPassword" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
                             <label for="confirmPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.15vw]">Confirm Password</label>
                         </div>
@@ -348,42 +348,6 @@ async function resetPassword(event) {
         alert('An error occurred. Please try again.');
     }
 }
-$(document).ready(function () {
-  var $el = $("#mainDiv");
-
-  function scaleToFit() {
-    // Get the total dimensions, including overflow content
-    var elWidth = $el[0].scrollWidth;
-    var elHeight = $el[0].scrollHeight;
-
-    // Get viewport dimensions
-    var screenWidth = $(window).width();
-    var screenHeight = $(window).height();
-
-    // Calculate the scale to fit within the screen
-    var scale = Math.min(screenWidth / elWidth, screenHeight / elHeight, 1);
-
-    // Calculate the adjusted top position to vertically center the scaled element
-    var scaledHeight = elHeight * scale;
-    var topPosition = (screenHeight - scaledHeight) / 2;
-
-    // Apply the scale transform and top position
-    $el.css({
-      transform: `scale(${scale})`,
-      transformOrigin: "bottom ", // Keep scaling consistent with the original position
-      // top: `${topPosition}px`,
-      position: "absolute", // Required for top adjustment
-    //   padding:"10px",
-      // overflow:'hidden'
-    });
-  }
-
-  // Scale and position when the page loads
-  scaleToFit();
-
-  // Recalculate scale and position when the window is resized
-  $(window).resize(scaleToFit);
-});
 
     </script>
 </body>
