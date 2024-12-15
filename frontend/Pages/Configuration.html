@@ -117,7 +117,7 @@ border-radius: 15px;
 
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-hidden max-h-screen">
     <div id="loader" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-50 z-[999999999999]">
         <p class="mb-4 text-2xl text-green-400">Loading...</p>
         <div class="w-16 h-16 border-8 border-green-500 border-t-transparent rounded-full animate-spin"></div>
@@ -128,7 +128,7 @@ border-radius: 15px;
 
     <!-- heading -->
 
-    <h1 class="flex justify-center items-center text-4xl pt-[8vw] font-bold">Configuration</h1>
+    <h1 class="flex justify-center items-center text-4xl pt-[10vh] lg:pt-[8vw] font-bold">Configuration</h1>
     <!-- step bar -->
     <div class="py-14">
         <dh-component>
@@ -167,27 +167,28 @@ border-radius: 15px;
         </div>
     </dh-component>
         </div>
-        <h1 id="activityHeading" class="flex hidden justify-center items-center text-4xl pt-[5vw] font-bold">Activity Details</h1>
+        <h1 id="activityHeading" class="flex hidden justify-center items-center text-4xl pt-[5vh] font-bold">Activity Details</h1>
     <!-- question heading -->
-    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg sm:text-4xl py-2 font-bold">Select your Company Sector</h1>
+    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg md:text-4xl py-2 font-bold mb-5">Select your Company Sector</h1>
     <!-- Activity div -->
-    <div id="ActivitytypeDiv" class="main no-scrollbar grid  overflow-y-auto max-h-[300px] overflow-x-hidden py-5 px-5 fade-shadow w-full 
+    <div id="ActivitytypeDiv" class="main no-scrollbar grid  overflow-y-auto max-h-[30vh] overflow-x-hidden fade-shadow w-full 
     grid-cols-1  
     items-center justify-items-center place-content-start">
        
     </div>
     
     <!-- options divs -->
-        <div id="main" class=" items-start justify-items-center place-content-start main no-scrollbar   grid gap-12 overflow-y-auto max-h-[30vh] overflow-x-hidden py-5 px-6 fade-shadow   w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-[47%] sm:mx-auto mx-auto">
+        <div id="main" class=" items-start justify-items-center place-content-start main no-scrollbar   grid gap-4 overflow-y-visible max-h-[40vh] overflow-x-hidden fade-shadow   w-fit sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:w-fit sm:mx-auto mx-auto leading-tight px-2">
           
         </div>
+        
             <!-- activity Details -->
-     <div id="activities" class="w-full overflow-x-hidden justify-center max-h-[300px] items-center pt-0 mt-0">
-        <div id="InputArea" class="w-full flex justify-center hidden">
-            <textarea type="text" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-2/5 flex bg-slate-200 h-[10vw] border-slate-300 rounded-[0.5vw]"></textarea>
+     <div id="activities" class="w-full overflow-x-hidden justify-center max-h-[35vh] items-center pt-0 mt-0">
+        <div id="InputArea" class="w-full flex justify-center hidden z-[9999]">
+            <textarea type="text" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-[80vw] sm:w-2/5 flex bg-slate-200 h-[20vh] border-slate-300 rounded-[0.5vw]"></textarea>
             <!-- controlbuttons -->
         </div>
-        <div id="activitybuttons" class="flex justify-between items-center px-2 pb-10 pt-5 sm:px-10" style="display: none;">
+        <div id="activitybuttons" class="flex justify-between items-center px-2 pb-10 pt-5 sm:px-10 absolute w-full bottom-0 z-10" style="display: none;">
           <button onclick="prevactivity()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Back</button>
           <button onclick="nextactivity()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Next</button>
       </div>
@@ -195,9 +196,9 @@ border-radius: 15px;
         <!-- isic div -->
         <div 
         id="mainIsic" 
-        class="main no-scrollbar grid gap-3 overflow-y-auto max-h-[35vh] overflow-x-hidden py-4 px-5 fade-shadow w-full 
-        sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 sm:w-2/3 md:max-w-[80vw] sm:mx-auto mx-auto
-        items-start justify-items-center place-content-center">    
+        class="main no-scrollbar grid gap-3 overflow-y-auto max-h-[35vh] overflow-x-hidden fade-shadow 
+        sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-2/3 md:max-w-[80vw] sm:mx-auto mx-auto
+        items-start justify-items-center  z-50 place-content-start">    
         </div>
 
 
@@ -208,7 +209,7 @@ border-radius: 15px;
            
       
         <!-- controlbuttons -->
-        <div id="controlbuttons" class="flex justify-between items-center px-2 py-5 sm:px-10">
+        <div id="controlbuttons" class="flex justify-between absolute bottom-0 w-full items-center px-2 py-5 sm:px-10 z-10">
             <button onclick="prev()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Back</button>
             <button onclick="next()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Next</button>
         </div>
@@ -227,7 +228,7 @@ border-radius: 15px;
      setTimeout(() => {
 
 hideLoader();
-}, 1000); 
+}, 2000); 
     async function testGetGeographies() {
     try {
         const result = await Parse.Cloud.run("getGeographiesBySector", { sectorId: 'F4OJEVB3CB' });
@@ -333,8 +334,8 @@ async function renderISICClass() {
             const name = isic.name;
             const displayName = name.split(':').slice(1).join(':').trim();
             Parent1Grid.innerHTML += `
-                <div id="${isic.id}" onclick="ISIC(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-[14vh] w-[20vw] justify-center items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
-                    <p class=" border-[#6BA42E] w-full text-center flex text-2xl sm:text-[1.3vw] items-center justify-center font-semibold">
+                <div id="${isic.id}" onclick="ISIC(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-[14vh] w-[60vw]  lg:w-[20vw] justify-center items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
+                    <p class=" border-[#6BA42E] w-full text-center flex sm:text-2xl lg:text-[1.3vw] items-center justify-center font-semibold">
                         ${displayName}
                     </p>
                 </div>`;
@@ -351,9 +352,9 @@ function renderObjects(container, objects) {
         container.innerHTML = '';
         objects.forEach(sector => {
             container.innerHTML += `
-                <div id="${sector.id}" onclick="Sector(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-[20vh] object-contain   justify-between items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
+                <div id="${sector.id}" onclick="Sector(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 min-w-[130px] w-[6vw] h-[18vh] object-contain   justify-between items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
                    <img class="w-full h-[75%] object-cover" src="https://res.cloudinary.com/ded7cxzxh/image/upload/v1732873340/${sector.image}" alt="undefined"/>
-                    <p class="h-[25%] min-h-fit border-t-2 border-[#6BA42E] w-full text-center flex text-lg items-center justify-center font-medium">
+                    <p class="h-auto min-h-[25%] border-t-2 border-[#6BA42E] w-full text-center flex text-xs sm:text-[0.8rem] items-center justify-center font-medium leading-tight">
                         ${sector.name}
                     </p>
                     <label class="container absolute right-1 top-2 z-40">
@@ -398,12 +399,12 @@ async function renderActivityTypes() {
         filteredactivties.forEach(activity => {
             const name = activity.name;
             Parent2Grid.innerHTML += `
-                <div id="${activity.id}" onclick="ActivityType(this.id)" class="flex my-4 relative flex-row text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-16 w-[35vw] justify-center items-center border-[#6BA24E] border-2 rounded-lg">
+                <div id="${activity.id}" onclick="ActivityType(this.id)" class="flex my-4 relative flex-row text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-16 w-[80vw] lg:w-[35vw] justify-center items-center border-[#6BA24E] border-2 rounded-lg">
                     <label class="container absolute left-4 top-[18px] z-40">
                         <input type="checkbox" class="sector-checkbox" >
                         <span class="checkmark left-0 rounded-sm"></span>
                     </label>
-                    <p class="border-[#6BA42E] px-[4vw] text-center flex text-xl items-center justify-center font-semibold">
+                    <p class="border-[#6BA42E] px-[4vw] text-center flex text-sm sm:text-xl items-center justify-center font-semibold">
                         ${name}
                     </p>
                 </div>`;
