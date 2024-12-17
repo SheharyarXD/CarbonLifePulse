@@ -34,11 +34,17 @@
         <!-- <h1 class=" justify-center flex items-center text-white font-bold py-[6.5vw] text-[2.8vw] " style="font-family: 'Poppins', sans-serif;">Output Result</h1> -->
         <div class="outputdiv bg-white mt-[1.6vw]  sm:h-[30vw]  sm:w-1/2 rounded-[2vw] flex justify-center items-center flex-col">
             <div class="text-[#6BA42E] text-xl sm:text-[3vw] font-extrabold pb-14" style="font-family: 'Poppins', sans-serif;">Total Carbon Emission</div>
-            <div class="text-3xl sm:text-[4vw] font-[700] pb-[5.1vw]"><span id="totalEmission" class="text-[#6BA42E]">2.07</span> tCO2e</div>
-            <div  class="text-sm px-[1.8vw] sm:text-[1.5vw] font-semibold " style="font-family: 'Poppins', sans-serif;">The detailed report has been sent to you via email</div>
-            <button id="registerButton" onclick="window.location.href='../Pages/loginsignup.html'" class="green-bg px-6 py-2 xl:px-[1.3vw] xl:py-[0.5rem]  rounded-[1.2vw]  text-white text-[1.4vw] font-semibold cursor-pointer my-7 mx-3 paras">
-                Login Now
-              </button>
+            <div class="text-3xl sm:text-[4vw] font-[700] pb-[2.1vw]"><span id="totalEmission" class="text-[#6BA42E]">2.07</span> tCO2e</div>
+            <!-- <div  class="text-sm px-[1.8vw] sm:text-[1.5vw] font-semibold " style="font-family: 'Poppins', sans-serif;">The detailed report has been sent to you via email</div> -->
+             
+            <input id="textarea" type="email" required placeholder="Enter your email here" class="border p-[0.6vw] text-[1.4vw]  w-2/5 flex bg-slate-200 sm:min-h-100px sm:h-[7vh] border-slate-300 rounded-[0.5vw]"></input>
+            <button 
+    id="registerButton" 
+    onclick="validateAndRedirect()" 
+    class="green-bg px-6 py-2 xl:px-[1.3vw] xl:py-[0.5rem] rounded-[1.2vw] text-white text-[1.4vw] font-semibold cursor-pointer my-7 mx-3 paras">
+    Get Detailed Report
+</button>
+
         </div>
     </div>
 
@@ -46,6 +52,18 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function validateAndRedirect() {
+    const emailField = document.getElementById("textarea");
+    const emailValue = emailField.value;
+
+    if (emailValue === "" || !emailField.checkValidity()) {
+        alert("Please enter a valid email address before proceeding.");
+        emailField.focus(); 
+    } else {
+
+        // window.location.href = '../Pages/loginsignup.html';
+    }
+}
         const totalEmissions = localStorage.getItem('totalEmission');
         let totalEmission = parseFloat(totalEmissions);
 // Display the result
@@ -103,6 +121,37 @@ const userEmails = localStorage.getItem('userEmail');
              document.getElementById("registerButton").style.display='none'
         }
 
+
+   document.getElementById('registerButton').addEventListener('click', function() {
+   const recipientEmail= document.getElementById('textarea').value;
+            const reportData = {
+                sector: "Transportation",
+                geography: "Global",
+                isicClasses: ["Class 1", "Class 2"],
+                activities: ["Vehicle Usage", "Fuel Consumption"],
+                activitiesDetails: [
+                    { name: "Vehicle Usage", question: "Distance traveled in Km?", input: 300, rate: 1.5 },
+                    { name: "Fuel Consumption", question: "Liters of fuel consumed?", input: 500, rate: 0.25 },
+                ],
+                email: recipientEmail, // Update with recipient's email if needed
+            };
+
+            // Sending data to the API endpoint
+            fetch("http://localhost:3000/api/report/send-report", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(reportData),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data.message);
+                alert('Report Generated and Sent Successfully');
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert('There was an error generating the report');
+            });
+        });
     </script>
 </body>
 </html>

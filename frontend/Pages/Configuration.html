@@ -185,7 +185,8 @@ border-radius: 15px;
             <!-- activity Details -->
      <div id="activities" class="w-full overflow-x-hidden justify-center max-h-[35vh] items-center pt-0 mt-0">
         <div id="InputArea" class="w-full flex justify-center hidden z-[9999]">
-            <textarea type="text" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-[80vw] sm:w-2/5 flex bg-slate-200 h-[20vh] border-slate-300 rounded-[0.5vw]"></textarea>
+            <!-- <textarea type="text" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-[80vw] sm:w-2/5 flex bg-slate-200 h-[20vh] border-slate-300 rounded-[0.5vw]"></textarea> -->
+            <input id="textarea" type="number" required placeholder="Enter your value here" class="border p-[0.6vw] text-[1.7vw] w-[80vw] sm:w-2/5 flex bg-slate-200 h-[8vh] border-slate-300 rounded-[0.5vw]"></input>
             <!-- controlbuttons -->
         </div>
         <div id="activitybuttons" class="flex justify-between items-center px-2 pb-10 pt-5 sm:px-10 absolute w-full bottom-0 z-10" style="display: none;">
@@ -399,7 +400,7 @@ async function renderActivityTypes() {
         filteredactivties.forEach(activity => {
             const name = activity.name;
             Parent2Grid.innerHTML += `
-                <div id="${activity.id}" onclick="ActivityType(this.id)" class="flex my-4 relative flex-row text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-16 w-[80vw] lg:w-[35vw] justify-center items-center border-[#6BA24E] border-2 rounded-lg">
+                <div id="${activity.id}" onclick="ActivityType(this.id)" class="flex my-2 relative flex-row text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-16 w-[80vw] lg:w-[35vw] justify-center items-center border-[#6BA24E] border-2 rounded-lg">
                     <label class="container absolute left-4 top-[18px] z-40">
                         <input type="checkbox" class="sector-checkbox" >
                         <span class="checkmark left-0 rounded-sm"></span>
@@ -437,23 +438,49 @@ function Sector(sectorIds) {
     }
 }
 
+// function ActivityType(Ids) {
+//     console.log(Ids)
+//     const divElement = document.getElementById(Ids);
+//     if (ActivityId.includes(Ids)) {
+//         ActivityId = ActivityId.filter(id => id !== Ids);
+//         divElement.style.backgroundColor = '';
+//         divElement.style.color = '';
+//     } else {
+//         ActivityId.push(Ids);
+//         // divElement.style.backgroundColor = '#6BA42E';
+//         // divElement.style.color = 'white';
+//         const checkbox = divElement.querySelector('input[type="checkbox"]');
+//         if (checkbox) {
+//             checkbox.checked = !checkbox.checked;
+//         }
+//     }
+
+//     // console.log(ActivityId);
+// }
+
 function ActivityType(Ids) {
     const divElement = document.getElementById(Ids);
+    const checkbox = divElement.querySelector('input[type="checkbox"]');
+
     if (ActivityId.includes(Ids)) {
-        ActivityId = ActivityId.filter(id => id !== Ids);
+
+        ActivityId = ActivityId.filter(id => id !== Ids); 
         divElement.style.backgroundColor = '';
         divElement.style.color = '';
+        if (checkbox) checkbox.checked = false;
+
     } else {
-        ActivityId.push(Ids);
-        // divElement.style.backgroundColor = '#6BA42E';
-        // divElement.style.color = 'white';
-        const checkbox = divElement.querySelector('input[type="checkbox"]');
-        if (checkbox) {
-            checkbox.checked = !checkbox.checked;
-        }
+        // If Ids does NOT exist in ActivityId array
+        console.log("Adding ID:", Ids);
+        ActivityId.push(Ids); // Add to array
+
+        // Update styles and checkbox
+        divElement.style.backgroundColor = 'white';
+        divElement.style.color = '#6BA42E';
+        if (checkbox) checkbox.checked = true;
     }
 
-    // console.log(ActivityId);
+    console.log("Current ActivityId Array:", ActivityId);
 }
 
 function ISIC(Ids) {
@@ -552,11 +579,11 @@ setTimeout(() => {
        
         let ParentGrid1 = document.getElementById('ActivitytypeDiv');
         ParentGrid1.innerHTML = '';
-        document.getElementById("activityHeading").classList.remove("hidden")
+        // document.getElementById("activityHeading").classList.remove("hidden")
         document.getElementById("InputArea").classList.remove("hidden")  
          document.getElementById("controlbuttons").style.display="none"
          document.getElementById("activitybuttons").style.display="flex"
-         document.getElementById("activityHeading").style.display="flex"
+        //  document.getElementById("activityHeading").style.display="flex"
         document.getElementById("InputArea").style.display="flex"
 
          displayQuestion()
@@ -575,17 +602,20 @@ hideLoader();
         currentStep--;
         if(currentStep==1){
             renderSectors()
+            // sectorId=''
         }
         else if(currentStep==2){
             renderGeography()
+            // geographyId=''
         }
         else if(currentStep==3){
+            ISICId=[]
             renderISICClass()
 
         }
         else if(currentStep==4){
             renderActivityTypes()
-            document.getElementById("activityHeading").style.display="none"
+            // document.getElementById("activityHeading").style.display="none"
             document.getElementById("InputArea").style.display="none"
             document.getElementById("activitybuttons").style.display="none"
             document.getElementById("controlbuttons").style.display="flex"
@@ -659,9 +689,10 @@ let answers = [];
     // console.log("isic",ISICId)
     // console.log("activity",ActivityId)
     carbon=await fetchCarbonEmissions(sectorId, geographyId, ISICId, ActivityId);
-    let textarea = document.querySelector('#InputArea textarea');
+    let textarea = document.querySelector('#InputArea #textarea');
     let questionHeading = document.getElementById('question');
-
+    questionHeading.style.marginTop="5vh";
+    questionHeading.style.marginBottom="2vh";
     if (currentQuestionIndex < carbon.length) {
         // Display the current question in the UI
         questionHeading.textContent = `How much ${carbon[currentQuestionIndex].activity_name} in Kg ?`;
@@ -682,7 +713,7 @@ let answers = [];
 }
 
 function nextactivity() {
-    let textarea = document.querySelector('#InputArea textarea');
+    let textarea = document.querySelector('#InputArea #textarea');
     let answer = textarea.value.trim();
 
 
@@ -702,7 +733,10 @@ function prevactivity() {
     }
     else{
         renderActivityTypes()
-            document.getElementById("activityHeading").style.display="none"
+        let questionHeading1 = document.getElementById('question');
+    questionHeading1.style.marginTop="0";
+    questionHeading1.style.marginBottom="20px";
+            // document.getElementById("activityHeading").style.display="none"
             document.getElementById("InputArea").style.display="none"
             document.getElementById("activitybuttons").style.display="none"
             document.getElementById("controlbuttons").style.display="flex"

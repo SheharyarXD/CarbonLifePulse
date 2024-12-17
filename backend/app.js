@@ -12,6 +12,7 @@ const activityRoutes = require('./api/Activity_Type');
 const isicClass = require('./api/ISIC_Class'); 
 const carbon = require('./api/Activity'); 
 const user = require('./api/User'); 
+const mail=require('./api/Pdf') 
 // const upload = multer({
 //     dest: 'uploads/', 
 //     limits: {
@@ -42,6 +43,7 @@ app.use('/api/activity', activityRoutes);
 app.use('/api/ISIC', isicClass);
 app.use('/api/Carbon', carbon);
 app.use('/api/auth', user);
+app.use('/api/report',mail)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.get('/', (req, res) => {
   pool.connect((err, client, release) => {
