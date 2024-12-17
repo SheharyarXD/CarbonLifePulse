@@ -137,7 +137,7 @@ const userEmails = localStorage.getItem('userEmail');
             };
 
             // Sending data to the API endpoint
-            fetch("http://localhost:3000/api/report/send-report", {
+            fetch("https://actsearthbackend.vercel.app/api/report/send-report", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(reportData),

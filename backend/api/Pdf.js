@@ -136,7 +136,7 @@ app.post('/send-report', async (req, res) => {
   
       // Extract recipient email from request body (e.g., { email: "user@example.com" })
     //   const { email } = req.body;
-    const email='sheharyarxd@gmail.com'
+    const email=reportData.email
   
       if (!email) {
         return res.status(400).send('Recipient email is required.');
