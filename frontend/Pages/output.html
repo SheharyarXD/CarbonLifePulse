@@ -142,9 +142,9 @@ const userEmails = localStorage.getItem('userEmail');
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(reportData),
             })
-            .then((response) => response.json())
+            .then((response) => response)
             .then((data) => {
-                console.log(data.message);
+                // console.log(data.message);
                 alert('Report Generated and Sent Successfully');
             })
             .catch((error) => {
