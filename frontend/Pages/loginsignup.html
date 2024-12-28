@@ -16,31 +16,31 @@
 <body>
     <div id="" class="main flex flex-row w-full justify-between font-sans">
         <div class="form flex flex-col py-5 px-8 w-full lg:w-[50vw] max-h-screen h-auto overflow-hidden">
-            <a href="../index.html">
+            <a class="w-fit" href="../index.html">
 
-                <div class="logo flex flex-row justify-center font-bold text-[#277D0D] items-center">
-                    <img class="h-10 lg:h-[6vw] w-fit px-[0.1vw]" src="../Images/LogoSVG.svg" alt="">
-                    <div class="text-xl lg:text-[2.8vw] pt-[1vh]"><span class="text-[#7E7E80]">ACTS.</span>Earth</div>
+                <div class="logo flex flex-row justify-start font-bold text-[#277D0D] items-center w-fit">
+                    <img class="h-10 lg:h-[5vw] w-fit px-[0.1vw]" src="../Images/LogoSVG.svg" alt="">
+                    <div class="text-xl lg:text-[1.6vw] pt-[1vh]"><span class="text-[#7E7E80]">ACTS.</span>Earth</div>
                 </div>
             </a>
             <div class="container w-full flex flex-col  text-sm text-gray-400 sm:px-14">
 
                     <form id="loginForm"  class="flex flex-col pb-[0.5vh]" action="" onsubmit="handleLogin(event)">
-                        <h1 class="h-[10%] text-3xl md:text-[3vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[10vh]" >Login</h1>
+                        <h1 class="h-[10%] text-3xl md:text-[3.4vw] font-bold text-[#6BA42E] my-12  lg:my-[10vh]" >Login</h1>
                         
                         <div class="form-group mb-5 lg:mb-[1.8vh] relative">
                             <input type="email" id="email" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
-                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-[0vw] peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
+                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.4vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-[0vw] peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
                         </div>
                         
                         <div class="form-group mb-5 lg:mb-[1.8vh] relative">
                             <input type="password" id="passwordField" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
-                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
+                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute text-xs lg:text-[1.4vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
                             <button type="button" class="absolute inset-y-0 right-3 flex items-center text-gray-500 z-50" onclick="togglePasswordVisibility()">
                                 <i class="bi bi-eye z-50" id="togglePasswordIcon"></i>
                             </button>
                         </div>
-                        <div class="flex flex-row justify-between items-center pb-[2vw] px-[0.25vw] text-[0.65rem] lg:text-[1.15vw]">
+                        <div class="flex flex-row justify-between items-center pb-[1vw] px-[0.25vw] text-[0.65rem] lg:text-[0.95vw]">
                             <div 
                                 class="forget text-[#6BA42E] font-semibold justify-end items-end flex w-full text-right cursor-pointer" 
                                 onclick="showResetPasswordForm()"
@@ -50,32 +50,32 @@
                         </div>
                         
                      
-                        <button class="bg-[#6BA42E] text-[#F3F3F3] my-6 lg:my-0 h-10 lg:h-[4.7vw] rounded-[0.5vw] lg:text-[2vw] font-semibold">Login</button>
-                        <div class="flex justify-center h-fit pt-5 lg:pt-0 lg:h-[4.8vw] items-center cursor-pointer font-bold text-[#444444] text-xs lg:text-[1.1vw]">Don't have an account? <span class="px-[0.25vw] text-[#6BA42E]" onclick="showSignup()" >Sign Up</span></div>
+                        <button class="bg-[#6BA42E] text-[#F3F3F3] my-6 lg:my-0 h-10 lg:h-[4vw] rounded-[0.5vw] lg:text-[1.2vw] font-semibold">Login</button>
+                        <div class="flex justify-center h-fit pt-5 lg:pt-0 lg:h-[3.8vw] items-center cursor-pointer font-bold text-[#444444] text-xs lg:text-[0.95vw]">Don't have an account? <span class="px-[0.25vw] text-[#6BA42E]" onclick="showSignup()" >Sign Up</span></div>
                     </form>
                     <form id="signupForm" class="flex flex-col pb-[1.2vw] hidden" action="" onsubmit="handleSignup(event)">
-                        <h1 class="text-3xl md:text-[3vw] font-bold text-[#6BA42E] my-12 lg:my-0 py-[5.2vh]">Sign Up</h1>
+                        <h1 class="text-3xl md:text-[3.4vw] font-bold text-[#6BA42E] my-12 lg:mt-[3vh] lg:mb-[8vh] py-[5.2vh] lg:py-0">Sign Up</h1>
                         
                         <div class="form-group mb-5 lg:mb-[2vh] relative">
                             <input type="email" id="signupEmail" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
-                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute   text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
+                            <label for="email"  class="form-label bg-white px-[0.25vw] absolute   text-xs lg:text-[1.4vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Email</label>
                         </div>
                         
                         <div class="form-group mb-5 lg:mb-[2vh] relative">
                             <input type="password" id="signupPassword" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
-                            <label for="signupPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
+                            <label for="signupPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.4vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.1vw]">Password</label>
                         </div>
                         
                         <div class="form-group  mb-5 lg:mb-[2vh] relative">
                             <input type="password" id="confirmPassword" class="peer h-10 lg:h-[4.9vw] form-control block w-full px-[1vw] py-[0.8vw] lg:text-[1.2vw] text-gray-900 bg-transparent border border-gray-300 rounded-[0.5vw] appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " required />
-                            <label for="confirmPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.6vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.15vw]">Confirm Password</label>
+                            <label for="confirmPassword" class="form-label bg-white px-[0.25vw] absolute  text-xs lg:text-[1.4vw] text-gray-500 duration-300 transform -translate-y-[2vw] top-[1.6vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[2.6vw] p-[0.15vw]">Confirm Password</label>
                         </div>
                         <div class="flex flex-row justify-between items-center pb-6 px-1">
-                            <div class="flex justify-center items-center font-bold text-[#444444]  text-xs lg:text-[1.1vw]"><span class="pr-[0.8vw] flex"><input class="h-2 w-2 lg:w-[1vw] lg:h-[1vw]" type="checkbox"></span>I agree to all the <span class="text-[#6BA42E] px-1">Terms</span> and <span class="text-[#6BA42E] px-1">Privacy Policies</span></div>
+                            <div class="flex justify-center items-center font-bold text-[#444444]  text-xs lg:text-[0.95vw]"><span class="pr-[0.8vw] flex"><input class="h-2 w-2 lg:w-[1vw] lg:h-[1vw]" type="checkbox"></span>I agree to all the <span class="text-[#6BA42E] px-1">Terms</span> and <span class="text-[#6BA42E] px-1">Privacy Policies</span></div>
                    
                         </div>
-                        <button class="bg-[#6BA42E] text-[#F3F3F3] my-6 lg:my-0 h-10 lg:h-[4.7vw] rounded-[0.5vw] lg:text-[1.8vw] font-semibold">Create Account</button>
-                        <div class="flex justify-center h-[5.3vw] items-center cursor-pointer font-bold text-[#444444]  text-xs lg:text-[1.1vw]">Already have an account? <span class="px-1 text-[#6BA42E]" onclick="showLogin()" >Login</span></div>
+                        <button class="bg-[#6BA42E] text-[#F3F3F3] my-6 lg:my-0 h-10 lg:h-[4vw] rounded-[0.5vw] lg:text-[1.2vw] font-semibold">Create Account</button>
+                        <div class="flex justify-center h-[3.3vw] items-center cursor-pointer font-bold text-[#444444]  text-xs lg:text-[0.95vw]">Already have an account? <span class="px-1 text-[#6BA42E]" onclick="showLogin()" >Login</span></div>
                     </form>
                 <!-- <div class="social-login w-full  ">
                     <div class="social-head flex flex-row justify-center items-center text-[1.1vw]">

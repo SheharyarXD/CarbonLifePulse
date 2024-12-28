@@ -128,7 +128,7 @@ border-radius: 15px;
 
     <!-- heading -->
 
-    <h1 class="flex justify-center items-center text-4xl pt-[10vh] lg:pt-[8vw] font-bold">Configuration</h1>
+    <h1 class="flex justify-center items-center text-4xl md:text-[2.6vw] pt-[10vh] lg:pt-[8vw] font-bold">Configuration</h1>
     <!-- step bar -->
     <div class="py-14">
         <dh-component>
@@ -169,7 +169,7 @@ border-radius: 15px;
         </div>
         <h1 id="activityHeading" class="flex hidden justify-center items-center text-4xl pt-[5vh] font-bold">Activity Details</h1>
     <!-- question heading -->
-    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg md:text-4xl py-2 font-bold mb-5">Select your Company Sector</h1>
+    <h1 id="question" class="flex  justify-center text-[#6BA42E] items-center text-lg md:text-[1.6vw] py-2 font-bold mb-5">Select your Company Sector</h1>
     <!-- Activity div -->
     <div id="ActivitytypeDiv" class="main no-scrollbar grid  overflow-y-auto max-h-[30vh] overflow-x-hidden fade-shadow w-full 
     grid-cols-1  
@@ -211,8 +211,8 @@ border-radius: 15px;
       
         <!-- controlbuttons -->
         <div id="controlbuttons" class="flex justify-between absolute bottom-0 w-full items-center px-2 py-5 sm:px-10 z-10">
-            <button onclick="prev()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Back</button>
-            <button onclick="next()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-2xl font-semibold py-1 sm:py-3">Next</button>
+            <button onclick="prev()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-[1.2vw] font-semibold py-1 sm:py-3">Back</button>
+            <button onclick="next()" class="border-2 border-[#6BA42E] text-[#6BA42E] px-8 sm:px-14 hover:bg-[#6BA24E] hover:text-white rounded-lg sm:text-[1.2vw] font-semibold py-1 sm:py-3">Next</button>
         </div>
     
 
@@ -336,7 +336,7 @@ async function renderISICClass() {
             const displayName = name.split(':').slice(1).join(':').trim();
             Parent1Grid.innerHTML += `
                 <div id="${isic.id}" onclick="ISIC(this.id)" class="flex relative flex-col text-[#6BA42E] hover:text-white hover:bg-[#6BA42E] cursor-pointer ease-in-out transition-colors duration-500 h-[14vh] w-[60vw]  lg:w-[20vw] justify-center items-center border-[#6BA24E] border-2 rounded-2xl overflow-hidden">
-                    <p class=" border-[#6BA42E] w-full text-center flex sm:text-2xl lg:text-[1.3vw] items-center justify-center font-semibold">
+                    <p class=" border-[#6BA42E] w-full text-center flex sm:text-2xl lg:text-[1.2vw] items-center justify-center font-semibold">
                         ${displayName}
                     </p>
                 </div>`;
@@ -405,7 +405,7 @@ async function renderActivityTypes() {
                         <input type="checkbox" class="sector-checkbox" >
                         <span class="checkmark left-0 rounded-sm"></span>
                     </label>
-                    <p class="border-[#6BA42E] px-[4vw] text-center flex text-sm sm:text-xl items-center justify-center font-semibold">
+                    <p class="border-[#6BA42E] px-[4vw] text-center flex text-sm sm:text-[1.2vw] items-center justify-center font-semibold">
                         ${name}
                     </p>
                 </div>`;
