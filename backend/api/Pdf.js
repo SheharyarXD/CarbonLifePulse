@@ -148,7 +148,7 @@ function generatePDF(reportData) {
     );
     doc.line(20, 256, 190, 256);
 
-  doc.save();
+
 
   const pdfBuffer = Buffer.from(doc.output("arraybuffer")); // Convert to Buffer
   return pdfBuffer;
