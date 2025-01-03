@@ -162,14 +162,23 @@ button.active {
       left: 0.3vw;
       color: #6BA42E;
     }
+    .fixedBg {
+  background-image: url('./Images/FixedBg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh; 
+}
 </style>
 </head>
 <body  class="max-h-screen h-auto bg-[#DFEDDA] overflow-x-hidden" style="font-family: 'Rubik','Poppins', sans-serif;">
   <header id="header" class="fixed top-0 w-full z-[999999]"></header>
 
-<div id="mainDiv" class="main relative h-screen lg:h-fit lg:min-h-screen  flex justify-center xl:justify-start items-start flex-row pt-[7vw]">
+<div id="mainDiv" class="main  relative h-screen lg:h-fit lg:min-h-screen  flex justify-center xl:justify-start items-start flex-row pt-[60px] md:pt-[7vw]">
+  <!-- <div class="fixedBg absolute md:hidden brightness-50"></div> -->
 <div class="text w-full flex flex-col   xl:w-2/3 h-full py-10 lg:py-0 px-14 z-50 ">
-<h1 id="MainHeading" class="text-xl sm:text-[3.4vw] font-bold  leading-snug py-[3vh] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
+<h1 id="MainHeading" class="text-2xl sm:text-[3.4vw] font-bold  leading-snug py-[3vh] text-[#7E7E80]"><p><span class="gradient-text">Transform Your Impact</span><br> <span>
   into Sustainable <br class=""> Action!
 
 </span>
@@ -260,21 +269,21 @@ button.active {
 
         <h2 class="text-4xl md:text-[3.8vw] font-bold text-[#6BA42E] mb-6 mt-4 h-fit">Who We Are</h2>
 
-        <p class="text-[#808080] mt-[2rem] mb-[1rem] w-[85%] text-xs leading-tight md:text-[1.2vw] 2xl:my-16">
+        <p class="text-[#808080] mt-[2rem] mb-[1rem] md:w-[85%] text-xs leading-tight md:text-[1.2vw] 2xl:my-16">
           At ACTS.Earth, we help businesses take meaningful steps toward sustainability by providing the tools needed to effectively achieve their environmental goals.
         </p>
 
-        <div class="space-y-4 w-[70%]">
+        <div class="space-y-4 md:w-[70%]">
           <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4  flex items-center px-2 sm:space-x-4  hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
-          <img class="w-[10%] mr-1 sm:mr-0" src="Images/i1.png" alt="">
+          <img class="w-[10%] mr-2 sm:mr-0" src="Images/i1.png" alt="">
             <div>
               <p class="text-xs md:text-[1.2vw] font-bold text-[#6BA42E]">Real-Time Carbon Tracking</p>
-              <p class="text-[#808080] text-[8px] md:text-[0.95vw]  md:pt-[1.5vh]">Instantly monitor and reduce your carbon footprint with real-time data.</p>
+              <p class="text-[#808080] text-[8px] md:text-[0.95vw] pt-[0.5vh] md:pt-[1.5vh]">Instantly monitor and reduce your carbon footprint with real-time data.</p>
             </div>
           </div>
           <!-- Card 2 -->
           <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4  flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
-            <img class="w-[10%] mr-1 sm:mr-0" src="Images/i2.png" alt="">
+            <img class="w-[10%] mr-2 sm:mr-0" src="Images/i2.png" alt="">
               <div>
                 <p class="text-xs md:text-[1.2vw]  font-bold text-[#6BA42E]">AI-Powered Prediction</p>
                 <p class="text-[#808080] text-[8px] md:text-[0.95vw] pt-1 md:pt-[1.5vh]">Instantly monitor and reduce your carbon footprint with real-time data.</p>
@@ -282,7 +291,7 @@ button.active {
           </div>
           <!-- Card 3 -->
           <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4  flex items-center px-2 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
-            <img class="w-[10%] mr-1 sm:mr-0" src="Images/i3.png" alt="">
+            <img class="w-[10%] mr-2 sm:mr-0" src="Images/i3.png" alt="">
               <div>
                 <p class="text-xs md:text-[1.2vw]  font-bold text-[#6BA42E]">Tailored Solutions</p>
                 <p class="text-[#808080] text-[8px] md:text-[0.95vw] pt-1 md:pt-[1.5vh]">Customized recommendations for your industry and needs.</p>
@@ -292,7 +301,7 @@ button.active {
 
             <!-- Card 4 -->
             <div class="bg-white featureCard shadow-lg rounded-[1.4vw] p-4 w-full flex items-center px-4 sm:space-x-4 hover:bg-[#c3e3a2] hover:cursor-default transition-[3s]">
-              <img class="w-[10%] mr-1 sm:mr-0" src="Images/i4.png" alt="">
+              <img class="w-[10%] mr-2 sm:mr-0" src="Images/i4.png" alt="">
                 <div>
                   <p class="text-xs md:text-[1.2vw]  font-bold text-[#6BA42E]">Transparent Carbon Credits</p>
                   <p class="text-[#808080] text-[8px] md:text-[0.95vw] pt-1 md:pt-[1.5vh]">Track carbon credits with blockchain transparency.</p>
@@ -341,65 +350,65 @@ button.active {
   <h1 id="productsHeading" class="text-[5.68vw] font-bold text-[#6BA42E] ">Our Products</h1>
 
   <div class="flex  relative  h-fit flex-col justify-center items-center w-full p-[1.5vw]">
-    <div class="flex  justify-center w-full items-center pt-[2vh]">
+    <div class="flex flex-col md:flex-row justify-center w-full items-center pt-[2vh] ">
 
     <!-- Card 1 -->
-     <div class="relative">
+     <div class="relative mb-4 md:mb-0">
 
        <img class="absolute -top-[4.2vw] -left-[3vw] w-[5vw]" src="Images/highVector.png" alt="">
        <div class="relative productCard cursor-default" onclick="window.location.href='/Pages/Configuration.html'">
-      <div class="relative  bg-white mx-[1vw] text-[#6BA42E] w-[30vw] h-[27vw] p-[1.2vw] md:p-[3.12vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border-2 border-[#6BA42E] transition-transform transform hover:scale-105">
+      <div class="relative  bg-white mx-[1vw] text-[#6BA42E] w-[70vw] md:w-[30vw] md:h-[27vw] p-[1.2vw] md:p-[3.12vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border-2 border-[#6BA42E] transition-transform transform hover:scale-105">
       <div class="text-[4.5vw]  my-[1.6vh]">
-        <img class="w-[6.4vw] " src="Images/P1.png" alt="">
+        <img class="w-[30px] md:w-[6.4vw] " src="Images/P1.png" alt="">
       </div>
-      <h2 class="text-[2vw] font-bold text-black mb-[2.4vh]">Carbon Measurement</h2>
-      <p class="text-[#808080] mb-[1.2vh] text-[1.5vw]">Accurately track and measure your business's carbon emissions to reduce environmental impact.</p>
-      <a href="../Pages/Configuration.html" class=" font-bold text-[1.4vw] mb-[15vh]">Start Measuring Emissions &gt;</a>
+      <h2 class="text-[12px] md:text-[2vw] font-bold text-black md:mb-[2.4vh]">Carbon Measurement</h2>
+      <p class="text-[#808080] md:mb-[1.2vh] text-[8px] md:text-[1.5vw]">Accurately track and measure your business's carbon emissions to reduce environmental impact.</p>
+      <a href="../Pages/Configuration.html" class=" font-bold text-[8px] md:text-[1.4vw] md:mb-[15vh]">Start Measuring Emissions &gt;</a>
     </div>
   </div>
   </div>
     <!-- Card 2 -->
-     <div class="relative">
+     <div class="relative mb-4 md:mb-0">
   <div class="relative productCard">
-        <div class="relative bg-white mx-4 text-[#6BA42E]  w-[30vw] h-[26vw] p-[1.2vw] md:p-[3.12vw] overflow-hidden rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 cursor-default">
-          <div class="text-[4.5vw]  my-[0.5vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
-            <img class="w-[4.7vw]" src="Images/calculator.png" alt="">
+        <div class="relative bg-white mx-4 text-[#6BA42E] w-[70vw] md:w-[30vw] md:h-[26vw] p-[1.2vw] md:p-[3.12vw] overflow-hidden rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 cursor-default">
+          <div class="text-[4.5vw] my-[1.6vh] md:my-[0.5vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
+            <img class="w-[24px] md:w-[4.7vw]" src="Images/calculator.png" alt="">
           </div>
           <p class="absolute bg-[#6BA42E] py-[0.24vw] text-center px-[4.4vw] font-semibold z-0 rotate-[40deg] -right-[4.4vw] top-[2.3vw] text-[1.5vw] text-white">Coming Soon</p>
-          <h2 class="text-[2vw] w-[27vw] font-bold text-black mb-[0.8vw]">Carbon Emission Estimator</h2>
-          <p class="text-[#808080] mb-[0.5vw] text-[1.5vw] w-[27vw]">Quickly calculate your company's carbon footprint for better sustainability decisions</p>
-          <p href="" class="font-bold text-[1.4vw] mb-[1vw]">Coming Soon! </p>
+          <h2 class="text-[12px] md:text-[2vw] md:w-[27vw] font-bold text-black  md:mb-[0.8vw]">Carbon Emission Estimator</h2>
+          <p class="text-[#808080] mb-[0.5vw] text-[8px] md:text-[1.5vw] md:w-[27vw]">Quickly calculate your company's carbon footprint for better sustainability decisions</p>
+          <p href="" class="font-bold text-[8px] md:text-[1.4vw] md:mb-[1vw]">Coming Soon! </p>
         </div>
       </div>
     </div>
   </div>
-      <div class="flex justify-around items-center mt-[4vh]">
+      <div class="flex flex-col md:flex-row justify-around items-center md:mt-[4vh]">
 
 
     <!-- Card 3 -->
-        <div class="relative productCard">
-      <div class="relative  bg-white text-[#6BA42E] w-[30vw] h-[28vw] p-[1.2vw] md:p-[3.12vw]  mx-[1.4vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 overflow-hidden cursor-default">
+        <div class="relative productCard mb-4 md:mb-0">
+      <div class="relative  bg-white text-[#6BA42E] w-[70vw] md:w-[30vw] md:h-[28vw] p-[1.2vw] md:p-[3.12vw]  mx-[1.4vw] rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 overflow-hidden cursor-default">
         <p class="absolute bg-[#6BA42E] py-[0.24vw] text-center px-[4.4vw] font-semibold z-0 rotate-[40deg] -right-[4.4vw] top-[2.3vw] text-[1.5vw] text-white">Coming Soon</p>
-        <div class="text-[4.5vw]  my-[0.5vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
-          <img  class="w-[4.7vw]" src="Images/co2.png" alt="">
+        <div class="text-[4.5vw] my-[1.6vh] md:my-[0.5vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
+          <img  class="w-[24px] md:w-[4.7vw]" src="Images/co2.png" alt="">
         </div>
-        <h2 class="text-[2vw] w-[27vw] font-bold text-black mb-[0.2vw]">Carbon Reductions Plans</h2>
-        <p class="text-[#808080] mb-[1.4vw] text-[1.5vw] w-[26vw] pt-[2vw]">Receive customized plans to reduce your carbon emissions and achieve sustainability goals.</p>
-        <p class="font-bold text-[1.4vw] mb-[2vw]">Coming Soon!</p>
+        <h2 class="text-[12px] md:text-[2vw] md:w-[27vw] font-bold text-black md:mb-[0.2vw]">Carbon Reductions Plans</h2>
+        <p class="text-[#808080] md:mb-[1.4vw] text-[8px] md:text-[1.5vw] md:w-[26vw] md:pt-[2vw]">Receive customized plans to reduce your carbon emissions and achieve sustainability goals.</p>
+        <p class="font-bold text-[8px] md:text-[1.4vw] md:mb-[2vw]">Coming Soon!</p>
       </div>
     </div>
     <!-- Card 4 -->
 
-        <div class="relative">
+        <div class="relative mb-4 md:mb-0">
           <div class="relative productCard">
-            <div class="relative  bg-white text-[#6BA42E] w-[30vw] h-[28vw] p-[1.2vw] md:p-[3.12vw] overflow-hidden mx-4 rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 cursor-default">            
+            <div class="relative  bg-white text-[#6BA42E] w-[70vw] md:w-[30vw] md:h-[28vw] p-[1.2vw] md:p-[3.12vw] overflow-hidden mx-4 rounded-[2.1vw] flex flex-col justify-between items-center shadow-lg border border-[#6BA42E] transition-transform transform hover:scale-105 cursor-default">            
             <p class="absolute bg-[#6BA42E] py-[0.24vw] text-center px-[4.4vw] font-semibold z-0 rotate-[40deg] -right-[4.4vw] top-[2.3vw] text-[1.5vw] text-white">Coming Soon</p>
-            <div class="text-[4.5vw]  my-[0.5vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
-              <img class="w-[4.7vw]" src="Images/redc.png" alt="">
+            <div class="text-[4.5vw] my-[1.6vh] md:my-[0.5vw] bg-[#6BA42E] rounded-full p-[0.8vw] ">
+              <img class="w-[24px] md:w-[4.7vw]" src="Images/redc.png" alt="">
           </div>
-          <h2 class="text-[2vw] w-[27vw] font-bold text-black mb-[0.5vw]">Environmental Compliance Management</h2>
-          <p class="text-[#808080] mb-[0.3vw] text-[1.5vw] w-[26vw]">Stay compliant with environmental regulations through seamless monitoring and reporting</p>
-          <p class="font-bold text-[1.4vw] mb-[2vw]">Coming Soon!</p>
+          <h2 class="text-[12px] md:text-[2vw] md:w-[27vw] font-bold text-black md:mb-[0.5vw]">Environmental Compliance Management</h2>
+          <p class="text-[#808080] mb-[0.3vw] text-[8px] md:text-[1.5vw] md:w-[26vw]">Stay compliant with environmental regulations through seamless monitoring and reporting</p>
+          <p class="font-bold text-[8px] md:text-[1.4vw] md:mb-[2vw]">Coming Soon!</p>
         </div>
       </div>
         <img class="absolute -bottom-[4vw] -right-[4vw] w-[6vw]" src="Images/lowVector.png" alt="">
@@ -413,11 +422,11 @@ button.active {
 
 
 
-<section id="AdvertisetoReg" class=" min-h-fit py-20 green-bg2 text-white  flex flex-col justify-center items-center">
-  <div  class="text-[3.4vw] my-1 firstRow font-semibold">Be one of the first 150 users to enjoy 50% off! </div>
-  <div class="text-[1.6vw] secondRow"> Sign up now to unlock exclusive access to our upcoming products!</div>
-  <div class="flex flex-row relative pt-8 justify-center w-full items-center">
-   <a href="Pages/loginsignup.html"><button  class="bg-white text-[#6BA42E] text-[1.6vw] h-fit py-[4vw] xl:py-0 xl:h-[7vh] cursor-pointer w-[18vw] font-bold rounded-xl hover:bg-gray-200 ">Register Yourself!</button></a>
+<section id="AdvertisetoReg" class=" min-h-fit py-5 md:py-20 green-bg2 text-white  flex flex-col justify-center items-center">
+  <div  class="md:text-[3.4vw] my-1 firstRow font-semibold">Be one of the first 150 users to enjoy 50% off! </div>
+  <div class="text-[10px] md:text-[1.6vw] secondRow"> Sign up now to unlock exclusive access to our upcoming products!</div>
+  <div class="flex flex-row relative pt-4 md:pt-8 justify-center w-full items-center">
+   <a href="Pages/loginsignup.html"><button  class="bg-white text-[#6BA42E] text-[12px] md:text-[1.6vw] h-fit py-[5px] md:py-[4vw] xl:py-0 xl:h-[7vh] cursor-pointer md:w-[18vw] w-fit px-5 md:px-0 font-bold   rounded-[1vw] md:rounded-xl hover:bg-gray-200 ">Register Yourself!</button></a>
     <img class="hidden xl:block right-5 top-0 absolute" src="Images/reg1.png" alt="">
   </div>
 </section>
@@ -589,54 +598,54 @@ button.active {
     <!-- Left Section -->
     <div id="leftSection" class="md:w-1/2 my-[1.5vw]">
       <div class="flex flex-row ">
-        <img class="pr-[2.4vw] w-fit h-[13vw]"  src="Images/zigzag.png" alt="">
-        <h2 class="text-[#6BA42E] font-black text-3xl md:text-[4vw] leading-[3vw] ">
+        <img class="pr-[2.4vw] w-fit h-[13vh] md:h-[13vw]"  src="Images/zigzag.png" alt="">
+        <h2 class="text-[#6BA42E] font-black text-4xl md:text-[4vw] leading-[4vw] md:leading-[3vw] ">
           <div class="flex py-2">Let us</div>
           <div class="flex py-2">listen to your</div>
           <div class="flex py-2">problems</div>
         </h2>
       </div>
-      <p class="text-[#7E7E80] w-[80%]  mx-auto py-[2vw] sm:leading-[2.2vw] text-xs leading-4  sm:text-[1.3vw] ">
+      <p class="text-[#7E7E80] w-[90%] md:w-[80%] mx-auto py-[4vw] md:py-[2vw] sm:leading-[2.2vw] text-[12px] leading-4  sm:text-[1.3vw] ">
         Share your concerns, and let us help you find solutions tailored to your needs. Together, we can make a positive impact on the environment!
       </p>
     </div>
 
     <!-- Right Section -->
-    <div class=" w-full md:w-1/2 px-[3vw] pt-[4vw] md:mt-0 md:text-[1.4vw] text-[#7E7E80]">
-      <div class="flex featureCard relative items-center justify-between border-b border-t  border-gray-300 h-[12vh] min-h-fit cursor-pointer question-container" onclick="toggleAnswer(this)">
+    <div class=" w-full md:w-1/2 px-[3vw] pt-[4vw] md:mt-0 text-[14px] md:text-[1.4vw] text-[#7E7E80]">
+      <div class="flex featureCard relative items-center justify-between border-b border-t  border-gray-300 h-[8vh] md:h-[12vh] min-h-fit cursor-pointer question-container" onclick="toggleAnswer(this)">
         <p class="w-[90%]">What kind of data is required for Carbon Measurement?</p>
         <span class="w-[5vw] absolute -right-[1.8vw]"><img class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[1.3vw]">
+      <div class="answer-container p-4 hidden italic font-normal text-xs md:text-[1.3vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
 
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[8vh] md:h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="w-[90%]">How does ACTS.Earth work?</p>
         <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[0.95vw]">
+      <div class="answer-container p-4 hidden italic font-normal  text-xs md:text-[0.95vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300 h-[8vh] md:h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="w-[90%]">How often can I track emissions?</p>
         <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[0.95vw]">
+      <div class="answer-container p-4 hidden italic font-normal  text-xs md:text-[0.95vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[8vh] md:h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="w-[90%]">What benefits do early users get apart from the 50% discount?</p>
         <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[0.95vw]">
+      <div class="answer-container p-4 hidden italic font-normal  text-xs md:text-[0.95vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
-      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
+      <div class="flex relative featureCard items-center justify-between border-b border-gray-300  h-[8vh] md:h-[12vh] question-container cursor-pointer min-h-fit" onclick="toggleAnswer(this)">
         <p class="">Is CarbonLife free to use?</p>
         <span class="w-[5vw] absolute -right-[1.8vw]"><img  class="w-[2.5vw]" src="Images/Arrow.png" alt=""></span>
       </div>
-      <div class="answer-container p-4 hidden italic font-normal text-[0.95vw]">
+      <div class="answer-container p-4 hidden italic font-normal  text-xs md:text-[0.95vw]">
         <p>To measure carbon emissions, data such as energy consumption, transportation modes, waste management, and product lifecycle details are required.</p>
       </div>
     </div>
@@ -646,32 +655,32 @@ button.active {
 
 <section id="contactUs" class=" overflow-hidden block relative md:h-[85vw] lg:h-fit">
   <div class="bg-white h-full absolute w-[70%] left-0"></div>
-  <div class="green-bg3 h-full absolute w-[30%] right-0"></div>
-  <section class="h-auto py-[15vh]  flex items-center justify-center">
-    <div class="bg-white z-50 overflow-hidden flex flex-col md:flex-row w-full max-w-[85%] mx-[1.6vw]  md:min-h-[62vh] ">
+  <div class="green-bg3  h-full absolute w-[30%] right-0"></div>
+  <section class="h-auto  md:py-[15vh]  flex items-center justify-center">
+    <div class="bg-white z-50 overflow-hidden flex flex-col md:flex-row w-full px-4 md:px-0 md:max-w-[85%] md:mx-[1.6vw]  md:min-h-[62vh] ">
       <!-- Form Section -->
       <div class="w-full  lg:w-1/2 px-[3.1vw] flex flex-col justify-center ">
-        <h2 class="text-[5.5vw] font-bold text-[#7E7E80] mb-[0.8vw] flex justify-center items-center pt-[1vw]"><img class="px-[0.4vw] pt-[0.4vw] h-[4vw]" src="Images/DIAMOND.png" alt=""> Get in <span class="text-[#6BA42E]">Touch</span></h2>
-        <img class="py-[0.9vw] w-[75%]" src="Images/lines.png" alt="">
-        <p class="text-[#7E7E80] mb-[2vw] leading-[1.8vw] pt-[1.4vw] text-[1.25vw]">Have questions or need support? Reach out to us—we're here to help you on your journey to a more sustainable lifestyle!</p>
+        <h2 class="text-4xl md:text-[5.5vw] font-bold text-[#7E7E80] mb-[0.8vw] flex justify-center items-center pt-[1vw]"><img class="px-[0.4vw] pt-[0.4vw] h-[4vw]" src="Images/DIAMOND.png" alt=""> Get in <span class="text-[#6BA42E]">Touch</span></h2>
+        <img class="py-[0.9vw] md:w-[75%]" src="Images/lines.png" alt="">
+        <p class="text-[#7E7E80] mb-[2vw] md:leading-[1.8vw] pt-[1.4vw] text-[12px] md:text-[1.25vw]">Have questions or need support? Reach out to us—we're here to help you on your journey to a more sustainable lifestyle!</p>
         <form id="contactForm"  method="POST" class="space-y-4 py-[1vw] pb-[4vw]">
         <div class="form-group mb-3 relative">
-            <input type="text" id="name" class="peer h-[3.2vw] form-control block w-full px-3 py-2.5 text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] rounded-[0.5vw]" placeholder=" " required />
-            <label for="name" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Name<span class="text-[#92dc43] px-1">*</span></label>
+            <input type="text" id="name" class="peer  h-[30px] md:h-[3.2vw] form-control block w-full px-3 py-2.5 text-[12px] md:text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E]  rounded-[1vw] md:rounded-[0.5vw]" placeholder=" " required />
+            <label for="name" class="form-label bg-white px-1 absolute  text-[12px] md:text-[1.1vw] text-gray-500 duration-300 transform -translate-y-3 md:-translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[3vw] md:peer-focus:-translate-y-[1.5vw]">Name<span class="text-[#92dc43] px-1">*</span></label>
         </div>
         <div class="form-group mb-6 relative">
-          <input type="email" id="email" class="peer h-[3.2vw] form-control block w-full px-3 py-[0.8vw] text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] rounded-[0.5vw]" placeholder=" " required />
-          <label for="email" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Email<span class="text-[#92dc43] px-1">*</span></label>
+          <input type="email" id="email" class="peer h-[30px] md:h-[3.2vw] form-control block w-full px-3 py-[0.8vw] text-[12px] md:text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E]  rounded-[1vw] md:rounded-[0.5vw]" placeholder=" " required />
+          <label for="email" class="form-label bg-white px-1 absolute  text-[12px] md:text-[1.1vw] text-gray-500 duration-300 transform -translate-y-3 md:-translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[3vw] md:peer-focus:-translate-y-[1.5vw]">Email<span class="text-[#92dc43] px-1">*</span></label>
       </div>
       <div class="form-group mb-6 relative">
-        <input type="tel" id="pnum" class="peer rounded-[0.5vw] h-[3.2vw] form-control block w-full px-3 py-2.5 text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" "  />
-        <label for="pnum" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Phone Number
+        <input type="tel" id="pnum" class="peer rounded-[1vw] md:rounded-[0.5vw]  h-[30px] md:h-[3.2vw] form-control block w-full px-3 py-2.5 text-[12px] md:text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" "  />
+        <label for="pnum" class="form-label bg-white px-1 absolute  text-[12px] md:text-[1.1vw] text-gray-500 duration-300 transform -translate-y-3 md:-translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[3vw] md:peer-focus:-translate-y-[1.5vw]">Phone Number
           <!-- <span class="text-[#92dc43] px-1">*</span> -->
         </label>
     </div>
     <div class="form-group mb-6 relative">
-      <textarea id="comment" class="peer rounded-[0.5vw] h-[5.2vw] form-control block w-full px-3 py-2.5 text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " ></textarea>
-      <label for="comment" class="form-label bg-white px-1 absolute  text-[1.1vw] text-gray-500 duration-300 transform -translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[1.5vw]">Message<span class="text-[#92dc43] px-1">*</span>
+      <textarea id="comment" class="peer  rounded-[1vw] md:rounded-[0.5vw] h-[80px] md:h-[5.2vw] form-control block w-full px-3 py-2.5 text-[12px] text-gray-900 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6BA42E] " placeholder=" " ></textarea>
+      <label for="comment" class="form-label bg-white px-1 absolute text-[12px] md:text-[1.1vw] text-gray-500 duration-300 transform -translate-y-3 md:-translate-y-5 top-[0.7vw] left-[1vw] z-10 origin-[0] peer-focus:left-[1vw] peer-focus:text-[#6BA42E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-[3vw] md:peer-focus:-translate-y-[1.5vw]">Message<span class="text-[#92dc43] px-1">*</span>
         <!-- <span class="text-[#92dc43] px-1">*</span> -->
       </label>
   </div>
@@ -680,14 +689,14 @@ button.active {
 
     <div class="form-group relative w-full">
       <label for="how"
-        class="absolute left-[0.3vw]  text-[1.2vw] text-gray-500 bg-white transition-all duration-300 transform -translate-y-[1.5vw] scale-90 top-[2.2vw] pointer-events-none label-floating px-1">
+        class="absolute left-[0.3vw]  text-[12px] md:text-[1.2vw] text-gray-500 bg-white transition-all duration-300 transform -translate-y-[1.5vw] scale-90 top-[2.2vw] pointer-events-none label-floating px-1">
         How did you find us?<span class="text-[#92dc43] px-1">*</span>
       </label>
 
       <select
         id="how"
         name="how"
-        class="w-full px-4 py-2 border border-gray-300  focus:outline-none focus:border-green-500 bg-transparent h-[3.2vw] relative rounded-[0.5vw]"
+        class="w-full px-4 py-2 border border-gray-300  focus:outline-none focus:border-green-500 bg-transparent h-[33px] text-[0.7rem] md:h-[3.2vw] relative rounded-[0.5vw]"
         onchange="toggleFloatingLabel(this)">
         <option value="" selected hidden disabled></option>
         <option value="google">Google</option>
@@ -697,7 +706,7 @@ button.active {
       </select>
     </div>
 
-          <button type="submit" class="w-full bg-[#6BA42E] text-white py-[1vw] text-[1.2vw] font-bold hover:bg-green-700 focus:outline-none rounded-[0.5vw]">Send</button>
+          <button type="submit" class="w-full bg-[#6BA42E] text-white py-[1.5vw] md:py-[1vw] text-[12px] md:text-[1.2vw] font-bold hover:bg-green-700 focus:outline-none  rounded-[1vw] md:rounded-[0.5vw]">Send</button>
         </form>
       </div>
 
@@ -715,7 +724,7 @@ button.active {
 </section>
 
 
-<footer class="bg-green-50 text-green-700 overflow-hidden">
+<footer class="bg-green-50 text-green-700 overflow-hidden h-fit">
   <div class="flex justify-center flex-col  w-full  overflow-hidden">
     <div class="flex py-20 flex-col md:flex-row md:justify-center items-start space-y-10 md:space-y-0 w-full px-10 md:px-0">
       <div class="w-[10%]"></div>
@@ -725,20 +734,20 @@ button.active {
           <img src="Images/Logo.png" alt="ACTS.Earth Logo" class="w-fit h-8 md:h-[2.5vw]  mr-[0.5vw]">
           <div class="text-lg md:text-[1.5vw]"><span class="text-[#7E7E80]">ACTS.</span>Earth</div>
         </h2>
-        <p class="text-sm md:text-[1.1vw] mb-[1.5vw] text-[#6BA42E] leading-7 w-10/12">
+        <p class="text-sm md:text-[1.1vw] mb-[1.5vw] text-[#6BA42E] leading-7 md:w-10/12">
           ACTS.Earth helps you track your carbon footprint in real-time. Take control of your impact and join us in creating a more sustainable future.
         </p>
         <div class="flex space-x-4 items-center">
           <!-- Social media icons -->
-          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/Facebook1.png" alt=""></a>
-          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/Twitter.png" alt=""></a>
-          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/LinkedIn.png" alt=""></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full h-[30px] w-[30px] md:w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img class="z-50" src="Images/Facebook1.png" alt=""></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full  h-[30px] w-[30px] md:w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full  h-[30px] w-[30px] md:w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/Twitter.png" alt=""></a>
+          <a href="#" class="bg-[#98EA41]  sm:p-[0.3vw] lg:p-0 lg:h-[2.5vw] rounded-full  h-[30px] w-[30px] md:w-[2.5vw] text-center flex items-center justify-center hover:bg-green-400"><img src="Images/LinkedIn.png" alt=""></a>
         </div>
       </div>
 
       <!-- Column 2: Products -->
-      <div class="md:w-[30%] px-4">
+      <div class="hidden md:block md:w-[30%] px-4">
         <h3 class="font-bold  text-[#6BA42E] mb-[2.8vw] md:text-[1.5vw]">Products</h3>
         <ul class="space-y-2 text-sm md:text-[1.1vw]">
           <li class="pb-[0.8vw] font-normal"><a href="#" class="text-[#6BA42E]  hover:text-green-700">Carbon Measurement</a></li>
@@ -749,7 +758,7 @@ button.active {
       </div>
 
       <!-- Column 3: Contact Information -->
-      <div class="md:w-[30%] px-4 text-[#6BA42E]">
+      <div class="md:w-[30%] md:px-4 text-[#6BA42E]">
         <h3 class="font-bold  text-[#6BA42E] mb-[3.4vw] md:text-[1.5vw]">Contact Information</h3>
         <ul class="space-y-2 text-sm md:text-[1.1vw]">
           <li class="flex items-center pb-4">
@@ -768,15 +777,15 @@ button.active {
 
 
     <!-- Divider -->
-    <div class="border-t w-full border-[#45691D] opacity-[12%] mt-8"></div>
+    <div class="border-t w-full border-[#45691D] opacity-[12%] md:mt-8"></div>
 
     <!-- Bottom section with copyright and links -->
-    <div class="flex flex-col md:flex-row justify-between items-center h-[7.3vw] font-medium text-sm md:text-[1.1vw] text-[#45691D] px-6 md:px-20 lg:px-32">
+    <div class="flex flex-col md:flex-row justify-between items-center min-h-[50px] py-2 md:py-0 md:h-[7.3vw] font-medium text-sm md:text-[1.1vw] text-[#45691D] px-6 md:px-20 lg:px-32">
       <p>&copy; ACTS.Earth, 2023. All rights reserved.</p>
-      <div class="flex space-x-4  ">
-        <a href="#" class="hover:text-green-700 font-medium underline underline-offset-1">Website Terms</a>
-        <a href="#" class="hover:text-green-700 font-medium underline underline-offset-1">Privacy Policy</a>
-        <a href="#" class="hover:text-green-700 font-medium underline underline-offset-1">Cookies Policy</a>
+      <div class="flex space-x-4  pt-1 md:pt-0">
+        <a href="#" class="hover:text-green-700 text-xs md:text-sm font-medium underline underline-offset-1">Website Terms</a>
+        <a href="#" class="hover:text-green-700 text-xs md:text-sm font-medium underline underline-offset-1">Privacy Policy</a>
+        <a href="#" class="hover:text-green-700 text-xs md:text-sm font-medium underline underline-offset-1">Cookies Policy</a>
       </div>
     </div>
   </div>
