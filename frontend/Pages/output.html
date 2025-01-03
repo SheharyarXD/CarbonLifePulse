@@ -125,10 +125,10 @@ const userEmails = localStorage.getItem('userEmail');
    document.getElementById('registerButton').addEventListener('click', function() {
    const recipientEmail= document.getElementById('textarea').value;
             const reportData = {
-                sector: "Transportation",
+                sector: "Textile",
                 geography: "Global",
                 isicClasses: ["Class 1", "Class 2"],
-                activities: ["Vehicle Usage", "Fuel Consumption"],
+                activities: ["Vehicle Usages", "Fuel Consumptions"],
                 activitiesDetails: [
                     { name: "Vehicle Usage", question: "Distance traveled in Km?", input: 300, rate: 1.5 },
                     { name: "Fuel Consumption", question: "Liters of fuel consumed?", input: 500, rate: 0.25 },
@@ -137,7 +137,7 @@ const userEmails = localStorage.getItem('userEmail');
             };
 
             // Sending data to the API endpoint
-            fetch("https://actsearthbackend.vercel.app/api/report/send-report", {
+            fetch("http://localhost:3000/api/report/send-report", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(reportData),

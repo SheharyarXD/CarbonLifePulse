@@ -141,7 +141,7 @@ function generatePDF(reportData) {
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text(
-      `The total emissions calculated for the  ${report.sector} are 275.00 tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
+      `The total emissions calculated for the  ${reportData.sector} are 275.00 tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
       25,
       248,
       { maxWidth: 160 }
@@ -163,36 +163,6 @@ function generatePDF(reportData) {
 //     { name: "Vehicle Usage", question: "Distance traveled in Km?", input: 300, rate: 0.5 },
 //     { name: "Fuel Consumption", question: "Liters of fuel consumed?", input: 500, rate: 0.25 },
 //   ],
-// };
-
-// Email Configuration using Nodemailer
-const transporter = nodemailer.createTransport({
-  service: "gmail", // You can use other email services here
-  auth: {
-    user: "sheharyarxd@gmail.com", // Replace with your email
-    pass: "dvle onvl qmod jrmd", // Replace with your email password or app-specific password
-  },
-});
-
-function sendEmail(pdfBuffer, recipientEmail) {
-  const mailOptions = {
-    from: "sheharyarxd@gmail.com",
-    to: recipientEmail,
-    subject: "Carbon Emissions Report",
-    text: "Please find the carbon emissions report attached.",
-    attachments: [
-      {
-        filename: "carbon_emissions_report.pdf",
-        content: pdfBuffer,
-        encoding: "base64",
-      },
-    ],
-  };
-
-  // Send the email
-  return transporter.sendMail(mailOptions);
-}
-
 app.get("/send-report", async (req, res) => {
   const doc = new jsPDF();
 
@@ -333,7 +303,36 @@ app.get("/send-report", async (req, res) => {
   res.send(Buffer.from(pdfData));
   // Save the PDF
 
+});// };
+
+// Email Configuration using Nodemailer
+const transporter = nodemailer.createTransport({
+  service: "gmail", // You can use other email services here
+  auth: {
+    user: "sheharyarxd@gmail.com", // Replace with your email
+    pass: "dvle onvl qmod jrmd", // Replace with your email password or app-specific password
+  },
 });
+
+function sendEmail(pdfBuffer, recipientEmail) {
+  const mailOptions = {
+    from: "sheharyarxd@gmail.com",
+    to: recipientEmail,
+    subject: "Carbon Emissions Report",
+    text: "Please find the carbon emissions report attached.",
+    attachments: [
+      {
+        filename: "carbon_emissions_report.pdf",
+        content: pdfBuffer,
+        encoding: "base64",
+      },
+    ],
+  };
+
+  // Send the email
+  return transporter.sendMail(mailOptions);
+}
+
 app.post("/send-report", async (req, res) => {
   try {
     const reportData = req.body;
