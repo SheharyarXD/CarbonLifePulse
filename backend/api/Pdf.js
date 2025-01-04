@@ -81,39 +81,29 @@ function generatePDF(reportData) {
     doc.text("Input(kg)", 76, 143);
     doc.text("Rate (tCO2e/Kg)", 113, 143);
     doc.text("Total Emission", 157, 143);
-
-
+    const totalRows = reportData.combinedList.length;
     let startY = 155; // Initial Y position
     const rowHeight = 10;
+    const otherElementY =  totalRows * rowHeight + 10;
     reportData.combinedList.forEach((row, index) => {
       doc.text(row.activity, 28, startY + index * rowHeight);
       doc.text(row.input, 80, startY + index * rowHeight);
       doc.text(row.emissionRate, 125, startY + index * rowHeight);
       doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight);
   });
-    // Table Rows
-    doc.setFont("helvetica", "normal");
-    doc.text("Vehicle Usage", 28, 155);
-    doc.text("300", 80, 155);
-    doc.text("0.5", 125, 155);
-    doc.text("150.00", 165, 155);
-    
-        // Draw gridlines for the table
+  
+     // Draw gridlines for the table
         doc.line(20, 147, 190, 147); // Horizontal line under headers
         doc.line(62, 135, 62, 170); // Vertical line (Components | Input(kg))
         doc.line(105, 135, 105, 170); // Vertical line (Input(kg) | Rate)
         doc.line(148, 135, 148, 170); // Vertical line (Rate | Total Emission)
         doc.line(20, 159, 190, 159); 
   
-    doc.text("Fuel Consumption", 28, 166);
-    doc.text("500", 80, 166);
-    doc.text("0.25", 125, 166);
-    doc.text("125.00", 165, 166);
-  
-   doc.setFontSize(16);
+
+    doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
     doc.setTextColor("#0000");
-    doc.text("Project MileStone", 28, 182);
+    doc.text("Project MileStone", 28, 182+otherElementY);
   
    
     doc.setFillColor("#C8E563");
@@ -122,10 +112,10 @@ function generatePDF(reportData) {
     // Column Headers
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
-    doc.text("Project MileStone", 30, 196);
-    doc.text("Status", 76, 196);
-    doc.text("Completion Date", 113, 196);
-    doc.text("Yes/No", 157, 196);
+    doc.text("Project MileStone", 30, 196+otherElementY);
+    doc.text("Status", 76, 196+otherElementY);
+    doc.text("Completion Date", 113, 196+otherElementY);
+    doc.text("Yes/No", 157, 196+otherElementY);
   
     // Draw gridlines for the table
     doc.line(20, 200, 190, 200); // Horizontal line under headers
@@ -136,30 +126,30 @@ function generatePDF(reportData) {
    
     // Table Rows
     doc.setFont("helvetica", "normal");
-    doc.text("Emission Data Collection", 28, 207);
-    doc.text("300", 80, 207);
-    doc.text(`${formattedDate}`, 125, 207);
-    doc.text("150.00", 165, 207);
+    doc.text("Emission Data Collection", 28, 207+otherElementY);
+    doc.text("300", 80, 207+otherElementY);
+    doc.text(`${formattedDate}`, 125, 207+otherElementY);
+    doc.text("150.00", 165, 207+otherElementY);
   
-    doc.text("Emission Analysis", 28, 218.5);
+    doc.text("Emission Analysis", 28, 218.5+otherElementY);
     doc.text("500", 80, 218.5);
-    doc.text(`${formattedDate}`, 125, 218.5);
-    doc.text("125.00", 165, 218.5);
+    doc.text(`${formattedDate}`, 125, 218.5+otherElementY);
+    doc.text("125.00", 165, 218.5+otherElementY);
   
   doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
     doc.setTextColor("#0000");
-    doc.text("Summary", 28, 240);
+    doc.text("Summary", 28, 240+otherElementY);
     
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text(
       `The total emissions calculated for the  ${reportData.sector} are 275.00 tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
       25,
-      248,
+      248+otherElementY,
       { maxWidth: 160 }
     );
-    doc.line(20, 256, 190, 256);
+    doc.line(20, 256+otherElementY, 190, 256+otherElementY);
 
 
 

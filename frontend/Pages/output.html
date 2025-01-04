@@ -125,14 +125,24 @@ const userEmails = localStorage.getItem('userEmail');
    document.getElementById('registerButton').addEventListener('click', function() {
     let storedSectorName = localStorage.getItem('sectorName');
 let storedGeographyName = localStorage.getItem('geographyName');
-let EmissionRates= localStorage.getItem('EmissionRates', emissionrates);
-let Inputs= localStorage.getItem('IndividualCarbon', answers);
+let EmissionRates= localStorage.getItem('EmissionRates');
+let Inputs= localStorage.getItem('IndividualCarbon');
 let storedActivitiesName = JSON.parse(localStorage.getItem('activitiesName'));
-const combinedList = storedActivitiesName.map((activity, index) => ({
-    activity,
-    emissionRate: EmissionRates[index],
-    input: Inputs[index],
-}));
+let i=0
+console.log(Inputs)
+EmissionRates=EmissionRates.split(',')
+Inputs=Inputs.split(',')
+console.log(EmissionRates)
+console.log(Inputs)
+const combinedList = [];
+for (let i = 0; i < storedActivitiesName.length; i++) {
+    combinedList.push({
+        activity: storedActivitiesName[i],
+        emissionRate: EmissionRates[i],
+        input: Inputs[i],
+    });
+}
+console.log(combinedList)
    const recipientEmail= document.getElementById('textarea').value;
             const reportData = {
                 sector: storedSectorName,
