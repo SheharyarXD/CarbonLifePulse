@@ -44,7 +44,6 @@ function generatePDF(reportData) {
   doc.addImage(lowerLeftImg, 'JPEG', 0, 267, 30, 30);
   doc.addImage(imgData, 'JPEG', 20, 123, 8, 8);
   doc.addImage(imgData, 'JPEG', 20, 176+otherElementY, 8, 8);
-  doc.addImage(imgData, 'JPEG', 20, 233+otherElementY, 8, 8);
 
   // doc.setFontSize(16);
   // doc.setFont("helvetica", "bold");
@@ -153,6 +152,7 @@ function generatePDF(reportData) {
   if(otherElementY>20){
     doc.addPage();
   }
+  doc.addImage(imgData, 'JPEG', 20, 233+otherElementY, 8, 8);
   doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
     doc.setTextColor("#0000");
