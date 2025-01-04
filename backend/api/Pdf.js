@@ -28,7 +28,7 @@ function generatePDF(reportData) {
   let currentY = 20;
   const totalRows = reportData.combinedList.length;
   let startY = 155; // Initial Y position
-  let rowHeight = 10;
+  const rowHeight = 10;
   const otherElementY =  totalRows * rowHeight-20;
   // --- Header Section ---
 
@@ -85,14 +85,13 @@ function generatePDF(reportData) {
     doc.text("Rate (tCO2e/Kg)", 113, 143);
     doc.text("Total Emission", 157, 143);
    
-    rowHeight+=1;
     reportData.combinedList.forEach((row, index) => {
       doc.setFont("helvetica", "normal");
       doc.text(row.activity, 28, startY + index * rowHeight);
       doc.text(row.input, 80, startY + index * rowHeight);
       doc.text(row.emissionRate, 125, startY + index * rowHeight);
       doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight);
-      doc.line(20, 147 + index * rowHeight, 190, 147 + index * rowHeight);
+      doc.line(20, 147 + index * rowHeight+1, 190, 147 + index * rowHeight+1);
   });
   
      // Draw gridlines for the table
