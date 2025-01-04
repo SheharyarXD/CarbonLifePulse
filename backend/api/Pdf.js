@@ -190,7 +190,7 @@ function generatePDF(reportData) {
       { maxWidth: 160 }
     );
     const dynamicTextDimensions = doc.getTextDimensions(dynamicTexts);
-    doc.line(20, 256+otherElementY+dynamicTextDimensions.h, 190, 256+otherElementY+dynamicTextDimensions.h);
+    doc.line(20, 253+otherElementY+dynamicTextDimensions.h, 190, 253+otherElementY+dynamicTextDimensions.h);
   }
 
 
