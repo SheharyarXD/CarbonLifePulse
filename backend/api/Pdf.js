@@ -84,7 +84,7 @@ function generatePDF(reportData) {
     const totalRows = reportData.combinedList.length;
     let startY = 155; // Initial Y position
     const rowHeight = 10;
-    const otherElementY =  totalRows * rowHeight + 10;
+    const otherElementY =  totalRows * rowHeight;
     reportData.combinedList.forEach((row, index) => {
       doc.text(row.activity, 28, startY + index * rowHeight);
       doc.text(row.input, 80, startY + index * rowHeight);
