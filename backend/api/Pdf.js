@@ -35,6 +35,7 @@ function generatePDF(reportData) {
   const totalRows = reportData.combinedList.length;
   let startY = 152; // Initial Y position
   const rowHeight = 12;
+  let emissionNameValues=[]
   const otherElementY =  totalRows * rowHeight-20;
   // --- Header Section ---
 
@@ -92,6 +93,7 @@ function generatePDF(reportData) {
     doc.text("Total Emission", 157, 143);
    let header=false
     reportData.combinedList.forEach((row, index) => {
+      emissionNameValues.push(`${(row.input*row.emissionRate).toFixed(3).trim()} tCO2e from ${row.activity}`)
       row.activity=trimString(row.activity)
       doc.setFont("helvetica", "normal");
       doc.text(row.activity, 28, startY + index * rowHeight+3);
@@ -157,7 +159,7 @@ function generatePDF(reportData) {
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text(
-      `The total emissions calculated for the ${reportData.sector.trim()} are ${reportData.totalEmission.toFixed(2)} tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
+      `The total emissions calculated for the ${reportData.sector.trim()} are ${reportData.totalEmission.toFixed(2)} tCO2e. This includes ${emissionNameValues}.`,
       25,
       248+otherElementY,
       { maxWidth: 160 }
