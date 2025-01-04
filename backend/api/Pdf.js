@@ -125,7 +125,7 @@ function generatePDF(reportData) {
     // Column Headers
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
-    doc.text("Project MileStone", 30, 196+otherElementY);
+    doc.text("Project MileStone", 28, 196+otherElementY);
     doc.text("Status", 76, 196+otherElementY);
     doc.text("Completion Date", 113, 196+otherElementY);
     doc.text("Yes/No", 163, 196+otherElementY);
@@ -140,12 +140,12 @@ function generatePDF(reportData) {
     // Table Rows
     doc.setFont("helvetica", "normal");
     doc.text("Emission Data", 28, 207+otherElementY);
-    doc.text("Completed", 80, 207+otherElementY);
-    doc.text(`${formattedDate}`, 120, 207+otherElementY);
+    doc.text("Completed", 73, 207+otherElementY);
+    doc.text(`${formattedDate}`, 116, 207+otherElementY);
     doc.text("Yes", 165, 207+otherElementY);
   
     doc.text("Emission Analysis", 28, 218.5+otherElementY);
-    doc.text("Completed", 80, 218.5+otherElementY);
+    doc.text("Completed", 73, 218.5+otherElementY);
     doc.text(`${formattedDate}`, 120, 218.5+otherElementY);
     doc.text("Yes", 165, 218.5+otherElementY);
   
