@@ -154,9 +154,26 @@ function generatePDF(reportData) {
     doc.addImage(logoImage, 'JPEG', 10,3, 55, 21);
     doc.addImage(topright, 'JPEG', 130,0, 80, 80);
     doc.addImage(lowerLeftImg, 'JPEG', 0, 267, 30, 30);
+    doc.addImage(imgData, 'JPEG', 20, 70, 8, 8);
+    doc.setFontSize(16);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor("#0000");
+    doc.text("Summary", 28,70);
+    
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    doc.text(
+      `The total emissions calculated for the ${reportData.sector.trim()} are ${reportData.totalEmission.toFixed(2)} tCO2e. This includes ${emissionNameValues}.`,
+      25,
+      78,
+      { maxWidth: 160 }
+    );
+    doc.line(20, 85, 190, 85);
   }
-  doc.addImage(imgData, 'JPEG', 20, 233+otherElementY, 8, 8);
-  doc.setFontSize(16);
+  else{
+
+    doc.addImage(imgData, 'JPEG', 20, 233+otherElementY, 8, 8);
+    doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
     doc.setTextColor("#0000");
     doc.text("Summary", 28, 240+otherElementY);
@@ -170,6 +187,7 @@ function generatePDF(reportData) {
       { maxWidth: 160 }
     );
     doc.line(20, 256+otherElementY, 190, 256+otherElementY);
+  }
 
 
 
