@@ -33,8 +33,8 @@ function generatePDF(reportData) {
   doc.addImage(topright, 'JPEG', 130,0, 80, 80);
   doc.addImage(lowerLeftImg, 'JPEG', 0, 267, 30, 30);
   doc.addImage(imgData, 'JPEG', 20, 123, 8, 8);
-  doc.addImage(imgData, 'JPEG', 20, 176, 8, 8);
-  doc.addImage(imgData, 'JPEG', 20, 233, 8, 8);
+  doc.addImage(imgData, 'JPEG', 20, 176+otherElementY, 8, 8);
+  doc.addImage(imgData, 'JPEG', 20, 233+otherElementY, 8, 8);
 
   // doc.setFontSize(16);
   // doc.setFont("helvetica", "bold");
@@ -107,8 +107,8 @@ function generatePDF(reportData) {
   
    
     doc.setFillColor("#C8E563");
-    doc.rect(20, 188, 170, 12, "F"); // Header background
-    doc.rect(20, 188, 170, 35); // Outer border of the table
+    doc.rect(20, 188+otherElementY, 170, 12, "F"); // Header background
+    doc.rect(20, 188+otherElementY, 170, 35); // Outer border of the table
     // Column Headers
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
@@ -118,11 +118,11 @@ function generatePDF(reportData) {
     doc.text("Yes/No", 157, 196+otherElementY);
   
     // Draw gridlines for the table
-    doc.line(20, 200, 190, 200); // Horizontal line under headers
-    doc.line(62, 188, 62, 223); // Vertical line (Components | Input(kg))
-    doc.line(105, 188, 105, 223); // Vertical line (Input(kg) | Rate)
-    doc.line(148, 188, 148, 223); // Vertical line (Rate | Total Emission)
-    doc.line(20, 211, 190, 211); 
+    doc.line(20, 200+otherElementY, 190, 200+otherElementY); // Horizontal line under headers
+    doc.line(62, 188+otherElementY, 62, 223+otherElementY); // Vertical line (Components | Input(kg))
+    doc.line(105, 188+otherElementY, 105, 223+otherElementY); // Vertical line (Input(kg) | Rate)
+    doc.line(148, 188+otherElementY, 148, 223+otherElementY); // Vertical line (Rate | Total Emission)
+    doc.line(20, 211+otherElementY, 190, 211+otherElementY); 
    
     // Table Rows
     doc.setFont("helvetica", "normal");
@@ -132,7 +132,7 @@ function generatePDF(reportData) {
     doc.text("150.00", 165, 207+otherElementY);
   
     doc.text("Emission Analysis", 28, 218.5+otherElementY);
-    doc.text("500", 80, 218.5);
+    doc.text("500", 80, 218.5+otherElementY);
     doc.text(`${formattedDate}`, 125, 218.5+otherElementY);
     doc.text("125.00", 165, 218.5+otherElementY);
   
