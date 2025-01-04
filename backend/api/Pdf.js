@@ -182,13 +182,15 @@ function generatePDF(reportData) {
     
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
+     const dynamicTexts = `The total emissions calculated for the ${reportData.sector.trim()} are ${reportData.totalEmission.toFixed(2)} tCO2e. This includes ${emissionNameValues}.`;
     doc.text(
-      `The total emissions calculated for the ${reportData.sector.trim()} are ${reportData.totalEmission.toFixed(2)} tCO2e. This includes ${emissionNameValues}.`,
+     dynamicTexts,
       25,
       248+otherElementY,
       { maxWidth: 160 }
     );
-    doc.line(20, 256+otherElementY, 190, 256+otherElementY);
+    const dynamicTextDimensions = doc.getTextDimensions(dynamicTexts);
+    doc.line(20, 256+otherElementY+dynamicTextDimensions.h, 190, 256+otherElementY+dynamicTextDimensions.h);
   }
 
 
