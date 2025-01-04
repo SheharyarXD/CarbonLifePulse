@@ -76,7 +76,7 @@ function generatePDF(reportData) {
    
     doc.setFillColor("#C8E563");
     doc.rect(20, 135, 170, 12, "F"); // Header background
-    doc.rect(20, 135, 170, 35); // Outer border of the table
+    doc.rect(20, 135, 170, 35+otherElementY); // Outer border of the table
     // Column Headers
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
