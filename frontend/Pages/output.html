@@ -143,6 +143,8 @@ for (let i = 0; i < storedActivitiesName.length; i++) {
 }
 console.log(combinedList)
    const recipientEmail= document.getElementById('textarea').value;
+   const totalEmissions = localStorage.getItem('totalEmission');
+   let totalEmission = parseFloat(totalEmissions);
             const reportData = {
                 sector: storedSectorName,
                 geography: storedGeographyName,
