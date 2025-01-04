@@ -87,10 +87,10 @@ function generatePDF(reportData) {
    let header=false
     reportData.combinedList.forEach((row, index) => {
       doc.setFont("helvetica", "normal");
-      doc.text(row.activity, 28, startY + index * rowHeight);
-      doc.text(row.input, 80, startY + index * rowHeight);
-      doc.text(row.emissionRate, 125, startY + index * rowHeight);
-      doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight);
+      doc.text(row.activity, 28, startY + index * rowHeight+3);
+      doc.text(row.input, 80, startY + index * rowHeight+3);
+      doc.text(row.emissionRate, 125, startY + index * rowHeight+3);
+      doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight+3);
       if(header==true){
 
         doc.line(20, 147 + index * rowHeight+1, 190, 147 + index * rowHeight+1);
