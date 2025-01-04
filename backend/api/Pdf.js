@@ -81,20 +81,29 @@ function generatePDF(reportData) {
     doc.text("Input(kg)", 76, 143);
     doc.text("Rate (tCO2e/Kg)", 113, 143);
     doc.text("Total Emission", 157, 143);
-  
-    // Draw gridlines for the table
-    doc.line(20, 147, 190, 147); // Horizontal line under headers
-    doc.line(62, 135, 62, 170); // Vertical line (Components | Input(kg))
-    doc.line(105, 135, 105, 170); // Vertical line (Input(kg) | Rate)
-    doc.line(148, 135, 148, 170); // Vertical line (Rate | Total Emission)
-    doc.line(20, 159, 190, 159); 
-   
+
+
+    let startY = 155; // Initial Y position
+    const rowHeight = 10;
+    reportData.combinedList.forEach((row, index) => {
+      doc.text(row.activity, 28, startY + index * rowHeight);
+      doc.text(row.input, 80, startY + index * rowHeight);
+      doc.text(row.emissionRate, 125, startY + index * rowHeight);
+      doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight);
+  });
     // Table Rows
     doc.setFont("helvetica", "normal");
     doc.text("Vehicle Usage", 28, 155);
     doc.text("300", 80, 155);
     doc.text("0.5", 125, 155);
     doc.text("150.00", 165, 155);
+    
+        // Draw gridlines for the table
+        doc.line(20, 147, 190, 147); // Horizontal line under headers
+        doc.line(62, 135, 62, 170); // Vertical line (Components | Input(kg))
+        doc.line(105, 135, 105, 170); // Vertical line (Input(kg) | Rate)
+        doc.line(148, 135, 148, 170); // Vertical line (Rate | Total Emission)
+        doc.line(20, 159, 190, 159); 
   
     doc.text("Fuel Consumption", 28, 166);
     doc.text("500", 80, 166);

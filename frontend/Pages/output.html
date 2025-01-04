@@ -125,17 +125,25 @@ const userEmails = localStorage.getItem('userEmail');
    document.getElementById('registerButton').addEventListener('click', function() {
     let storedSectorName = localStorage.getItem('sectorName');
 let storedGeographyName = localStorage.getItem('geographyName');
+let EmissionRates= localStorage.getItem('EmissionRates', emissionrates);
+let Inputs= localStorage.getItem('IndividualCarbon', answers);
 let storedActivitiesName = JSON.parse(localStorage.getItem('activitiesName'));
+const combinedList = storedActivitiesName.map((activity, index) => ({
+    activity,
+    emissionRate: EmissionRates[index],
+    input: Inputs[index],
+}));
    const recipientEmail= document.getElementById('textarea').value;
             const reportData = {
                 sector: storedSectorName,
                 geography: storedGeographyName,
                 isicClasses: ["Class 1", "Class 2"],
                 activities: storedActivitiesName,
-                activitiesDetails: [
-                    { name: "Vehicle Usage", question: "Distance traveled in Km?", input: 300, rate: 1.5 },
-                    { name: "Fuel Consumption", question: "Liters of fuel consumed?", input: 500, rate: 0.25 },
-                ],
+                combinedList,
+                // activitiesDetails: [
+                //     { name: "Vehicle Usage", question: "Distance traveled in Km?", input: 300, rate: 1.5 },
+                //     { name: "Fuel Consumption", question: "Liters of fuel consumed?", input: 500, rate: 0.25 },
+                // ],
                 email: recipientEmail, // Update with recipient's email if needed
             };
 
