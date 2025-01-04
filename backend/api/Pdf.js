@@ -26,7 +26,10 @@ function generatePDF(reportData) {
   const greenColor = [34, 139, 34]; // Green color in RGB
   const marginLeft = 20;
   let currentY = 20;
-
+  const totalRows = reportData.combinedList.length;
+  let startY = 155; // Initial Y position
+  const rowHeight = 10;
+  const otherElementY =  totalRows * rowHeight;
   // --- Header Section ---
 
   doc.addImage(logoImage, 'JPEG', 10,3, 55, 21);
@@ -81,10 +84,7 @@ function generatePDF(reportData) {
     doc.text("Input(kg)", 76, 143);
     doc.text("Rate (tCO2e/Kg)", 113, 143);
     doc.text("Total Emission", 157, 143);
-    const totalRows = reportData.combinedList.length;
-    let startY = 155; // Initial Y position
-    const rowHeight = 10;
-    const otherElementY =  totalRows * rowHeight;
+   
     reportData.combinedList.forEach((row, index) => {
       doc.text(row.activity, 28, startY + index * rowHeight);
       doc.text(row.input, 80, startY + index * rowHeight);
