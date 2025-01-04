@@ -28,7 +28,7 @@ function generatePDF(reportData) {
   let currentY = 20;
   const totalRows = reportData.combinedList.length;
   let startY = 155; // Initial Y position
-  const rowHeight = 10;
+  let rowHeight = 10;
   const otherElementY =  totalRows * rowHeight-20;
   // --- Header Section ---
 
