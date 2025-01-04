@@ -128,7 +128,7 @@ function generatePDF(reportData) {
     doc.text("Project MileStone", 30, 196+otherElementY);
     doc.text("Status", 76, 196+otherElementY);
     doc.text("Completion Date", 113, 196+otherElementY);
-    doc.text("Yes/No", 157, 196+otherElementY);
+    doc.text("Yes/No", 163, 196+otherElementY);
   
     // Draw gridlines for the table
     doc.line(20, 200+otherElementY, 190, 200+otherElementY); // Horizontal line under headers
@@ -139,15 +139,15 @@ function generatePDF(reportData) {
    
     // Table Rows
     doc.setFont("helvetica", "normal");
-    doc.text("Emission Data Collection", 28, 207+otherElementY);
-    doc.text("300", 80, 207+otherElementY);
-    doc.text(`${formattedDate}`, 125, 207+otherElementY);
-    doc.text("150.00", 165, 207+otherElementY);
+    doc.text("Emission Data", 28, 207+otherElementY);
+    doc.text("Completed", 80, 207+otherElementY);
+    doc.text(`${formattedDate}`, 120, 207+otherElementY);
+    doc.text("Yes", 165, 207+otherElementY);
   
     doc.text("Emission Analysis", 28, 218.5+otherElementY);
-    doc.text("500", 80, 218.5+otherElementY);
-    doc.text(`${formattedDate}`, 125, 218.5+otherElementY);
-    doc.text("125.00", 165, 218.5+otherElementY);
+    doc.text("Completed", 80, 218.5+otherElementY);
+    doc.text(`${formattedDate}`, 120, 218.5+otherElementY);
+    doc.text("Yes", 165, 218.5+otherElementY);
   
   doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
