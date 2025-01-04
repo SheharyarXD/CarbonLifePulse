@@ -29,7 +29,7 @@ function generatePDF(reportData) {
   const totalRows = reportData.combinedList.length;
   let startY = 155; // Initial Y position
   const rowHeight = 10;
-  const otherElementY =  totalRows * rowHeight;
+  const otherElementY =  totalRows * rowHeight-20;
   // --- Header Section ---
 
   doc.addImage(logoImage, 'JPEG', 10,3, 55, 21);
