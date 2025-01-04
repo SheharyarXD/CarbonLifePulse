@@ -151,6 +151,9 @@ function generatePDF(reportData) {
     doc.text("Yes", 166, 218.5+otherElementY);
   if(otherElementY>20){
     doc.addPage();
+    doc.addImage(logoImage, 'JPEG', 10,3, 55, 21);
+    doc.addImage(topright, 'JPEG', 130,0, 80, 80);
+    doc.addImage(lowerLeftImg, 'JPEG', 0, 267, 30, 30);
   }
   doc.addImage(imgData, 'JPEG', 20, 233+otherElementY, 8, 8);
   doc.setFontSize(16);
