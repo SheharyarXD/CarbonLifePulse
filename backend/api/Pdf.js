@@ -91,7 +91,7 @@ function generatePDF(reportData) {
       doc.text(row.input, 80, startY + index * rowHeight);
       doc.text(row.emissionRate, 125, startY + index * rowHeight);
       doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight);
-      doc.line(20, 147, 190, 147 + index * rowHeight);
+      doc.line(20, 147 + index * rowHeight, 190, 147 + index * rowHeight);
   });
   
      // Draw gridlines for the table
