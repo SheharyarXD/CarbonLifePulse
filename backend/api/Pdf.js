@@ -27,7 +27,7 @@ function generatePDF(reportData) {
   const marginLeft = 20;
   let currentY = 20;
   const totalRows = reportData.combinedList.length;
-  let startY = 155; // Initial Y position
+  let startY = 152; // Initial Y position
   const rowHeight = 12;
   const otherElementY =  totalRows * rowHeight-20;
   // --- Header Section ---
@@ -100,9 +100,9 @@ function generatePDF(reportData) {
   header=false;
      // Draw gridlines for the table
         doc.line(20, 147, 190, 147); // Horizontal line under headers
-        doc.line(62, 135, 62, 170+otherElementY); // Vertical line (Components | Input(kg))
-        doc.line(105, 135, 105, 170+otherElementY); // Vertical line (Input(kg) | Rate)
-        doc.line(148, 135, 148, 170+otherElementY); // Vertical line (Rate | Total Emission)
+        doc.line(62, 135, 62, 170+otherElementY-3); // Vertical line (Components | Input(kg))
+        doc.line(105, 135, 105, 170+otherElementY-3); // Vertical line (Input(kg) | Rate)
+        doc.line(148, 135, 148, 170+otherElementY-3); // Vertical line (Rate | Total Emission)
         // doc.line(20, 159, 190, 159); 
   
 
