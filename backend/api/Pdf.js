@@ -157,7 +157,7 @@ function generatePDF(reportData) {
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text(
-      `The total emissions calculated for the ${reportData.sector} are 275.00 tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
+      `The total emissions calculated for the ${reportData.sector.trim()} are ${totalEmission.toFixed(2)} tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
       25,
       248+otherElementY,
       { maxWidth: 160 }
