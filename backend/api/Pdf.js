@@ -72,7 +72,7 @@ function generatePDF(reportData) {
    doc.text("Geography:", 115, 104);
     doc.setFont("helvetica", "normal");
    doc.text(`${activites.join(", ")}`, 28, 111);
-   doc.text(`${reportData.geography}`, 145, 111);
+   doc.text(`${reportData.geography}`, 140, 111);
    
     doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
