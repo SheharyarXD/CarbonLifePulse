@@ -16,11 +16,16 @@ const logoImage='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QLoRXhpZgAA
 // const BoldRubik= './font/Rubik-ExtraBold-normal.js';
 // const BlackRubik= './font/Rubik-Black-normal.js';
 // Function to generate PDF
+function shortenString(a){
+  let parts =  a.split(',');
+  let activity =  parts.reduce((min, current) => current.length < min.length ? current : min);
+  return activity
+} 
 function generatePDF(reportData) {
   const doc = new jsPDF();
 
-  reportData.activities = reportData.activities.map(activity => trimString(activity));
-
+  let activites = reportData.activities.map(activity => shortenString(activity));
+ 
   const formattedDateTime = moment().format('MM/DD/YYYY, hh:mm:ss A');
   const formattedDate = moment().format('MM/DD/YYYY');
   // Styling Details
@@ -66,7 +71,7 @@ function generatePDF(reportData) {
    doc.text("Activities:", 20, 104);
    doc.text("Geography:", 115, 104);
     doc.setFont("helvetica", "normal");
-   doc.text(`${reportData.activities.join(", ")}`, 28, 111);
+   doc.text(`${activites.join(", ")}`, 28, 111);
    doc.text(`${reportData.geography}`, 145, 111);
    
     doc.setFontSize(16);
@@ -87,8 +92,7 @@ function generatePDF(reportData) {
     doc.text("Total Emission", 157, 143);
    let header=false
     reportData.combinedList.forEach((row, index) => {
-      let parts =  row.activity.split(',');
-      row.activity =  parts.reduce((min, current) => current.length < min.length ? current : min);
+      row.activity=trimString(row.activity)
       doc.setFont("helvetica", "normal");
       doc.text(row.activity, 28, startY + index * rowHeight+3);
       doc.text(row.input, 80, startY + index * rowHeight+3);
