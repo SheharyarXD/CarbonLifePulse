@@ -95,9 +95,9 @@ function generatePDF(reportData) {
   
      // Draw gridlines for the table
         doc.line(20, 147, 190, 147); // Horizontal line under headers
-        doc.line(62, 135, 62, 170); // Vertical line (Components | Input(kg))
-        doc.line(105, 135, 105, 170); // Vertical line (Input(kg) | Rate)
-        doc.line(148, 135, 148, 170); // Vertical line (Rate | Total Emission)
+        doc.line(62, 135, 62, 170+otherElementY); // Vertical line (Components | Input(kg))
+        doc.line(105, 135, 105, 170+otherElementY); // Vertical line (Input(kg) | Rate)
+        doc.line(148, 135, 148, 170+otherElementY); // Vertical line (Rate | Total Emission)
         doc.line(20, 159, 190, 159); 
   
 
