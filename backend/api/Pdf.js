@@ -76,7 +76,7 @@ function generatePDF(reportData) {
    
     doc.setFillColor("#C8E563");
     doc.rect(20, 135, 170, 12, "F"); // Header background
-    doc.rect(20, 135, 170, 35+otherElementY); // Outer border of the table
+    doc.rect(20, 135, 170, 32+otherElementY); // Outer border of the table
     // Column Headers
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
@@ -150,7 +150,7 @@ function generatePDF(reportData) {
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text(
-      `The total emissions calculated for the  ${reportData.sector} are 275.00 tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
+      `The total emissions calculated for the ${reportData.sector} are 275.00 tCO2e. This includes 150.00 tCO2e from vehicle usage and 125.00 tCO2e from fuel consumption.`,
       25,
       248+otherElementY,
       { maxWidth: 160 }
