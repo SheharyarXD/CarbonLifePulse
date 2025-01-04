@@ -86,6 +86,7 @@ function generatePDF(reportData) {
     doc.text("Total Emission", 157, 143);
    
     reportData.combinedList.forEach((row, index) => {
+      doc.setFont("helvetica", "normal");
       doc.text(row.activity, 28, startY + index * rowHeight);
       doc.text(row.input, 80, startY + index * rowHeight);
       doc.text(row.emissionRate, 125, startY + index * rowHeight);
