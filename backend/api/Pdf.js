@@ -85,6 +85,7 @@ function generatePDF(reportData) {
     doc.text("Rate (tCO2e/Kg)", 113, 143);
     doc.text("Total Emission", 157, 143);
    
+    rowHeight+=1;
     reportData.combinedList.forEach((row, index) => {
       doc.setFont("helvetica", "normal");
       doc.text(row.activity, 28, startY + index * rowHeight);
