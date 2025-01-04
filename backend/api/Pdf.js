@@ -19,6 +19,7 @@ const logoImage='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QLoRXhpZgAA
 function generatePDF(reportData) {
   const doc = new jsPDF();
 
+  reportData.activities = reportData.activities.map(activity => trimString(activity));
 
   const formattedDateTime = moment().format('MM/DD/YYYY, hh:mm:ss A');
   const formattedDate = moment().format('MM/DD/YYYY');
@@ -200,6 +201,16 @@ function sendEmail(pdfBuffer, recipientEmail) {
 
   // Send the email
   return transporter.sendMail(mailOptions);
+}
+function trimString(str) {
+  let parts = str.split(',');
+  
+  while (str.length > 20) {
+      parts.shift();
+      str = parts.join(','); 
+  }
+
+  return str;
 }
 
 app.post("/send-report", async (req, res) => {
