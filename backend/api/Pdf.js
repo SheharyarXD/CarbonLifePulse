@@ -150,7 +150,9 @@ function generatePDF(reportData) {
     doc.text("Completed", 74, 218.5+otherElementY);
     doc.text(`${formattedDate}`, 118, 218.5+otherElementY);
     doc.text("Yes", 166, 218.5+otherElementY);
-  
+  if(otherElementY>20){
+    doc.addPage();
+  }
   doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
     doc.setTextColor("#0000");
