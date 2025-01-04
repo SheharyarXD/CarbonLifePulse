@@ -123,12 +123,15 @@ const userEmails = localStorage.getItem('userEmail');
 
 
    document.getElementById('registerButton').addEventListener('click', function() {
+    let storedSectorName = localStorage.getItem('sectorName');
+let storedGeographyName = localStorage.getItem('geographyName');
+let storedActivitiesName = JSON.parse(localStorage.getItem('activitiesName'));
    const recipientEmail= document.getElementById('textarea').value;
             const reportData = {
-                sector: "Transportation",
-                geography: "Global",
+                sector: storedSectorName,
+                geography: storedGeographyName,
                 isicClasses: ["Class 1", "Class 2"],
-                activities: ["Vehicle Usage", "Fuel Consumption"],
+                activities: storedActivitiesName,
                 activitiesDetails: [
                     { name: "Vehicle Usage", question: "Distance traveled in Km?", input: 300, rate: 1.5 },
                     { name: "Fuel Consumption", question: "Liters of fuel consumed?", input: 500, rate: 0.25 },

@@ -270,6 +270,9 @@ let ISICId = [];
 let ActivityId=[]
 let activities = [];
 let carbon=[];
+let sectorName='';
+let geographyName='';
+let activitiesName=[];
 
 const ParentGrid = document.getElementById('main');
 
@@ -426,11 +429,13 @@ function Sector(sectorIds) {
     if(stepTextDiv.innerText===Questions[0]){
 
         sectorId = sectorIds;
-        // console.log(sectorId);
+        sectorName=divElement.innerText;
+        // console.log(sectorName);
     }
     else if(stepTextDiv.innerText===Questions[1]){
         geographyId=sectorIds;
-        // console.log(geographyId);
+        geographyName=divElement.innerText;
+        // console.log(geographyName);
     }
     if (checkbox) {
         console.log(!checkbox.checked)
@@ -465,6 +470,7 @@ function ActivityType(Ids) {
     if (ActivityId.includes(Ids)) {
 
         ActivityId = ActivityId.filter(id => id !== Ids); 
+        activitiesName=activitiesName.filter(name=>name!==divElement.innerText)
         divElement.style.backgroundColor = '';
         divElement.style.color = '';
         if (checkbox) checkbox.checked = false;
@@ -473,7 +479,8 @@ function ActivityType(Ids) {
         // If Ids does NOT exist in ActivityId array
         console.log("Adding ID:", Ids);
         ActivityId.push(Ids); // Add to array
-
+        activitiesName.push(divElement.innerText);
+        console.log(activitiesName)
         // Update styles and checkbox
         divElement.style.backgroundColor = 'white';
         divElement.style.color = '#6BA42E';
@@ -706,6 +713,9 @@ let answers = [];
                     return sum + item.carbon_emission * answer;
                 }, 0);
                 localStorage.setItem('totalEmission', totalEmission);
+                localStorage.setItem('sectorName', sectorName);
+                localStorage.setItem('geographyName', geographyName);
+                localStorage.setItem('activitiesName', JSON.stringify(activitiesName));
                 // console.log("Total Emission:", totalEmission);
          window.location.href = '/Pages/output.html';
      
