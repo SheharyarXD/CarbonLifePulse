@@ -140,14 +140,14 @@ function generatePDF(reportData) {
     // Table Rows
     doc.setFont("helvetica", "normal");
     doc.text("Emission Data", 28, 207+otherElementY);
-    doc.text("Completed", 73, 207+otherElementY);
+    doc.text("Completed", 74, 207+otherElementY);
     doc.text(`${formattedDate}`, 116, 207+otherElementY);
-    doc.text("Yes", 165, 207+otherElementY);
+    doc.text("Yes", 166, 207+otherElementY);
   
     doc.text("Emission Analysis", 28, 218.5+otherElementY);
-    doc.text("Completed", 73, 218.5+otherElementY);
-    doc.text(`${formattedDate}`, 120, 218.5+otherElementY);
-    doc.text("Yes", 165, 218.5+otherElementY);
+    doc.text("Completed", 74, 218.5+otherElementY);
+    doc.text(`${formattedDate}`, 116, 218.5+otherElementY);
+    doc.text("Yes", 166, 218.5+otherElementY);
   
   doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
