@@ -84,16 +84,20 @@ function generatePDF(reportData) {
     doc.text("Input(kg)", 76, 143);
     doc.text("Rate (tCO2e/Kg)", 113, 143);
     doc.text("Total Emission", 157, 143);
-   
+   let header=false
     reportData.combinedList.forEach((row, index) => {
       doc.setFont("helvetica", "normal");
       doc.text(row.activity, 28, startY + index * rowHeight);
       doc.text(row.input, 80, startY + index * rowHeight);
       doc.text(row.emissionRate, 125, startY + index * rowHeight);
       doc.text((row.input*row.emissionRate).toFixed(3), 165, startY + index * rowHeight);
-      doc.line(20, 147 + index * rowHeight+1, 190, 147 + index * rowHeight+1);
+      if(header==true){
+
+        doc.line(20, 147 + index * rowHeight+1, 190, 147 + index * rowHeight+1);
+      }
+      header=true
   });
-  
+  header=false;
      // Draw gridlines for the table
         doc.line(20, 147, 190, 147); // Horizontal line under headers
         doc.line(62, 135, 62, 170+otherElementY); // Vertical line (Components | Input(kg))
